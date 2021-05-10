@@ -1,0 +1,27 @@
+p {
+    font-size: 12px;
+    font-style: italic;
+    text-indent: 2em;
+    line-height: 26px;
+}
+.red {
+    color:red;
+}
+.font {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+#box{
+    background-color: blue;)
+    width: 20px;
+    height: 20px;
+}
+h1 {
+    font-family: '微软雅黑';
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
