@@ -28,3 +28,9 @@ a {
 .colorchange {
     color: #666;
 }
+.display {
+    height: 100px;
+    width: 150px;
+    background-color: blueviolet;
+    display: block;
+}
