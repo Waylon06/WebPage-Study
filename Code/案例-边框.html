@@ -6,17 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>边框</title>
     <style>
-        div {
+        .shixian {
             width: 300px;
             height: 200px;
             border-width: 5px;
             /* border-width  边框的粗细 一般情况下都用px */
             border-style: solid;
-            /* border-style  边框样式  solid 实线边框  dashed 虚线边框 */
+            /* border-style  边框样式  solid 实线边框  dashed 虚线边框  dotted 点线边框 */
+            border-color: blue;
+        }
+        .xuxian {
+            width: 300px;
+            height: 200px;
+            border-width: 5px;
+            border-style: dashed;
+        }
+        .dianxian {
+            width: 300px;
+            height: 200px;
+            border-width: 5px;
+            border-style: dotted;
         }
     </style>
 </head>
 <body>
-    <div></div>
+    <div class="shixian"></div>
+    <div class="xuxian"></div>
+    <div class="dianxian"></div>
 </body>
 </html>
