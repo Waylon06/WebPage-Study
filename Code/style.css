@@ -34,3 +34,13 @@ a {
     background-color: blueviolet;
     display: block;
 }
+table{
+    width: 500px;
+    height:200px;
+}
+table,
+td {
+    border: 2px solid pink;
+    /* 合并相邻边框 */
+    border-collapse: collapse;
+}
