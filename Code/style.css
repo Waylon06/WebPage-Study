@@ -48,9 +48,12 @@ td {
     width: 400px;
     height: 400px;
     background-color: blue;
+    margin-top: 20px;
+    border: 1px solid transparent;
 }
 .son {
     width: 200px;
     height: 200px;
     background-color: brown;
+    margin-top: 40px;
 }
