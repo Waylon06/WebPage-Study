@@ -44,3 +44,13 @@ td {
     /* 合并相邻边框 */
     border-collapse: collapse;
 }
+.father {
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+}
+.son {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+}
