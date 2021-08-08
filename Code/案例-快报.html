@@ -10,12 +10,17 @@
             margin: 0;
             padding: 0;
         }
+
+        li {
+            list-style: none;
+        }
         .all {
             width: 248px;   
             height: 163px;
             border: 1px solid #cccccc;
             margin: 100px auto;
         }
+
         .all h3 {
             height: 32px;
             border-bottom: 1px dotted #cccccc;
@@ -24,11 +29,38 @@
             line-height: 32px;
             padding-left: 15px;
         }
+
+        .all ul li a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 12px;
+        }
+
+        .all ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .all ul li {
+            height: 23px;
+            line-height: 23px;
+            padding-left: 20px;
+        }
+
+        .all ul {
+            margin-top: 7px;
+        }
     </style>
 </head>
 <body>
     <div class="all">
         <h3>品优购快报</h3>
+        <ul>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】母亲节，健康好礼低至5折！</a></li>
+            <li><a href="#">【特惠】9.9元洗100张照片！</a></li>
+            <li><a href="#">【特惠】长虹智能空调立省1000元！</a></li>
+            <li><a href="#">【特惠】猪肉只卖5块一斤！</a></li>
+        </ul>
     </div>
     
 </body>
