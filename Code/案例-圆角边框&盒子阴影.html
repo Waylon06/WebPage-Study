@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆角边框</title>
+    <style>
+        .yuanxing {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* border-radius: 100px; */
+            /* 50% 就是宽度和高度的一半 为100px */
+            border-radius: 50%;
+        }
+
+        .juxing {
+            width: 400px;
+            height: 200px;
+            background-color: red;
+            border-radius: 100px;
+        }
+        
+        .byy {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 10px 20px 30px 40px;
+        }
+        .yinzi {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+        }
+        div:hover {
+            box-shadow: 10px 10px 10px 10px rgb(0, 0, 0, .3);
+        }
+    </style>
+</head>
+
+<body>
+    <h5>圆形边框</h5>
+    <div class="yuanxing"></div>
+    <h5>矩形边框</h5>
+    <div class="juxing"></div>
+    <h5>可以设置不同的圆角</h5>
+    <div class="byy"></div>
+    <div class="yinzi"></div>
+</body>
+
+</html>
