@@ -1,25 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>浮动布局</title>
     <style>
-        .one,.two{
-            width: 200px;
-            height: 200px;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+        .box {
+            width: 1226px;
+            height: 460px;
+            text-align: center;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .list {
+            width: 234px;
+            height: 460px;
+            background-color: blue;
+            float: left;
+        }
+
+        .son2 {
+            width: 992px;
+            height: 460px;
             background-color: pink;
             float: left;
         }
-/* 浮动层叠了，上面的盒子2的浮动被下面的取代了 */
-        .two {
-            float: right;
+
+        a {
+            display: block;
+            width: 200px;
+            height: 40px;
+            background-color: #55585a;
+            font-size: 14px;
+            text-decoration: none;
+            color: #fff;
+            line-height: 40px;
+            padding-left: 30px;
+        }
+
+        a:hover {
+            background-color: #ff6700;
+        }
+        
+        .box2 {
+            width: 1226px;
+            height: 285px;
+            background-color: skyblue;
+            margin: 0 auto;
+        }
+
+        .box2 li {
+            width: 296px;
+            height: 285px;
+            background-color: purple;
+            float: left;
+            margin-right: 14px;
+        }
+/* 需将第四个li的左内边距给取消掉，不然会被挤下去，但下面不能直接用.li4来取消，因为.li4的权重没有.box2 li的权重高，所以要用.box2 .li4来取消内边距 */
+        .box2 .li4 {
+            margin-right: 0;
         }
     </style>
 </head>
+
 <body>
-    <div class="one">1</div>
-    <div class="two">2</div>
+    <div class="box">
+        <div class="list">
+                <a href="#">手机</a>
+                <a href="#">电视</a>
+                <a href="#">笔记本 平板</a>
+                <a href="#">家电</a>
+                <a href="#">出行 穿戴</a>
+                <a href="#">智能 路由器</a>
+                <a href="#">电源 配件</a>
+                <a href="#">健康 儿童</a>
+                <a href="#">耳机 音响</a>
+                <a href="#">生活 箱包</a>
+        </div>
+        <div class="son2"></div>
+    </div>
+    <ul class="box2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="li4">4</li>
+    </ul>
 </body>
+
 </html>
