@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    height: 42px;   
+    /* 注意此地方会层叠w里面的margin */
+    margin: 30px auto;
+}
+.logo {
+    width: 198px;
+    height: 42px;
+}
