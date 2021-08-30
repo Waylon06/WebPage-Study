@@ -20,6 +20,10 @@ a {
     text-decoration: none;
 }
 
+.clear {
+    clear: both;
+}
+
 /* 头部区域 */
 .header {
     height: 42px;   
@@ -279,7 +283,6 @@ a {
 /* 编程入门部分 */
 .bcrm {
     margin-top: 40px;
-    clear: both;
 }
 
 .bcrm-hd {
@@ -369,4 +372,298 @@ a {
 
 .bcrm-bd .bdright ul li .info span {
     color: #ff7c2d;
+}
+
+/* 数据分析师部分 */
+.sjfxs {
+    margin-top: 40px;
+}
+
+.sjfxs-hd {
+    height: 45px;
+}
+
+.sjfxs-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.sjfxs-hd ul {
+    margin-left: 354px;
+}
+
+.sjfxs-hd ul li {
+    float: left;
+    padding: 0 45px;
+}
+
+.sjfxs-hd ul li a {
+    font-size: 16px;
+    color: #979898;
+    margin-top: 10px;
+}
+
+.sjfxs-hd ul li a:hover {
+    color: #66bcfd;
+}
+
+.sjfxs-hd .lost {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.sjfxs-bd {
+    height: 95px;
+}
+
+.sjfxs-bd .bdleft {
+    float: left;
+    width: 228px;
+}
+
+.sjfxs-bd .bdright {
+    float: left;
+    width: 972px;
+}
+
+.sjfxs-bd .bdright .r-top {
+    margin-left: 15px;
+}
+
+.sjfxs-bd .bdright ul {
+    width: 1300px;
+}
+
+.sjfxs-bd .bdright ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin-right: 15px;
+    margin-top: 18px;
+    background-color: #fff;
+}
+
+.sjfxs-bd .bdright ul li img {
+    width: 100%;
+}
+
+.sjfxs-bd .bdright ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.sjfxs-bd .bdright ul li .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.sjfxs-bd .bdright ul li .info span {
+    color: #ff7c2d;
+}
+
+/* 机器学习工程师部分 */
+.jqxxgcs {
+    margin-top: 40px;
+}
+
+.jqxxgcs-hd {
+    height: 45px;
+}
+
+.jqxxgcs-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.jqxxgcs-hd ul {
+    margin-left: 354px;
+}
+
+.jqxxgcs-hd ul li {
+    float: left;
+    padding: 0 45px;
+}
+
+.jqxxgcs-hd ul li a {
+    font-size: 16px;
+    color: #979898;
+    margin-top: 10px;
+}
+
+.jqxxgcs-hd ul li a:hover {
+    color: #66bcfd;
+}
+
+.jqxxgcs-hd .lost {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.jqxxgcs-bd {
+    width: 1225px;
+}
+
+.jqxxgcs-bd ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin-right: 15px;
+    background-color: #fff;
+}
+
+.jqxxgcs-bd ul li img {
+    width: 100%;
+}
+
+.jqxxgcs-bd ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.jqxxgcs-bd .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.jqxxgcs-bd .info span {
+    color: #ff7c2d;
+}
+
+/* 前端开发工程师部分 */
+.qdkfgcs {
+    margin-top: 40px;
+}
+
+.qdkfgcs-hd {
+    height: 45px;
+}
+
+.qdkfgcs-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.qdkfgcs-hd ul {
+    margin-left: 354px;
+}
+
+.qdkfgcs-hd ul li {
+    float: left;
+    padding: 0 45px;
+}
+
+.qdkfgcs-hd ul li a {
+    font-size: 16px;
+    color: #979898;
+    margin-top: 10px;
+}
+
+.qdkfgcs-hd ul li a:hover {
+    color: #66bcfd;
+}
+
+.qdkfgcs-hd .lost {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.qdkfgcs-bd {
+    width: 1225px;
+}
+
+.qdkfgcs-bd ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin-right: 15px;
+    background-color: #fff;
+}
+
+.qdkfgcs-bd ul li img {
+    width: 100%;
+}
+
+.qdkfgcs-bd ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.qdkfgcs-bd .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.qdkfgcs-bd .info span {
+    color: #ff7c2d;
+}
+
+/* 底部部分 */
+.footer {
+    height: 415px;
+    background-color: #fff;
+}
+
+.footer .w {
+    padding-top: 35px;
+}
+
+.coperight {
+    float: left;
+}
+
+.coperight p {
+    font-size: 12px;
+    color: #666;
+    margin: 20px 0 15px 0;
+}
+
+.coperight .app {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    font-size: 16px;
+}
+
+.links {
+    float:right
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.links dl dd a {
+    color: #333;
+    font-size: 12px;
 }
