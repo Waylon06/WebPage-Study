@@ -1,34 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        var i ;
-        var j ;
-        for(i = 0;i <= 4; i++){
-
-            for(j = 0; j <= i; j++){
-            document.write("*");
-            }
-            document.write("<br>");
-        }
-        var names = ['小颜','小王','小张'];
-        var nums = [10,20,30];
-        var sum = 0;
-        for(var a =0 ; a<names.length;a++){
-            sum+=nums[a];
-        }
-        var num1=[1,2];
-        num1.push(3);
-        console.log(names.concat(num1));
-        var arr = ["../images/生日图片.jpg"];
-        document.write('<img src = '+arr[0]+'alt = "">');
-    </script>
-</head>
-<body>
     
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        // var i ;
+        // var j ;
+        // for(i = 0;i <= 4; i++){
+        //     for(j = 0; j <= i; j++){
+        //     document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+        // var names = ['小颜','小王','小张'];
+        // var nums = [10,20,30];
+        // var sum = 0;
+        // for(var a =0 ; a<names.length;a++){
+        //     sum+=nums[a];
+        // }
+        // var num1=[1,2];
+        // num1.push(3);
+        // console.log(names.concat(num1));
+        // var arr = ["../images/生日图片.jpg"];
+        // document.write('<img src = '+arr[0]+'alt = "">');
+
+
+        // var stu1 ={
+        //     name:'张三',
+        //     age: 17,
+        //     gender: '男'
+        // };
+        // // 遍历dui'xiang
+        // for(var key in stu1){
+        //     console.log(key);
+        //     console.log(stu1[key]);
+        // }
+
+
+        // var datas = [
+        //     { name: '狗蛋', age: 18, gender: '男' },
+        //     { name: '翠花', age: 19, gender: '女' },
+        //     { name: '来福', age: 17, gender: '男' }
+        // ];
+        // var str = `<table border = 1><tr><td>姓名</td><td>年龄</td><td>性别</td></tr>`;
+        // for(var i =0; i<=datas.length; i++){
+        //     str += "<tr>";
+        //     var obj = datas[i];
+        //     for(var key in obj){
+        //         str += '<td>'+obj[key]+'</td>';
+        //     }
+        //     str += "</tr>"; 
+        // }
+        // str += "</table>";
+        // document.write(str);
+
+
+        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+</head>
+
+<body>
+    <div id="box">
+        <div v-text = msg >
+        </div>
+        <p v-html = text>
+
+        </p>
+        <p v-pre>{{msg}}</p>
+        <p v-once>{{text}}</p>
+        <div>
+            <input type="text" v-model = "msg">
+            <br>
+            {{num}}
+            <button @click = "handle">增加</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var vm =  new Vue({
+            el:"#box",
+            data:{
+                num: 0,
+                msg: "Hello World!",
+                text: "<span color = blue>Wylon</span>"
+            },
+            methods:{
+                handle:function(){
+                    console.log(this.num);
+                    this.num++;
+                }
+            }
+        });
+    </script>
 </body>
+
 </html>
