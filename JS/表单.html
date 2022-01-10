@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form div{
+            height: 40px;
+            line-height: 40px;
+        }
+        form div span:first-child{
+            display: inline-block;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <form action="">
+            <div>
+                <span>姓名：</span>
+                <span>
+                    <input type="text" v-model="name">
+                </span>
+            </div>
+            <div>
+                <span>性别：</span>
+                <span>
+                    <input type="radio" id="male" value="man" v-model="sex">
+                    <label for="male">男</label>
+                    <input type="radio" id="female" value="woman" v-model="sex">
+                    <label for="female">女</label>
+                </span>
+            </div>
+            <div>
+                <span>年龄：</span>
+                <span>
+                    <input type="text" v-model="age">
+                </span>
+            </div>
+            <div>
+                <span>爱好：</span>
+                <span>
+                    <input type="checkbox" id="sing" value="1" v-model="hobby">
+                    <label for="sing">唱</label>
+                    <input type="checkbox" id="dance" value="2" v-model="hobby">
+                    <label for="dance">跳</label>
+                    <input type="checkbox" id="rap" value="3" v-model="hobby">
+                    <label for="rap">Rap</label>
+                </span>
+            </div>
+            <div>
+                <span>地址：</span>
+                <span>
+                    <select name="" id=""  v-model="address">
+                        <option value="0">--请选择--</option>
+                        <option value="1">四川</option>
+                        <option value="2">山东</option>
+                        <option value="3">湖北</option>
+                        <option value="4">湖南</option>
+                        <option value="5">河南</option>
+                        <option value="6">河北</option>
+                        <option value="7">云南</option>
+                        <option value="8">陕西</option>
+                        <option value="9">辽宁</option>
+                        <option value="10">山西</option>
+                        <option value="11">台湾</option>
+                        <option value="12">黑龙江</option>
+                        <option value="13">福建</option>
+                        <option value="14">广东</option>
+                        <option value="15">广西</option>
+                        <option value="16">海南</option>
+                        <option value="17">宁夏</option>
+                        <option value="18">北京市</option>
+                        <option value="19">重庆市</option>
+                        <option value="20">上海市</option>
+                        <option value="21">天津市</option>
+                        <option value="22">安徽</option>
+                        <option value="23">吉林</option>
+                        <option value="24">浙江</option>
+                        <option value="25">江苏</option>
+                        <option value="26">江西</option>
+                        <option value="27">甘肃</option>
+                        <option value="28">贵州</option>
+                        <option value="29">内蒙古自治区</option>
+                        <option value="30">香港特别行政区</option>
+                        <option value="31">澳门特别行政区</option>
+                        <option value="32">新疆维吾尔族自治区</option>
+                        <option value="33">西藏藏族自治区</option>
+                    </select>
+                </span>
+            </div>
+            <div>
+                <span>
+                    <input type="submit" v-on:click.prevent="handleSubmit">
+                </span>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                name: '',
+                sex: '',
+                age: '',
+                hobby: [],
+                address: '',
+            },
+            methods: {
+                handleSubmit: function () {
+                    console.log(this.name);
+                    console.log(this.sex);
+                    console.log(this.age);
+                    console.log(this.hobby);
+                    console.log(this.address)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
