@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ZH-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-focus>
+        <input type="text" v-color="msg">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        // 注册全局指令
+        // Vue.directive('focus', {
+        //     inserted: function (el) {
+        //         console.log(el);
+        //         el.focus();
+        //     }
+        // });
+        // Vue.directive('color', {
+        //     bind: function (el, binding) {
+        //         console.log(binding.value);
+        //         el.style.backgroundColor = binding.value;
+        //     }
+        // });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'red'
+            },
+            // 定义局部指令
+            directives: {
+                color: {
+                    bind: function (el, binding) {
+                        el.style.backgroundColor = binding.value;
+                    }
+                },
+                focus: {
+                    inserted: function (el) {
+                        el.focus();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

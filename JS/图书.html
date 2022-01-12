@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .bookStore {
+            margin: 0 auto;
+            width: 500px;
+            text-align: center;
+        }
+
+        .bookStore table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .bookStore table th,
+        td {
+            padding: 10px;
+            border: 1px dashed orange;
+            line-height: 35px;
+        }
+
+        .bookStore th {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="bookStore">
+            <h1>图书管理</h1>
+            <div class="total">
+                <span>图书总数：</span>
+                <span>{{total}}</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        编号：<input type="text" v-model="id">
+                        名称：<input type="text" v-model="name">
+                        <input type="submit" v-on:click="handle">
+                    </tr>
+                    <tr>
+                        <th>书号</th>
+                        <th>书名</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in books" :key='item.id'>
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.date | format('yyyy年MM月dd日')}}</td>
+                        <td>
+                            <a href="" v-on:click.prevent='toEdit(item.id)'>修改</a>
+                            <span>|</span>
+                            <a href="" v-on:click.prevent='deleteBook(item.id)'>删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        Vue.filter('format', function (value, arg) {
+            function dateFormat(date, format) {
+                if (typeof date === "string") {
+                    var mts = date.match(/(\/Date\((\d+)\)\/)/);
+                    if (mts && mts.length >= 3) {
+                        date = parseInt(mts[2]);
+                    }
+                }
+                date = new Date(date);
+                if (!date || date.toUTCString() == "Invalid Date") {
+                    return "";
+                }
+                var map = {
+                    "M": date.getMonth() + 1, //月份 
+                    "d": date.getDate(), //日 
+                    "h": date.getHours(), //小时 
+                    "m": date.getMinutes(), //分 
+                    "s": date.getSeconds(), //秒 
+                    "q": Math.floor((date.getMonth() + 3) / 3), //季度 
+                    "S": date.getMilliseconds() //毫秒 
+                };
+
+                format = format.replace(/([yMdhmsqS])+/g, function (all, t) {
+                    var v = map[t];
+                    if (v !== undefined) {
+                        if (all.length > 1) {
+                            v = '0' + v;
+                            v = v.substr(v.length - 2);
+                        }
+                        return v;
+                    } else if (t === 'y') {
+                        return (date.getFullYear() + '').substr(4 - all.length);
+                    }
+                    return all;
+                });
+                return format;
+            }
+            return dateFormat(value, arg);
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: false,
+                id: '',
+                name: '',
+                books: [{
+                    id: 1,
+                    name: '三国演义',
+                    date: new Date()
+                }, {
+                    id: 2,
+                    name: '水浒传',
+                    date: new Date()
+                }, {
+                    id: 3,
+                    name: '红楼梦',
+                    date: new Date()
+                }, {
+                    id: 4,
+                    name: '西游记',
+                    date: new Date()
+                }]
+            },
+            methods: {
+                handle: function () {
+                    if (this.flag) {
+                        this.books.some((item) => {
+                            if (item.id == this.id) {
+                                item.name = this.name;
+                                return true;
+                            }
+                        });
+                        this.flag = false;
+                    } else {
+                        var book = {};
+                        book.id = this.id;
+                        book.name = this.name;
+                        book.date = new Date();
+                        this.books.push(book);
+                        this.id = '';
+                        this.name = '';
+                    }
+                },
+                toEdit: function (id) {
+                    this.flag = true;
+                    console.log(id);
+                    var book = this.books.filter(function (item) {
+                        return item.id == id;
+                    });
+                    console.log(book);
+                    this.id = book[0].id;
+                    this.name = book[0].name;
+                },
+                deleteBook: function (id) {
+                    this.books = this.books.filter(function (item) {
+                        return item.id != id;
+                    });
+                }
+            },
+            computed: {
+                total: function () {
+                    return this.books.length;
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

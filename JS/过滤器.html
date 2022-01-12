@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model.lazy="msg">
+        <div>{{msg | upper}}</div>
+        <div>{{msg | upper | lower}}</div>
+        <div>{{msg | rever}}</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        // 自定义全局过滤器
+        Vue.filter('upper', function (val) {
+            console.log(val);
+            return val.charAt(0).toLocaleUpperCase() + val.slice(1);
+        });
+        Vue.filter('lower', function (val) {
+            console.log(val);
+            return val.charAt(0).toLocaleLowerCase() + val.slice(1);
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: ""
+            },
+            // 定义局部过滤器
+            filters: {
+                rever: function (val) {
+                    return val.split('').reverse().join('');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
