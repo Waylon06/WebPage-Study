@@ -24,6 +24,15 @@
         }
         console.log(o);
         console.log(str.charAt(1));
+        var max = 0 ;
+        // 用for in 来遍历对象
+        for(var k in o){
+            // k 得到的是 属性名
+            // o[k] 得到的是 属性值
+            if (o[k] > max) {
+                max = o[k];
+            }
+        }
     </script>
 </head>
 <body>
