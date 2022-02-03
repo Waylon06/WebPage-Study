@@ -10,6 +10,20 @@
         console.log(arr.toString());
         var arr1 = ['green','blue','pink'];
         console.log(arr1.join());
+        console.log(arr1.join('-'));
+        console.log(arr1.join('&'));
+        var str = 'adcsdgfagafghafhahreq';
+        var o = {};
+        for(var i = 0; i <str.length;i++){
+            var chars = str.charAt(i);
+            if (o[chars]) {
+                o[chars]++;
+            }else{
+                o[chars] = 1
+            }
+        }
+        console.log(o);
+        console.log(str.charAt(1));
     </script>
 </head>
 <body>
