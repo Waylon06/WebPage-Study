@@ -25,14 +25,18 @@
         console.log(o);
         console.log(str.charAt(1));
         var max = 0 ;
+        var ch ='';
         // 用for in 来遍历对象
         for(var k in o){
             // k 得到的是 属性名
             // o[k] 得到的是 属性值
             if (o[k] > max) {
                 max = o[k];
+                ch = k;
             }
         }
+        console.log(max);
+        console.log('最多的字符是'+ch);
     </script>
 </head>
 <body>
