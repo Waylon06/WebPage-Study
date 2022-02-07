@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var arr = [1,2,3];
+        var arr = [1, 2, 3];
         console.log(arr.toString());
-        var arr1 = ['green','blue','pink'];
+        // 字符转换为字符串 join
+        var arr1 = ['green', 'blue', 'pink'];
         console.log(arr1.join());
         console.log(arr1.join('-'));
         console.log(arr1.join('&'));
         var str = 'adcsdgfagafghafhahreq';
         var o = {};
-        for(var i = 0; i <str.length;i++){
+        for (var i = 0; i < str.length; i++) {
             var chars = str.charAt(i);
             if (o[chars]) {
                 o[chars]++;
-            }else{
+            } else {
                 o[chars] = 1
             }
         }
         console.log(o);
         console.log(str.charAt(1));
-        var max = 0 ;
-        var ch ='';
+        var max = 0;
+        var ch = '';
         // 用for in 来遍历对象
-        for(var k in o){
+        for (var k in o) {
             // k 得到的是 属性名
             // o[k] 得到的是 属性值
             if (o[k] > max) {
@@ -36,16 +38,35 @@
             }
         }
         console.log(max);
-        console.log('最多的字符是'+ch);
+        console.log('最多的字符是' + ch);
         // 拼接字符串
         // concat(str1,str2,str3...);
         // 截取字符
         var str1 = '改革春风吹满地';
-        console.log(str1.substr(2,2));
-
+        console.log(str1.substr(2, 2));
+        // 替换字符 replace  只会替换遇见的第一个字符
+        var str2 = 'waylonwaylon';
+        console.log(str2.replace('w', 'W'));
+        // 替换字符串里面的所有对应的字符
+        for (var i = 0; i <= str2.length; i++) {
+            str2 = str2.replace('w', 'W');
+        }
+        console.log(str2);
+        var str4 = 'lorrainlorrain'
+        while (str4.indexOf('l') !== -1) {
+            str4 = str4.replace('l', 'L');
+        }
+        console.log(str4);
+        // 字符转换数组 split('分隔符')
+        var str5 = 'apple, peach, banana';
+        console.log(str5.split(','));
+        var str6 = 'apple& peach& banana';
+        console.log(str6.split('&'));
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
