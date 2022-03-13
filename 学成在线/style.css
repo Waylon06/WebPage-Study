@@ -223,6 +223,14 @@ a {
 }
 
 /* 主体部分模块 */
+
+.bcktop {
+    position: fixed;
+    bottom: 20px ;
+    right: 10px;
+   
+}
+
 .box {
     margin-top: 30px;
 }
@@ -251,6 +259,7 @@ a {
 }
 
 .box-bd ul li {
+    position: relative;
     float: left;
     width: 228px;
     height: 270px;
@@ -259,7 +268,13 @@ a {
     background-color: #fff;
 }
 
-.box-bd ul li img {
+.box-bd ul li em {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+
+.box-bd ul li > img {
     width: 100%;
 }
 
