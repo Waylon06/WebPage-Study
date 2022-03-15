@@ -4,6 +4,13 @@ p {
     text-indent: 2em;
     line-height: 26px;
 }
+
+.bcktop {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+}
+
 .red {
     color:red;
 }

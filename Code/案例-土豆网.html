@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 402px;
+            height: 224.6px;
+            margin: 30px auto;
+            background-color: pink;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mask {
+            /* 隐藏遮罩层 */
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0, .4) url(../images/play.png) no-repeat center;
+        }
+
+        .box:hover  .mask{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="mask"></div>
+        <img src="../images/tudou.jpg" alt="">
+    </div>
+</body>
+</html>

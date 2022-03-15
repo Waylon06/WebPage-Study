@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .peqi,
+        .gorge {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* display的none属性会让位置和文字都消失 */
+        .peqi {
+            /* display: block; */
+            display: none;
+            background-color: pink;
+        }
+
+        .gorge {
+            display: block;
+            background-color: skyblue;
+        }
+
+        .dad,
+        .mom {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* visibility的hidden属性只会让内容消失，位置还在 */
+        .dad {
+            background-color: red;
+            /* visibility: visible; */
+            visibility: hidden;
+        }
+
+        .mom {
+            visibility: visible;
+            background-color: purple;
+        }
+
+        .txt {
+            /* 显示 */
+            /* overflow: visible; */
+            /* 隐藏溢出部分 */
+            /* overflow: hidden; */
+            /* 溢出的部分以滚动条形式显示，不溢出也显示滚动条 */
+            /* overflow: scroll; */
+            /* 溢出时才显示滚动条，不溢出不显示滚动条 */
+            overflow: auto;
+            width: 200px;
+            height: 200px;
+            border: 3px solid pink;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="peqi">佩奇</div>
+    <div class="gorge">乔治</div>
+    <div class="dad">猪爸爸</div>
+    <div class="mom">猪妈妈</div>
+    <div class="txt">
+        《官场现形记》是晚清文学家李伯元创作的长篇小说。小说最早在陈所发行的《世界繁华报》上连载，共五编60回，是中国近代第一部在报刊上连载并取得社会轰动效应的长篇章回小说。它由30多个相对独立的官场故事联缀起来，涉及清政府中上自皇帝、下至佐杂小吏等，开创了近代小说批判现实的风气。鲁迅将《官场现形记》与其他三部小说并称之为谴责小说，是清朝晚期文学代表作品之一。
+
+        　　《官场现形记》是晚清文学家李伯元创作的长篇小说。小说最早在陈所发行的《世界繁华报》上连载，共五编60回，是中国近代第一部在报刊上连载并取得社会轰动效应的长篇章回小说。它由30多个相对独立的官场故事联缀起来，涉及清政府中上自皇帝、下至佐杂小吏等，开创了近代小说批判现实的风气。鲁迅将《官场现形记》与其他三部小说并称之为谴责小说，是清朝晚期文学代表作品之一。
+    </div>
+</body>
+
+</html>
