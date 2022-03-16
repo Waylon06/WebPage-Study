@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 数组去重的原理是把旧数组中的不重复的元素放到新数组
+        // 算法原理：遍历旧数组，然后拿着旧数组的元素去查询新数组，如果该元素不存在，就添加进去，否则就不添加
+        var arr = ['c', 'd', 'g', 'k', 'd', 'w', 'c', 'a'];
+        function unique(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr[newArr.length] = arr[i];
+                }
+            }
+            return newArr;
+        }
+        var demo = unique(arr);
+        console.log(demo);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

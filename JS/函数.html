@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function tellstory(name){
+        function tellstory(name) {
             console.log(name + "在讲故事");
         }
         tellstory("Waylon");
         tellstory();
-        function sum(a,b){
-            console.log(a+b);
+        function sum(a, b) {
+            console.log(a + b);
         }
-        sum(1,2);
+        sum(1, 2);
+
+        // 利用对象封装自己的数学对象 里面有PI、最大值
+        // 在参数不确定时，可以使用arguments来接收传递过来的所有实参
+        var myMath = {
+            PI: 3.1415926,·
+            max: function () {
+                var max = arguments[0];
+                for (var i = 0; i <= arguments.length; i++) {
+                    if (max < arguments[i]) {
+                        max = arguments[i]
+                    }
+                }
+                return max
+            },
+            min: function(){
+                var min = arguments[0];
+                for (var i = 0; i <= arguments.length; i++) {
+                    if (min > arguments[i]) {
+                        min = arguments[i]
+                    }
+                }
+                return min
+            }
+        }
+        console.log(myMath.PI);
+        console.log(myMath.max(1,8,99));
+        console.log(myMath.min(9,33,5,6));
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

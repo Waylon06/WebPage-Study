@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [1, 2, 3];
+        // push（）在数组后面添加一个或多个新元素，且有返回值，返回新数组的长度
+        arr.push(4);
+        console.log(arr.push(4, 5));
+        // unshift()在数组开头添加一个或多个新元素,且有返回值，返回新数组的长度
+        arr.unshift(6);
+        // pop()删除数组的最后一个元素,不需要加参数且有返回值，返回删除的元素
+        arr.pop();
+        console.log(arr.pop());
+        // shift()删除数组的第一个元素,不需要加参数且有返回值，返回删除的元素
+        arr.shift();
+        console.log(arr.shift());
+        // 翻转数组
+        var i = [4, 5, 6, 7]
+        i.reverse();
+        console.log(i);
+        // 冒泡排序
+        var arr1 = [9, 6, 5, 3, 4, 1];
+        arr1.sort(function (a, b) {
+            return a - b; // 升序的排列
+            // return b-a; //降序的排列
+        });
+        console.log(arr1);
+
+        // 返回数组元素索引号
+        // indexOf()只返回第一个满足条件的索引号（从前往后找）,找不到该元素就返回-1
+        var arr2 = ['red', 'grren', 'blue', 'pink', 'blue'];
+        console.log(arr2.indexOf('blue'));
+        // lastIndexOf()只返回第一个满足条件的索引号（从前往后找）,找不到该元素就返回-1
+        console.log(arr2.lastIndexOf('blue'));
+
+
+        // 数组转换为字符串
+        // 1.toString（）
+        var arr3 = [1, 2, 3];
+        console.log(arr3.toString());
+        // 2.join(分隔符)
+        var arr4 = ['green','blue','red'];
+        console.log(arr4.join('$'));
+        //concat（） 连接两个新数组
+        var arr5 = []
+        console.log(arr5.concat(arr3,arr4));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

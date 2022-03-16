@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = {
+            name:'Waylon',
+            age: 18,
+            sex : 'man'
+        }
+        // 对象用for...in来遍历
+        // for(变量 in 对象)  里面的变量一般用k 或者 key
+        for(var k in obj ){
+            console.log(k);    //k 变量 输出  得到的是 属性名 
+            console.log(obj[k]);  // obj[k] 得到的是属性值
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
