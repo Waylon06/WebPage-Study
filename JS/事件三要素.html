@@ -5,8 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img {
+            width: 50%;
+            height: 50%;
+        }
+    </style>
 </head>
 <body>
     <button id = "btn">唐伯虎</button>
+    <button id = "time">显示当前系统时间</button>
+    <div>某个时间</div>
+    <p>假如这是一个时间</p>
+    <button id="wzx">王祖贤</button>
+    <button id="zhm">周慧敏</button>
+    <img src="../images/wzx.webp" alt="" title="王祖贤">
+    <script>
+        // 获取事件源
+        var btn = document.getElementById('btn');
+        // 绑定事件 注册事件
+        btn.onclick
+        // 添加事件处理程序
+        btn.onclick = function() {
+            alert("点秋香");
+        }
+        
+
+        // 获取元素
+        var btn2 = document.querySelector('#time');
+        var div = document.querySelector('div');
+        // 注册事件
+        btn2.onclick = function(){
+            div.innerText = getDate();
+        }
+
+        function getDate(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var dates = date.getDate();
+            var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+            var day = date.getDay();
+            return '今天是'+year+'年'+month+'月'+dates+'日'+arr[day];
+        }
+        var p = document.querySelector('p');
+        p.innerText = getDate();
+        // innerText 与 innerHTML 的区别是是否能识别HTML标签
+        var div2 = document.querySelector('div');
+        div2.innerHTML = '<strong>今天是：</strong>2022';
+
+
+        var wzx = document.querySelector('#wzx');
+        var zhm = document.querySelector('#zhm');
+        var img = document.querySelector('img');
+        wzx.onclick = function(){
+            img.src = '../images/wzx.webp';
+            img.title = '王祖贤';
+        }
+        zhm.onclick = function(){
+            img.src = '../images/zhm.webp';
+            img.title = '周慧敏';
+        }
+    </script>
 </body>
 </html>
