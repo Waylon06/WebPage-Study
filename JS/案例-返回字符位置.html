@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'avcdefghjagklcabga';
+        var index = str.indexOf('a');
+        var num = 0;
+        console.log('a出现的位置：');
+        while(index !== -1){
+            console.log(index);
+            num++;
+            index = str.indexOf('a',index + 1);
+        }
+        console.log('a出现的次数为'+num);
+
+
+        var o = {};
+        for(var i = 0;i < str.length; i++){
+            var chars = str.charAt(i);
+            if(o[chars]){
+                o[chars]++;
+            }else{
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        var max = 0;
+        var ch = '';
+        for (const k in o) {
+            if(o[k] > max){
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log('最多的字符是:'+ch); 
+        console.log('次数为:'+max);       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

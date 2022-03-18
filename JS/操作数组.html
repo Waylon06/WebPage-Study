@@ -33,8 +33,12 @@
 
         // 返回数组元素索引号
         // indexOf()只返回第一个满足条件的索引号（从前往后找）,找不到该元素就返回-1
+        // 字符串对象，根据字符返回的位置，str.indexOf（'要查找的字符',起始位置）
         var arr2 = ['red', 'grren', 'blue', 'pink', 'blue'];
         console.log(arr2.indexOf('blue'));
+        var str7 = '改革春风吹满地，春天到了'
+        console.log(str7.indexOf('春'));
+        console.log(str7.indexOf('春',3));
         // lastIndexOf()只返回第一个满足条件的索引号（从前往后找）,找不到该元素就返回-1
         console.log(arr2.lastIndexOf('blue'));
 
@@ -49,6 +53,7 @@
         //concat（） 连接两个新数组
         var arr5 = []
         console.log(arr5.concat(arr3,arr4));
+
     </script>
 </head>
 

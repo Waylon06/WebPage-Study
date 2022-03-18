@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">2022-03-18</div>
+    <li>大河之水天上来</li>
+    <li>大河之水天上来</li>
+    <li>大河之水天上来</li>
+    <li>大河之水天上来</li>
+    <li>大河之水天上来</li>
+    <div class="box">盒子</div>
+    <div class="box">盒子</div>
+    <ul id = "nav">
+        <li>首页</li>
+        <li>产品</li>
+    </ul>
+    <script>
+        //get是获得Elements是元素By是通过
+        // 参数id是大小写敏感的字符串
+        //  getElementById('id名') 返回的是个元素对象
+        var timer = document.getElementById('time');
+        console.log(timer);
+        console.log(typeof timer);
+        // console.dir 打印我们返回的元素对象 更好的查看里面的属性和方法
+        console.dir(timer);
+        // getElementsByTagName('元素名') 返回的是获取元素对象的集合，以伪数组的形式储存
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+        for(var i = 0; i < lis.length; i++){
+            console.log(lis[i]);
+        }
+        // getElementsByClassName('类名') 是根据类名获得某些元素集合
+        var boxs = document.getElementsByClassName('box');
+        console.log(boxs);
+        // querySelector('选择器') 是H5新增的 只能选择第一个 什么选择器都能选 切记里面的类需要加符号 .box #nav 等  
+        var firstBox = document.querySelector('.box');
+        console.log(firstBox);
+        var nav = document.querySelector('#nav');
+        console.log(nav);
+        var li = document.querySelector('li');
+        console.log(li);
+        // querySelectorAll();返回的是选择器的所有元素对象集合 
+        var allBox = document.querySelectorAll('.box');
+        console.log(allBox);
+        //获取body元素
+        var bodyEle = document.body;
+        console.log(bodyEle);
+        //返回html元素
+        var htmlEle = document.documentElement;
+        console.log(htmlEle);
+    </script>
+</body>
+</html>
