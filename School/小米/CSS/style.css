@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.w {
+    width: 1226px;
+    margin: 0px auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.header {
+    height: 40px;
+    background-color: #333;
+
+}
+
+.top a {
+    font-size: 12px;
+    line-height: 40px;
+    color: #b0b0b0;
+    display: inline-block;
+
+}
+
+.top span {
+    margin: 0 3.6px;
+    color: #424242;
+}
+
+.top .cut {
+    float: right;
+}
+
+.logo {
+    height: 100px;
+    background-color: #fff;
+}
+
+.logo-mi {
+    float: left;
+}
+
+.logo-mi img {
+    width: 56px;
+    height: 56px;
+    margin: 22px 0;
+}
+
+.top-nav ul li a {
+    float: left;
+    display: block;
+    padding: 26px 10px 38px;
+}
+
+.top-nav ul li a span{
+    color: #333;
+}
+
+.space {
+    width: 127px;
+    height: 88px;
+    padding-right: 15px;
+}
+
+
+
+
+.home-banner-box {
+    height: 120px;
+    margin: 22px 0;
+}
+
+.home-banner-box img {
+    width: 1226px;
+    height: 120px;
+}
+
+.box {
+    margin-top: 50px;
+}
+
+.box-hd {
+    height: 58px;
+}
+
+h2 {
+    float: left;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    display: block;
+}
+
+.more {
+    font-size: 16px;
+    line-height: 58px;
+    float: right;
+    color: #333;
+    margin-right: 8px;
+}
+
+.box-bd {
+    height: 614px;
+}
+
+.box-bd .left {
+    float: left;
+    width: 234px;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.box-bd .right {
+    float: left;
+    width: 992px;
+    height: 100%;
+}
+
+.box-bd .left img {
+    width: 100%;
+    height: 100%;
+}
+
+.box-bd .right li {
+    float: left;
+    width: 234px;
+    height: 300px;
+    background-color: #fff;
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+
+.box-bd .right li img {
+    width: 160px;
+    height: 160px;
+    margin: 0 37px 18px 37px;
+
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 10px 2px 10px;
+}
+
+.desc {
+    font-size: 12px;
+    text-align: center;
+    color: #b0b0b0;
+    margin: 0 10px 10px 10px;
+}
+
+.price {
+    font-size: 14px;
+    text-align: center;
+    color: #ff6700;
+    margin: 0 10px 14px 10px;
+}
+
+del {
+    color: #b0b0b0;
+}

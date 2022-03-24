@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+.header {
+    height: 107px;
+}
+
+.menu {
+    height: 105px;
+}
+
+.header .menu .logo {
+    float: left;
+    width: 180px;
+    height: 63px;
+    margin: 21px 0;
+} 
+
+.header .menu .logo img {
+    width: 100%;
+    height: auto;
+}
+
+.header .menu ul {
+    float: right;
+    color: #6c6c6c;
+    font-size: 18px;
+    width: 996px;
+    height: 30px;
+    margin-top: 40px;
+}
+
+.header .menu ul li {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    border-right: 1px solid #6c6c6c;
+}
+
+.header .menu ul li .item {
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.header .menu ul .first {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.header .menu ul li:last-child {
+    border: none;
+}
+
+.header .menu ul .last {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.banner {
+    height: 446px;
+    width: 1903px;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+
+.body {
+    margin: 77px auto 30px auto;
+}
+
+body .title-group{
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 17px;
+    margin: 55px 0 45px 0;
+    height: 26.4px;
+}
+
+body .title-group .title {
+    float: left;
+    color: #363636;
+    font-size: 20px;
+}
+
+body .title-group .more {
+    float: right;
+    color: #868686;
+    font-size: 18px;
+    line-height: 22px; 
+    margin-right: 5px;
+}
+
+body .pic-ad-1 {
+    height: 550px;
+}
+
+body .pic-ad-1 .pic-ad-1-1 {
+    padding: 14px;
+    margin-right: 17px;
+    margin-bottom: 17px;
+    float: left;
+}
+
+body .pic-ad-1 .pic-ad-1-2 {
+    padding: 14px;
+    margin-bottom: 17px;
+    float: left;
+}
+
+body .pic-ad-2 {
+    height: 3298px;
+}
+
+body .pic-ad-2 .subject-buy {
+    float: left;
+    padding: 10px;
+    margin-right: 45px;
+    margin-bottom: 45px;
+    width: 556px;
+}
+
+body .pic-ad-2 .subject-buy:nth-child(2n) {
+    margin-right: 0;
+}
+
+body .pic-ad-2 .subject-buy .subject {
+    width: 556px;
+    height: 276px;
+}
+
+body .pic-ad-2 .subject-buy .goods-group {
+    border: 1px solid #f6f6f6;
+    height: 206.6px;
+}
+
+body .pic-ad-2 .subject-buy .goods-group .goods {
+    background-color: #fff;
+    float: left;
+    margin: 0 12px;
+    width: 160px;
+}
+
+body .pic-ad-2 .subject-buy .goods-group .goods img {
+    width: 125px;
+    height: 125px;
+    margin: 7px 17.5px;
+}
+
+body .pic-ad-2 .subject-buy .goods-group .goods .title {
+    color: #111;
+    font-size: 12px;
+    line-height: 18px;
+    height: 36px;
+    overflow: hidden;
+}
+
+body .pic-ad-2 .subject-buy .goods-group .goods .price {
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+}
+
+body .pic-ad-2 .subject-buy .goods-group .goods .price .group-price {
+    color: #111;
+    font-size: 16px;
+}
+
+body .pic-ad-2 .subject-buy .goods-group .goods .price .del-price {
+    color: #cbcbcb;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.footer {
+    height: 600px;
+    background-color: red;
+    padding-top: 60px;
+}
+
+.footer .footer-head {
+    width: 1000px;
+    height: 240px;
+    background-color: aqua;
+}
+
+.footer .footer-nav {
+    margin-top: 60px;
+    margin-bottom: 58px;
+}
+
+.footer .footer-nav ul li {
+    border-right: 1px solid #c1c1c1;
+    text-align: center;
+    display: inline-block;
+}
+
+.footer .footer-server {
+    background-color: #3f3e3e;
+    font-size: 14px;
+    line-height: 1px;
+    color: #b1b1b1;
+    text-align: center;
+}
+
+.footer .footer-server .footer-server-top {
+    padding-top: 27px;
+}
+
+.footer .footer-server .footer-server-mid {
+    padding: 27px 0;
+}
+
+.footer .footer-server .footer-server-bottom .record-num {
+    margin-left: 25px;
+}
+
+.footer .footer-server .footer-server-bottom .line {
+    margin: 0 15px 0 15px;
+}
+
+.footer .footer-ft {
+    height: 70px;
+}
+
