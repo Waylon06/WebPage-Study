@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <input type="text" value="输入内容">
+    <script>
+        // 1.获取元素
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        // 2.注册事件   处理程序
+        btn.onclick = function(){
+            // input.innerHTML = '';   innerHTML是普通盒子才有的 修改例如div标签里面的内容
+            input.value = '杨崇尉';
+            // 如果想要某个表单被禁用 不能被点击disabled  想要这个按钮button禁用
+             btn.disabled = true;    //按钮禁用
+            //  this 指向的事件函数调用者btn
+            this.disabled = ture ; //也能达到禁用效果
+        }
+    </script>
+</body>
+</html>

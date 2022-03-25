@@ -23,6 +23,10 @@ body {
 
 .header {
     height: 107px;
+    position: sticky;
+    top: 0;
+    background-color: #fafafa;
+    border-bottom: 4px solid #fc475d;
 }
 
 .menu {
@@ -51,10 +55,14 @@ body {
 }
 
 .header .menu ul li {
-    display: inline-block;
+    float: left;
     height: 20px;
     line-height: 20px;
     border-right: 1px solid #6c6c6c;
+}
+
+.header .menu ul li:first-child {
+    color: #fc475d;
 }
 
 .header .menu ul li .item {
@@ -77,9 +85,35 @@ body {
     margin-left: 15px;
 }
 
+.leftcode {
+    position: fixed;
+    bottom: 150px;
+    width: 162px;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.leftcode .floating {
+    margin: 8px;
+    padding: 20px 15px 8px;
+    border: 2px solid #ffedf1;
+}
+
+.leftcode .floating img {
+    height: 112px;
+}
+
+.leftcode .floating .words {
+    margin-top: 10px;
+    color: #666;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
 .banner {
-    height: 446px;
-    width: 1903px;
+    height: 356px;
+    width: 1519px;
 }
 
 .banner img {
@@ -158,7 +192,7 @@ body .pic-ad-2 .subject-buy .goods-group {
 body .pic-ad-2 .subject-buy .goods-group .goods {
     background-color: #fff;
     float: left;
-    margin: 0 12px;
+    margin: 0 11px;
     width: 160px;
 }
 
@@ -195,14 +229,49 @@ body .pic-ad-2 .subject-buy .goods-group .goods .price .del-price {
 
 .footer {
     height: 600px;
-    background-color: red;
     padding-top: 60px;
 }
 
 .footer .footer-head {
     width: 1000px;
     height: 240px;
-    background-color: aqua;
+}
+
+.footer .footer-head .qrcode-group {
+    float: left;
+    width: 666px;
+    margin-top: 20px;
+}
+
+.footer .footer-head .qrcode {
+    width: 162px;
+    height: 162px;
+    margin-right: 60px;
+    float: left;
+}
+
+.footer .footer-head .qrcode img {
+    width: 100%;
+}
+
+.footer .footer-head .info {
+    margin-left: 666px;
+    padding-left: 45px;
+    width: 410px;
+    border-left: 1px solid #4d4d4d;
+}
+
+.footer .footer-head .info .title {
+    color: #4d4d4d;
+    font-size: 24px;
+    line-height: 24px;
+} 
+
+.footer .footer-head .info .list {
+    color: #4d4d4d;
+    font-size: 15px;
+    line-height: 16px;
+    margin-top: 20px;
 }
 
 .footer .footer-nav {
@@ -210,10 +279,25 @@ body .pic-ad-2 .subject-buy .goods-group .goods .price .del-price {
     margin-bottom: 58px;
 }
 
+.footer .footer-nav ul {
+    height: 20.8px;
+}
+
 .footer .footer-nav ul li {
     border-right: 1px solid #c1c1c1;
     text-align: center;
-    display: inline-block;
+    float: left;
+}
+
+.footer .footer-nav ul li:last-child {
+    border: none;
+}
+
+.footer .footer-nav ul li a span {
+    color: #6c6c6c;
+    font-size: 16px;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
 .footer .footer-server {
@@ -242,5 +326,15 @@ body .pic-ad-2 .subject-buy .goods-group .goods .price .del-price {
 
 .footer .footer-ft {
     height: 70px;
+    text-align: center;
 }
 
+.footer .footer-ft a img {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    margin: 10px;
+}
