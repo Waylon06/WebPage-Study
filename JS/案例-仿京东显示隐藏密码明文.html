@@ -6,14 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div {
-            width: 1200px;
-            height: 200px;
-            border: 1px solid red;
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 24px;
         }
     </style>
 </head>
 <body>
-    <div></div>
+    <div class="box">
+        <label for="" >
+            <img src="images/close.png" alt="" id="eye">
+        </label>
+        <input type="password" id="pwd">
+    </div>
+    <script>
+        // 1.获取元素
+        var eye = document.getElementById('eye');
+        var pwd = document.getElementById('pwd');
+        // 2.注册事件 处理程序
+        var flag = 1;
+        eye.onclick = function(){
+            flag = !flag;
+            if(flag == 0){
+                pwd.type = 'text';
+                eye.src = 'images/open.png';
+            } else {
+                pwd.type = 'password';
+                eye.src = 'images/close.png';
+            }
+        }
+
+    </script>
 </body>
 </html>
