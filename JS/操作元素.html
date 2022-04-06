@@ -5,10 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
 </head>
 <body>
     <button>按钮</button>
     <input type="text" value="输入内容">
+    <div></div>
     <script>
         // 1.获取元素
         var btn = document.querySelector('button');
@@ -21,6 +29,11 @@
              btn.disabled = true;    //按钮禁用
             //  this 指向的事件函数调用者btn
             this.disabled = ture ; //也能达到禁用效果
+        }
+        var  div = document.querySelector('div');
+        div.onclick = function() {
+            this.style.backgroundColor = 'purple';
+            this.style.width = '250px';
         }
     </script>
 </body>
