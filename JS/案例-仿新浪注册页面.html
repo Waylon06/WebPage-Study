@@ -19,6 +19,16 @@
             background: url(images/mess.png) no-repeat left center;
             padding-left: 20px;
         }
+
+        .wrong {
+            color: red;
+            background-image: url(images/wrong.png);
+        }
+        
+        .right {
+            color: green;
+            background-image: url(images/right.png);
+        }
     </style>
 </head>
 
@@ -27,6 +37,20 @@
         <input type="password" class="ipt">
         <p class="message">请输入6~16位密码</p>
     </div>
+    <script>
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+        ipt.onblur = function(){
+            if(this.value.length<6||this.value.length>16){
+                message.className = 'message wrong';
+                message.innerHTML = '您输入的位数不对要求6~16位';
+            }
+            else {
+                message.className = 'message right';
+                message.innerHTML = '您的输入正确';
+            }
+        }
+    </script>
 </body>
 
 </html>
