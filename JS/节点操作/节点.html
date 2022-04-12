@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="case">我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box">
+        <span class="erweima">×</span>
+    </div>
+    <ol>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+        <li>我是li5</li>
+    </ol>
+    <script>
+        var ul = document.querySelector('ul');
+        var erweima = document.querySelector('.erweima');
+        console.log(erweima.parentNode);    //就近原则
+        //childNodes包含了所有在内部的节点，包括textNode、elementNode (开发不常用)
+        console.log(ul.childNodes);
+        console.log(ul.childNodes[0].nodeType);
+        console.log(ul.childNodes[1].nodeType);
+        // children 获取所有的内部所有的elementNode    （开发常用）
+        console.log(ul.children);
+
+        var ol = document.querySelector('ol');
+        // firstChild lastChild 返回第一子节点，不管是文本节点，还是元素节点
+        console.log(ol.firstChild);
+        console.log(ol.lastChild);
+        // firstElementChild lastElementChild  返回第一个子元素，只能是元素节点  但是只支持IE9以上的版本
+        console.log(ol.firstElementChild);
+        console.log(ol.lastElementChild);
+        // 利用伪数组（children[i]）可以得到折中的方法，两边都能满足
+        console.log(ol.children[0]); //第一个元素
+        console.log(ol.children[4]); //最后一个元素
+        console.log(ol.children[ol.children.length - 1]);
+
+        //兄弟节点
+        var cs = document.querySelector('case');
+        // nextSibling 下一个兄弟节点 包含元素节点或者文本节点等等
+        // console.log(cs.nextSibling);
+        // nextElementSibling 得到下一个兄弟元素节点
+        // console.log(cs.nextElementSibling);
+
+        // 增
+    </script>
+
+</body>
+
+</html>
