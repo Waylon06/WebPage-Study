@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" wl="1" class="nav"></div>
+    <script>
+        var div = document.querySelector('div');
+        // 获取元素的属性值
+        // 1.element.属性  只能获取元素内部自定义的属性
+        console.log(div.id);
+        //element.getAttribute('属性')  get得到 Attribute属性   可以获取程序员自己添加的属性
+        console.log(div.getAttribute('wl'));
+
+        //设置属性值
+        //1.element.属性 = '值'
+        div.id = 'case';
+        div.className = 'navs';
+        //2.element.setAttribute('属性', '值')  主要针对于自定义元素
+        div.setAttribute('wl', 2);
+        div.setAttribute('class', 'footer');
+
+        //移除属性
+        //element.removeAttribute()
+        div.removeAttribute('wl')
+    </script>
+</body>
+</html>

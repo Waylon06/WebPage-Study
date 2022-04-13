@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul');
+        // 复制节点  node.cloneNode() 当其括号内为空或者为false时  浅拷贝  只复制标签不复制内容
+        // 当node.cloneNode() 括号内为true时   深拷贝  既复制标签也复制内容
+        var li = ul.children[0].cloneNode(true);
+        ul.appendChild(li);
+    </script>
+</body>
+
+</html>

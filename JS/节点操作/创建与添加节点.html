@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .red {
+            background-color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,16 +20,33 @@
     <script>
 
         //创建元素节点
-        var li = document.createElement('li');
+        var li = document.createElement('li');  
         var lili = document.createElement('li');
         //获取父级元素
         var ul = document.querySelector('ul');
+        //创建一个文本节点
+        var txt = document.createTextNode('Hello World!');
+        ul.appendChild(txt);
 
-        //添加元素
+
+        //添加元素节点
         //node.appendChild（child）在后面追加元素，类似与数组中的push
         ul.appendChild(li);
         //node.insertBefore(child,指定元素) 添加到指定元素之前
         ul.insertBefore(lili,ul.children[0]);
+
+        //创建 属性 与 属性值
+        //createAttribute()来创建属性
+        var att = document.createAttribute('class');
+        //设置属性值
+        att.value = 'red';
+        //将属性加进元素中
+        ul.setAttributeNode(att);
+
+        //替换节点
+        // node.replaceChild(newnode,oldnode);
+        console.log(ul.children[1]);
+        ul.replaceChild(txt,ul.children[1]);
     </script>
 </body>
 
