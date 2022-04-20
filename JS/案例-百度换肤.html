@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,15 @@
             padding: 0;
             margin: 0;
         }
+
         body {
             background: url(images/1.jpg) no-repeat center top;
         }
+
         li {
             list-style: none;
         }
+
         .baidu {
             overflow: hidden;
             margin: 100px auto;
@@ -31,15 +35,26 @@
         }
 
         .baidu img {
-            width: 100%;
+            width: 100px;
         }
     </style>
 </head>
+
 <body>
     <ul class="baidu">
         <li><img src="images/1.jpg" alt=""></li>
         <li><img src="images/2.jpg" alt=""></li>
         <li><img src="images/3.jpg" alt=""></li>
         <li><img src="images/4.jpg" alt=""></li>
+        <script>
+            var imgs = document.querySelector('.baidu').querySelectorAll('img');
+
+            for(var i = 0; i < imgs.length; i++){
+                imgs[i].onclick = function(){
+                   document.body.style.backgroundImage = 'url('+this.src+')' ;
+                }
+            }
+        </script>
 </body>
+
 </html>

@@ -82,10 +82,12 @@
         </div>
     </div>
     <script>
+        //获取元素
         var tab_list = document.querySelector('.tab_list');
         var lis = document.querySelectorAll('li');
         var items = document.querySelectorAll('.item');
         for (var i = 0; i < lis.length; i++) {
+            //给每个li添加一个自定义属性并且赋值
             lis[i].setAttribute('index', i)
             lis[i].onclick = function () {
 
@@ -98,10 +100,12 @@
                 this.className = 'current';
 
                 //2.显示内容模块
+                //通过index来判断选中的li
                 var index = this.getAttribute('index');
                 for(var i =0; i < items.length; i++){
                     items[i].style.display = 'none';
                 }
+                //根据index选中的li展示所对应的内容
                 items[index].style.display = 'block';
             }
         }

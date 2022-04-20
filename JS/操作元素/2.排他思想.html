@@ -15,13 +15,18 @@
     <button>按钮4</button>
     <button>按钮5</button>
     <script>
+        //获取需要操作的元素
         var btns = document.getElementsByTagName('button');
         var bd = document.querySelector('body');
+        // 干掉所有人，再复活自己
+        //使用for循环对每个需要鼠标点击事件的button添加鼠标点击事件
         for(var i = 0; i<btns.length; i++){
             btns[i].onclick = function(){
+                //干掉所有队友（包括自己在内的）
                 for(var i = 0; i < btns.length; i++){
                     btns[i].style.backgroundColor = '';
                 }
+                //泉水复活自己
                 this.style.backgroundColor = 'pink';
             }
         }

@@ -20,8 +20,10 @@
     <script>
 
         //创建元素节点
+        //获取需要操作的元素
         var li = document.createElement('li');  
         var lili = document.createElement('li');
+        // lili.style.backgroundColor = "#fff"
         //获取父级元素
         var ul = document.querySelector('ul');
         //创建一个文本节点
@@ -30,7 +32,7 @@
 
 
         //添加元素节点
-        //node.appendChild（child）在后面追加元素，类似与数组中的push
+        //node.appendChild（child）在后面追加元素，类似于数组中的push
         ul.appendChild(li);
         //node.insertBefore(child,指定元素) 添加到指定元素之前
         ul.insertBefore(lili,ul.children[0]);

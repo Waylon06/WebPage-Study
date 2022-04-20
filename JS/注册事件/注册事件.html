@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>传统方式注册事件</button>
+    <button>方法监听注册事件</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        // 1.传统方式注册事件
+        btns[0].onclick = function(){
+            alert('hi');
+        }
+        // 2.方法监听注册事件   addEventListener   里面的事件类型是字符串  必定加引号  而且不带on
+        btns[1].addEventListener('click',function(){
+            alert('22');
+        });
+        btns[1].addEventListener('click',function(){
+            alert('33');
+        });
+    </script>
+</body>
+</html>

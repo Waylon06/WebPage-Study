@@ -19,6 +19,7 @@
         var ul = document.querySelector('ul');
         //删除节点 node.removeChild(child)  删除的是父节点中的某一个子节点
         var btn = document.querySelector('button');
+        //给按钮绑定事件
         btn.onclick = function () {
             if (ul.children.length == 0) {
                 this.disabled = true;

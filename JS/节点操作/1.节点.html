@@ -28,18 +28,20 @@
         <li>我是li5</li>
     </ol>
     <script>
+        //获取需要操作的元素
         var ul = document.querySelector('ul');
         var erweima = document.querySelector('.erweima');
+        var ol = document.querySelector('ol');
         console.log(erweima.parentNode);    //就近原则
         //childNodes包含了所有在内部的子节点，包括textNode、elementNode (开发不常用)
-        //元素节点的nodeType值为1  属性节点的nodeType值为2   文本节点的nodeType值为3
         console.log(ul.childNodes);
+        //元素节点的nodeType值为1  属性节点的nodeType值为2   文本节点的nodeType值为3
         console.log(ul.childNodes[0].nodeType);
         console.log(ul.childNodes[1].nodeType);
+
         // children 获取所有的内部所有的elementNode    （开发常用）
         console.log(ul.children);
 
-        var ol = document.querySelector('ol');
         // firstChild lastChild 返回第一子节点，不管是文本节点，还是元素节点
         console.log(ol.firstChild);
         console.log(ol.lastChild);

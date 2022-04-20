@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        var divs = document.querySelectorAll('div');
+        divs[0].onclick = function () {
+            alert(11);
+            // 1.传统删除事件方式
+            divs[0].onclick = null;
+        }
+        divs[1].addEventListener('click', fn)
+        function fn() {
+            alert(22);
+            divs[1].removeEventListener('click', fn);
+        }
+    </script>
+</body>
+
+</html>

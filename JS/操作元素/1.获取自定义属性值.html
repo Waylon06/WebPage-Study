@@ -8,25 +8,28 @@
 </head>
 <body>
     <div id="demo" wl="1" class="nav"></div>
+    
     <script>
+        //获取需要操作的元素
         var div = document.querySelector('div');
-        // 获取元素的属性值
+
+        // 获取元素的属性值，有两种方法
         // 1.element.属性  只能获取元素内部自定义的属性
         console.log(div.id);
         //element.getAttribute('属性')  get得到 Attribute属性   可以获取程序员自己添加的属性
         console.log(div.getAttribute('wl'));
 
-        //设置属性值
+        //设置属性值，也有两种方法
         //1.element.属性 = '值'
-        div.id = 'case';
+        console.log(div.id = 'case');
         div.className = 'navs';
         //2.element.setAttribute('属性', '值')  主要针对于自定义元素
         div.setAttribute('wl', 2);
         div.setAttribute('class', 'footer');
 
-        //移除属性
+        //移除属性，删除属性
         //element.removeAttribute()
-        div.removeAttribute('wl')
+        div.removeAttribute('wl');
     </script>
 </body>
-</html>
+</html> 
