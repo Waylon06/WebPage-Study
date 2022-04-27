@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.keyup 按键弹起的时候触发
+
+        // document.onkeyup = function(){
+        //     console.log('我弹起来了');
+        // }
+
+        document.addEventListener('keyup', function(){
+            console.log('我弹起来了');
+        })
+
+        // 2.keydown 按键按下的时候触发
+        document.addEventListener('keydown', function(){
+            console.log('我按下了');
+        })
+
+        // 3.keypress 按键按下的时候触发(与keydown的区别是不能识别功能键  比如ctrl shift 左右箭头)
+        document.addEventListener('keypress', function(){
+            console.log('我按下了press');
+        })
+
+        // 4.三个事件执行顺序 keydown -- keypress -- keyup
+    </script>
+
+</body>
+
+</html>

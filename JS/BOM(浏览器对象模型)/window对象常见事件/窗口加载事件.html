@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // load  是等页面全部加载完再执行，这样JS代码就可以放到任何位置了
+        window.onload = function(){
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function(){
+                alert('点击我');
+            })
+        }
+        window.addEventListener('load', function(){  
+            alert(33);
+        })
+        // DOMContentLoaded事件 是等DOM加载完毕，不包含图片 flash css 等就可以执行 因此加载速度比load更快些
+        document.addEventListener('DOMContentLoaded',function(){
+            alert(44);
+        })
+    </script>
+    <button>点击</button>
+</body>
+</html>

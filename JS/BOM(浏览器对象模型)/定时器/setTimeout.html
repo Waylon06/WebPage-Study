@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.setTimeout
+        // 语法规范：window.setTimeout(回调函数，延时时间);
+        // 1.window 在调用中的时候可以省去
+        // 2.延时时间单位是毫秒  但是可以省略  省略时默认是0
+        setTimeout(function(){
+            console.log('时间到了');
+        },2000); 
+        function boom(){
+            console.log('你家厕所炸了');
+        }
+        setTimeout(boom,3000);
+        // setTimeout('boom()',3000); 也行，但是不推荐，因为麻烦些
+        var timer = setTimeout(boom,3000);
+        var timer2 = setTimeout(boom,5000);
+    </script>
+</body>
+</html>

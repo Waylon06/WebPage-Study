@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+        }
+
+        .prev,
+        .right {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .4);
+            text-align: center;
+            line-height: 30px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .prev {
+            left: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .right {
+            right: 0;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+
+        .box {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            background: rgba( 255, 255, 255, .4);
+            border-radius: 7px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 3px;
+        }
+
+        .box .selected {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+<body>
+    <div class="tb-promo">
+        <img src="images/tb.jpg" alt="">
+        <!-- 左侧按钮箭头 -->
+        <a href="#" class="prev"> &lt; </a>
+        <!-- 右侧按钮箭头 -->
+        <a href="#" class="right"> &gt; </a>
+        <!-- 小圆点 -->
+        <div class="box">
+            <li class = "selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </div>
+</body>
+</html>

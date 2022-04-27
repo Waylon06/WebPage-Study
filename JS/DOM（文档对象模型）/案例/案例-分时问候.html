@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/monring.webp" alt="" title="早上好">
+    <div>早上好</div>
+    <script>
+        // 绑定元素
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');p
+        // 获取小时数
+
+
+
+
+        var date = new Date();
+        var h = date.getHours();
+        // 判断时间来供给相应的图片与标语
+        if(h<12){
+           img.src = "../images/monring.webp";
+           div.innerHTML = "早上好，加油写代码";
+        } else if (h<18&&h>=12){
+            img.src = "../images/aftnoon.webp";
+           div.innerHTML = "下午好，努力写代码";
+        }else{
+            img.src = "../images/night.webp";
+           div.innerHTML = "晚上好，肝命写代码";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        .box {
+            background-color: #fff;
+            /* （第二种清除浮动的方法） */
+            overflow: hidden; 
+        }
+        .one {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            float: left;
+        }
+        .two {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            float: left;
+        }
+
+        .three {
+             height: 300px;
+             background-color: blue;
+        }
+
+        /* .clear {
+            clear: both;
+        } (第一种清除浮动的方法)*/
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="one"></div>
+        <div class="two"></div>
+        <!-- <div class="clear"></div>（第一种清除浮动的方法） -->
+    </div>
+    <div class="three"></div>
+    
+</body>
+</html>
