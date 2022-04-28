@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 第一个问题
+        // // 允许多个任务同时进行   --- 异步
+        // console.log(1);
+
+        // setTimeout(function () {
+        //     console.log(3);
+        // }, 1000);
+        // // 先打印2，再打印3
+        // console.log(2);
+
+        // 第二个问题
+        console.log(1);
+
+        setTimeout(function (){
+            console.log(3);
+        }, 0);
+        // 先执行同步任务 再执行异步任务 有回调函数的是异步任务 所以打印出来还是1 2 3
+        console.log(2);
+    </script>
+</body>
+
+</html>
