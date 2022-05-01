@@ -5,21 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        div {
-            width: 100px;
-            height: 200px;
-            background-color: pink;
-        }
-    </style>
 </head>
 <body>
-    <div>假设这是一个广告</div>
     <script>
-        var div = document.querySelector('div');
+        console.log(1);
+        document.onclick = function(){
+            console.log('click');
+        }
+        console.log(2);
         setTimeout(function(){
-            div.style.display = 'none';
-        }, 5000)
+            console.log(3);
+        }, 3000);
     </script>
 </body>
 </html>
