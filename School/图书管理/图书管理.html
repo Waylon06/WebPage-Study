@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            margin: auto;
+            width: 800px;
+            text-align: center;
+        }
+
+        .grid table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .grid th,
+        td {
+            padding: 10;
+            border: 1px dashed orange;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        .grid th {
+            background-color: orange;
+        }
+
+        .grid .book {
+            padding-bottom: 10px;
+            padding-top: 5px;
+            background-color: #F3DCAB;
+        }
+
+        .grid .book div {
+            /* display: flex; */
+        }
+
+        .grid .book button {
+            float: right;
+            padding-right: 5px;
+        }
+
+        .grid .total {
+            height: 30px;
+            line-height: 30px;
+            background-color: #F3DCAB;
+            border-top: 1px solid #C2D89A;
+        }
+
+        .grid td span {
+            border: 1px solid orange;
+            cursor: pointer;
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="grid">
+            <div>
+                <h1>图书管理</h1>
+                <div class="book">
+                    <div>
+                        <label for="id">
+                            编号：
+                        </label>
+                        <input type="text" id="id">
+                        <label for="name">
+                            名称：
+                        </label>
+                        <input type="text" id="name">
+                        <label for="author">
+                            作者：
+                        </label>
+                        <input type="text" id="author">
+                        <button>提交</button>
+                    </div>
+                </div>
+            </div>
+            <div class="total">
+                <span>图书总数：</span>
+                <span></span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>名称</th>
+                        <th>作者</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        
+        var id = document.querySelector('#id');
+        var bname = document.getElementById('name');
+        var author = document.querySelector('#author');
+        var btn = document.querySelector('button');
+        var tbd = document.querySelector('tbody');
+        var tr = document.querySelector('tbody').querySelector('tr');
+        var book_list = [
+            { id: 1, book_name: '三国演义', author: '罗贯中' }
+        ];
+        
+        for(var i = 0; i < book_list.length; i++){
+            tr.children[0].innerHTML = book_list[i].id;
+            tr.children[1].innerHTML = book_list[i].book_name;
+            tr.children[2].innerHTML = book_list[i].author; 
+        }
+        btn.addEventListener('click', function () {
+            var book = {};
+            book.id = id.value;
+            book.book_name = bname.value;
+            book.author = author.value;
+            book_list.push(book);
+            for (var i = 1; i < book_list.length; i++) {
+                var tr = document.createElement('tr');
+                var td1 = document.createElement('td');
+                td1.innerHTML = book_list[i].id;
+                var td2 = document.createElement('td');
+                td2.innerHTML = book_list[i].book_name;
+                var td3 = document.createElement('td');
+                td3.innerHTML = book_list[i].author;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tbd.appendChild(tr);
+            }
+            id.value = '';
+            bname.value = '';
+            author.value = '';
+        });
+
+
+
+    </script>
+</body>
+
+</html>
