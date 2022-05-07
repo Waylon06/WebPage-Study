@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+    <script>
+        // 声明变量
+        let a;
+        let b,c,d;
+        let e = 520;
+
+
+        //1. 变量不能重复声明
+        let star = '罗志祥';
+        // let star = '小猪';     //会报错
+
+        // var 可以重复声明变量
+
+        // 2.块级作用域（只能在作用域内生效）
+        {
+            let girl = 'Lorrain';
+        }
+        console.log(girl);    //会报错
+
+        // 3.不存在变量提升（不允许在声明变量之前去使用这个变量）
+        console.log(song);  //会保存
+        let song = '静悄悄';
+
+        //4.不影响作用域链的效果
+        {
+            let school = '大学';
+            function fn(){
+                console.log(school);
+            }
+            fn();
+        }
+    </script>
+    
+</body>
+</html>

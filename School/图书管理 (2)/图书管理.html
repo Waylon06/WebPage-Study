@@ -107,7 +107,7 @@
         </div>
     </div>
     <script>
-
+        
         var id = document.querySelector('#id');
         var bname = document.getElementById('name');
         var author = document.querySelector('#author');
@@ -117,71 +117,29 @@
         var book_list = [
             { id: 1, book_name: '三国演义', author: '罗贯中' }
         ];
-
-        for (var i = 0; i < book_list.length; i++) {
+        
+        for(var i = 0; i < book_list.length; i++){
             tr.children[0].innerHTML = book_list[i].id;
             tr.children[1].innerHTML = book_list[i].book_name;
-            tr.children[2].innerHTML = book_list[i].author;
+            tr.children[2].innerHTML = book_list[i].author; 
         }
-        var flag = 0;
         btn.addEventListener('click', function () {
-            for (var j = 0; j < book_list.length; j++) {
-                if (bname.value == book_list[j].book_name && id.value == book_list[j].id) {
-                    alert("此书名与编号已存在，请重新输入");
-                    id.value = '';
-                    bname.value = '';
-                    flag = 0;
-                    break;
-                } else if (id.value == book_list[j].id) {
-                    alert("此编号已存在，请重新输入");
-                    id.value = '';
-                    flag = 0;
-                    break;
-                } else if (bname.value == book_list[j].book_name) {
-                    alert("此书名已存在，请重新输入");
-                    bname.value = '';
-                    flag = 0;
-                    break;
-                } else {
-                    flag = 1;
-                }
-            }
-
-            // console.log(flag);
-
-            if (flag == 1) {
-                var book = {};
-                book.id = id.value;
-                book.book_name = bname.value;
-                book.author = author.value;
-                book_list.push(book);
-                // for (var i = 1; i < book_list.length; i++) {
+            var book = {};
+            book.id = id.value;
+            book.book_name = bname.value;
+            book.author = author.value;
+            book_list.push(book);
                 var tr = document.createElement('tr');
-                // var td1 = document.createElement('td');
-                // td1.innerHTML = book_list[i].id;
-                // var td2 = document.createElement('td');
-                // td2.innerHTML = book_list[i].book_name;
-                // var td3 = document.createElement('td');
-                // td3.innerHTML = book_list[i].author;
-                // tr.innerHTML = "<td>" + book_list[i].id + "</td>" +
-                //     "<td>" + book_list[i].book_name + "</td>" +
-                //     "<td>" + book_list[i].author + "</td>";
-                tr.innerHTML = "<td>" + book.id + "</td>" +
-                    "<td>" + book.book_name + "</td>" +
-                    "<td>" + book.author + "</td>";
-                // tr.appendChild(td1);
-                // tr.appendChild(td2);
-                // tr.appendChild(td3);
+                var td1 = document.createElement('td');
+                td1.innerHTML = book.id;
+                var td2 = document.createElement('td');
+                td2.innerHTML = book.book_name;
+                var td3 = document.createElement('td');
+                td3.innerHTML = book.author;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
                 tbd.appendChild(tr);
-                // }
-                id.value = '';
-                bname.value = '';
-                author.value = '';
-
-                // console.log(book_list);
-
-            }
-
         });
 
 

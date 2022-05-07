@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            /* position: relative; */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 150px;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin-left: 45px;
+        }
+
+        .w {
+            height: 200px;
+            background-color: skyblue;
+            margin: 0 auto 200px;
+            padding: 10px;
+            border: 15px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="w"></div>
+<script>
+    var father = document.querySelector('.father');
+    var son = document.querySelector('.son');
+    // 可以获取元素的偏移位置，返回不带单位的数值
+    console.log(father.offsetTop);
+    console.log(father.offsetLeft);
+    // 以带有定位的父盒子为准，如果没有父盒子或者父盒子没有定位，就以body为准
+    console.log(son.offsetLeft);
+
+    var w = document.querySelector('.w');
+    // 可以得到元素的大小 宽度和高度 包含padding border width 后的大小
+    console.log(w.offsetWidth);
+    console.log(w.offsetHeight);
+
+    // 返回带有定位的父亲，否则返回body
+    console.log(son.offsetParent);
+</script>
+</body>
+
+</html>
