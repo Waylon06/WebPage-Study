@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .son {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+
+        father.addEventListener('mouseover', function() {
+            console.log(11);
+        });
+        // mouseenter无冒泡
+        // father.addEventListener('mouseenter', function() {
+        //     console.log(11);
+        // });
+
+    </script>
+</body>
+</html>
