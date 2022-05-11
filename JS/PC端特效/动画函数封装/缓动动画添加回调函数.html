@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="b500">点击夏雨荷走500</button>
+    <button class="b800">点击夏雨荷走800</button>
+    <div></div>
+    <span>夏雨荷</span>
+    <script>
+        // 简单动画函数封装 obj 目标对象 target 目标位置
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.b500');
+        var btn800 = document.querySelector('.b800');
+
+        function animate(obj, target, callback) {
+            // 先清除以前的定时器，保留一个定时器才不会出现设置点击事件后连点的加速情况
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                // Math.ceil往大的取整  
+                // var step = Math.ceil((target - obj.offsetLeft) / 10);
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    if(callback) {
+                        callback();
+                    }
+                }
+                // 把每次加一 这个步长值改为一个慢慢变小的值     步长公式（目标值 - 现在的位置）/ 10
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+
+        animate(div, 300);
+        btn500.addEventListener('click', function () {
+            animate(span, 500);
+        });
+        btn800.addEventListener('click', function () {
+            animate(span, 800, function() {
+                span.style.backgroundColor = 'pink';
+            });
+        })
+        // 匀速动画 就是 盒子是当前的位置 + 固定的值 10
+        // 缓动动画就是 盒子当前的位置 + 变化的值（（目标值 - 现在的位置）/ 10）
+    </script>
+</body>
+
+</html>
