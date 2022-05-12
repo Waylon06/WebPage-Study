@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 如果script函数还是写在html前面的话，还是需要等页面加载结束才执行js代码
+        $('div').hide();
+        // // jQuery方法1
+        // $(document).ready(function() {
+        //     $('div').hide();
+        // })
+        // jQuery方法2
+        $(function() {
+            $('div').hide();
+        })
+    </script>
+    <div></div>
+    
+</body>
+</html>
