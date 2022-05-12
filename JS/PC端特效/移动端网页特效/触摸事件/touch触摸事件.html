@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        div.addEventListener('touchstart', function(e) {
+            console.log(e);
+            console.log('我触摸了屏幕');
+            // touches正在触摸屏幕的所有手指列表
+            // targetTouches 正在触摸当前DOM元素的手指列表
+            // 如果侦听的是一个DOM元素，他们两个是一样的
+            // changedTouches 手指状态发生了改变的列表 从无到有 或者 从有到无
+        });
+        div.addEventListener('touchmove', function() {
+            console.log('继续触摸');
+        });
+        div.addEventListener('touchend', function() {
+            console.log('结束触摸');
+        })
+    </script>
+</body>
+</html> 

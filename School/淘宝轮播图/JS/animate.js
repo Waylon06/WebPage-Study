@@ -8,9 +8,11 @@ function animate(obj, target, callback) {
         step = step > 0 ? Math.ceil(step) : Math.floor(step);
         if (obj.offsetLeft == target) {
             clearInterval(obj.timer);
-            if(callback) {
-                callback();
-            }
+            // if(callback) {
+            //     // 调用函数
+            //     callback();
+            // }
+            callback && callback();  //短路运算符(两侧为true才执行) 等价于上面的
         }
         // 把每次加一 这个步长值改为一个慢慢变小的值     步长公式（目标值 - 现在的位置）/ 10
         obj.style.left = obj.offsetLeft + step + 'px';

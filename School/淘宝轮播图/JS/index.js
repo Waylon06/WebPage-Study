@@ -37,35 +37,47 @@ window.addEventListener('load', function () {
     // 克隆第一张图片 实现真正的无缝滚动
     var first = ul.children[0].cloneNode(true);
     ul.appendChild(first);
-
+    // 设置一个flag作为节流阀
+    var flag = true;
+    // 右侧按钮点击事件
     right.addEventListener('click', function () {
-        if (num == ul.children.length - 1) {
-            ul.style.left = 0;
-            num = 0;
+        if (flag) {
+            flag = false;
+            if (num == ul.children.length - 1) {
+                ul.style.left = 0;
+                num = 0;
+            }
+            num++;
+            animate(ul, -num * tb_promoWidth, function () {
+                flag = true;
+            });
+            circle++;
+            if (circle == ol.children.length) {
+                circle = 0;
+            }
+            circleMove();
         }
-        num++;
-        animate(ul, -num * tb_promoWidth);
-        circle++;
-        if (circle == ol.children.length) {
-            circle = 0;
-        }
-        circleMove();
     });
-    // 左键点击跳转事件
+    // 左侧点击跳转事件
     prev.addEventListener('click', function () {
-        if (num == 0) {
-            num = ul.children.length - 1;
-            ul.style.left = -num * tb_promoWidth + 'px';
+        if (flag) {
+            flag = false;
+            if (num == 0) {
+                num = ul.children.length - 1;
+                ul.style.left = -num * tb_promoWidth + 'px';
 
+            }
+            num--;
+            animate(ul, -num * tb_promoWidth, function() {
+                flag = true;
+            });
+            circle--;
+            // if (circle < 0) {
+            //     circle = ol.children.length - 1;
+            // }
+            circle = circle < 0 ? ol.children.length - 1 : circle;
+            circleMove();
         }
-        num--;
-        animate(ul, -num * tb_promoWidth);
-        circle--;
-        // if (circle < 0) {
-        //     circle = ol.children.length - 1;
-        // }
-        circle = circle < 0 ? ol.children.length - 1 : circle;
-        circleMove();
     });
 
     // 圆点移动
