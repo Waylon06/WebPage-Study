@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6允许在大括号里面直接写入变量和函数，作为对象的属性和方法
+        // 这样书写更加简洁
+        let name = 'Waylon';
+        let change = function () {
+            console.log("活着就是为了改变世界！");
+        }
+        //创建对象
+        const school = {
+            // 完整写法
+            // name:name,
+            // change:change
+            // 简化写法
+            name,
+            change,
+            // say:function() {
+            //     console.log("言行一致！");
+            // }
+            // 声明方法的简化
+            say() {
+                console.log("言行一致！");
+            }
+        }
+        school.change();
+        school.say();
+    </script>
+</body>
+
+</html>

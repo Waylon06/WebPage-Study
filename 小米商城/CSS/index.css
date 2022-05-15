@@ -278,12 +278,12 @@ nav .nav-search .search-form .search-btn {
 }
 
 .swiper .swiper-button-prev:hover {
-    background-color: #333;
+    background-color: rgba(54, 47, 54, 0.6);
     color: #b0b0b0;
 }
 
 .swiper .swiper-button-next:hover {
-    background-color: #333;
+    background-color: rgba(54, 47, 54, 0.6);;
     color: #b0b0b0;
 }
 
@@ -325,7 +325,6 @@ section .span4 ul li {
     height: 82px;
     padding: 0 3px;
 }
-
 
 
 section .span4 ul li a {
@@ -411,6 +410,7 @@ h2 {
 
 .box-bd {
     height: 614px;
+    margin-bottom: 8px;
 }
 
 .box-bd .left {
@@ -452,6 +452,7 @@ h2 {
     font-weight: 400; 
     text-align: center;
     margin: 0 10px 2px 10px;
+    color: #333;
 }
 
 .desc {
@@ -470,4 +471,146 @@ h2 {
 
 del {
     color: #b0b0b0;
+}
+
+.box-bd .right .end {
+    position: relative;
+    height: 93px;
+    padding-top: 50px;
+}
+
+.box-bd .right .end a {
+    float: left;
+    display: block;
+}
+
+.box-bd .right .end .more {
+    position: absolute;
+    top: 34px;
+    display: block;
+    margin: 0 110px 0 30px;
+    font-size: 18px;
+    color: #333;
+}
+
+.box-bd .right .end .more small {
+    position: absolute;
+    top: 26px;
+    display: block;
+    font-size: 12px;
+    color: #757575;
+}
+
+.box-bd .right .end .go-more {
+    position: absolute;
+    right: 35px;
+    top: 48px;
+    width: 48px;
+    height: 48px;
+    color: #ff6700;
+}
+
+.box-bd .right .end .go-more i {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.box-bd .right .end .go-more i::before {
+    font-family: 'icomoon';
+    content: '\e968';
+}
+
+/* 底部 */
+
+footer .site-footer .footer-service {
+    padding: 27px 0;
+    border-bottom: 1px solid #e0e0e0;
+    height: 25px;
+}
+
+footer .site-footer .footer-service ul li {
+    float: left;
+    width: 19.8%;
+    height: 25px;
+    border-left: 1px solid #e0e0e0;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+}
+
+footer .site-footer .footer-service a {
+    color: #616161;
+}
+
+footer .site-footer .footer-service ul li:first-child {
+    border-left: 0;
+}
+
+footer .site-footer .footer-service ul li em {
+    margin-right: 6px;
+    font-size: 24px;
+    line-height: 24px;
+    vertical-align: -4px;
+}
+
+footer .site-footer .footer-service ul li em::before {
+    font-family: 'icomoon';
+    content: '';
+}
+
+.site-footer .footer-links {
+    padding: 40px 0;
+}
+
+.site-footer .footer-links dl {
+    float: left;
+    width: 160px;
+    margin: 0;
+}
+
+.site-footer .footer-links dl dt {
+    margin: -1px 0 26px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #424242;
+}
+
+.site-footer .footer-links dl dd {
+    margin: 10px 0 0;
+    font-size: 12px;
+}
+
+.site-footer .footer-links dl dd a {
+    color: #757575
+}
+
+.site-footer .footer-links .contact {
+    float: right;
+    width: 251px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+    color: #616161;
+}
+
+.site-footer .footer-links .contact .phone {
+    font-size: 22px;
+    line-height: 1;
+    color: #ff6700;
+}
+
+.site-footer .footer-links .contact p {
+    margin: 0 0 5px 0;
+    font-size: 12px;
+}
+
+.site-footer .footer-links .contact .contact-service {
+    background: #fff;
+    color: #ff6700;
+    width: 118px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    display: inline-block;
+    border: 1px solid #ff6700;
+    text-align: center;
 }
