@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+</head>
+<body>
+    <div id="id"></div>
+    <script>
+        let ad = document.querySelector('div');
+        ad.addEventListener('click', function() {
+            // 没用箭头函数时需要保存this的值
+            // let _this = this;
+            setTimeout(()=> {
+                console.log(this);
+                this.style.background = 'pink';
+            }, 2000)
+        })
+
+        const ARR = [ 1, 6, 9, 10, 100, 25];
+        // const RESULT = ARR.filter(function(item) {
+        //     if(item % 2 === 0) {
+        //         return true;
+        //     }else {
+        //         return false;
+        //     }
+        // }) 
+
+        const RESULT = ARR.filter(item => item % 2 === 0);
+        console.log(RESULT);
+
+        // 箭头函数适合与this无关的回调。定时器，数组的方法回调
+        // 箭头函数不适合与this有关的回调。事件回调，对象方法
+        // 这里要扩展一下 就是对象中的箭头函数的this永远和最外层的对象所处的环境保持一致 不论套了多少层 
+        //  有人会想 按老师说的 对象中的箭头函数的this应该指向对象 但其实并不是这样
+    </script>
+</body>
+</html>

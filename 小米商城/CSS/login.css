@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0);
+}
+
+body {
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    font-family: "MiSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.login-desktop .left .bg {
+    width: 375px;
+}
+
+.login-desktop .left .bg img {
+    width: 100%;
+    height: 100%;
+}
+
+.login-desktop .left::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.login-desktop .left {
+    float: left;
+}
+
+.login-desktop .right .login-header {
+    padding: 20px;
+    height: 40px;
+    width: 1487px;
+}
+
+.login-desktop .right .login-header .logo {
+    float: left;
+    height: 40px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #333;
+    line-height: 40px;
+ 
+} 
+
+.login-desktop .right .login-header .logo img {
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.login-desktop .right .login-header img {
+    height: 40px;
+    width: 40px;
+}
+
+.login-desktop .right .login-header .mi-nav {
+    float: right;
+}
+
+.login-desktop .right .login-header .mi-nav a {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #838383;
+    line-height: 40px;
+}
+
+.login-desktop .right .login-header .mi-nav span {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #ddd;
+    vertical-align: middle;
+    display: inline-block;
+    height: 14px;
+    width: 0;
+}
+
+.login-desktop .right .login-header .mi-nav .language {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #838383;
+    line-height: 40px;
+}
+
+.login-desktop .right .login-header .mi-nav .language .corner {
+    position: absolute;
+    top: 18px;
+    right: -10px ;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: #838383;
+
+}
+
+.login-desktop .right {
+    float: left;
+}
+

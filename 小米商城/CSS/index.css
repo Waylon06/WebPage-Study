@@ -418,6 +418,7 @@ h2 {
     width: 234px;
     height: 100%;
     background-color: #ffffff;
+    transition:  all .2s linear;
 }
 
 .box-bd .right {
@@ -438,6 +439,13 @@ h2 {
     background-color: #fff;
     margin-left: 14px;
     margin-bottom: 14px;
+    transition:  all .2s linear;
+}
+
+.box-bd .left:hover,
+.box-bd .right li:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translate3d(0, -5px, 0);
 }
 
 .box-bd .right li img {
