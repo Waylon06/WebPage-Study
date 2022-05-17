@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小米账号-登录</title>
     <link rel="stylesheet" href="../CSS/login.css">
+    <script src="../JS/login.js"></script>
 </head>
+
 <body>
     <div class="login-desktop">
         <div class="left">
@@ -31,7 +34,45 @@
                     </div>
                 </div>
             </div>
+            <div class="login-banner">
+                <div class="mi-card">
+                    <div class="qr-code"></div>
+                    <div class="login-table">
+                        <div class="table-nav">
+                            <span id="login"><a href="#">登录</a></span>
+                            <span id="regester"><a href="#">注册</a></span>
+                        </div>
+                        <div class="table-main">
+                            <div class="username">
+                                <input type="text" placeholder="邮箱/手机号码/小米ID" id="username">
+                            </div>
+                            <div class="pwd">
+                                <input type="password" placeholder="密码" id="password">
+                            </div>
+                            <input type="checkbox" class="ck">
+                            <span>
+                                已阅读并同意小米帐号
+                                <a href="#">用户协议</a>
+                                和
+                                <a href="#">隐私政策</a>
+                            </span>
+                            <button class="btn">登录</button>
+                            <div class="login-sevrve">
+                                <a href="#">忘记密码？</a>
+                                <a href="#">手机号登录</a>
+                            </div>
+                            <div class="table-footer">
+                                <a href="#">
+                                    <img src="../Images/table-footer.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

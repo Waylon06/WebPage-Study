@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box
 }
 
 li {
@@ -9,7 +10,7 @@ li {
 
 a {
     text-decoration: none;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -17,6 +18,13 @@ body {
     font-size: 14px;
     font-family: "MiSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+body::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 
 .login-desktop .left .bg {
     width: 375px;
@@ -35,12 +43,12 @@ body {
 
 .login-desktop .left {
     float: left;
+    height: auto;
 }
 
 .login-desktop .right .login-header {
     padding: 20px;
     height: 40px;
-    width: 1487px;
 }
 
 .login-desktop .right .login-header .logo {
@@ -50,8 +58,8 @@ body {
     font-weight: 500;
     color: #333;
     line-height: 40px;
- 
-} 
+    margin-left: 20px;
+}
 
 .login-desktop .right .login-header .logo img {
     margin-right: 10px;
@@ -103,7 +111,7 @@ body {
 .login-desktop .right .login-header .mi-nav .language .corner {
     position: absolute;
     top: 18px;
-    right: -10px ;
+    right: -10px;
     width: 0;
     height: 0;
     border: 5px solid transparent;
@@ -112,6 +120,148 @@ body {
 }
 
 .login-desktop .right {
-    float: left;
+    width: auto;
 }
 
+.login-desktop .right .login-banner {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.login-desktop .right .login-banner .mi-card {
+    border-radius: 4px;
+    padding: 40px 45px;
+    margin: 0 auto 80px;
+    box-shadow: 0 20px 50px 0 hsl(0deg 0% 64% / 10%);
+    display: inline-block;
+    height: 489px;
+    width: 360px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table {
+    width: 360px;
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-nav {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-nav span a {
+    margin-right: 20px;
+    font-size: 22px;
+    color: #333;
+    font-weight: 500;
+    display: block;
+    float: left;
+    border-bottom: 4px solid #ff5c00;
+    border-radius: 3px;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main {
+    height: 316px;
+    position: relative;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main .username {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    position: absolute;
+    left: -40px;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main .username input {
+    width: 350px;
+    padding: 30px 20px 10px;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main .pwd {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 80px;
+    left: -40px;
+
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main .pwd input {
+    width: 350px;
+    padding: 30px 20px 10px;
+}
+
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 180px;
+    left: -40px;
+    padding: 0 20px;
+    border-radius: 4px;
+    width: 350px;
+    height: 60px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #ff5c00;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main .ck {
+   
+    position: absolute;
+    left: -40px;
+    top: 158px;
+    height: 20px;
+    width: 20px;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main span {
+    position: absolute;
+    left: -18px;
+    top: 159px;
+    font-size: 14px;
+}
+
+.login-desktop .right .login-banner .mi-card .login-table .table-main .login-sevrve {
+    position: absolute;
+    top: 270px;
+    position: relative;
+}
+
+.table-main .login-sevrve a {
+    color: #ff5c00;
+    font-size: 17px;
+}
+
+.table-main .login-sevrve a:first-child {
+    position: absolute;
+    left: -40px;
+
+}
+
+.table-main .login-sevrve a:nth-child(2) {
+    position: absolute;
+    right: 48px;
+}
+
+.table-main .table-footer {
+    position: absolute;
+    top: 300px;
+    left:-65px;
+    width: 360px;
+}
+
+.table-main .table-footer img {
+    width: 120%;
+}
