@@ -565,6 +565,9 @@ footer .site-footer .footer-service ul li em::before {
     font-family: 'icomoon';
     content: '';
 }
+.site-footer {
+    position: relative;
+}
 
 .site-footer .footer-links {
     padding: 40px 0;
@@ -621,4 +624,16 @@ footer .site-footer .footer-service ul li em::before {
     display: inline-block;
     border: 1px solid #ff6700;
     text-align: center;
+}
+
+.site-footer .footer-info {
+    position: absolute;
+    top: 340px;
+    left: -10px;
+    background: #fafafa;
+}
+
+.site-footer .footer-info img {
+    width: 100%;
+    height: 100%;
 }

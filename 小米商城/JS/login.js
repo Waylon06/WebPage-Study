@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+    // Ajax连接接口
     var btn = document.querySelector('.btn');
     var un = document.querySelector('#username');
     var psw = document.querySelector('#password');
@@ -22,5 +23,6 @@ window.addEventListener('load', function () {
         console.log(PARAMS.username);
         console.log(PARAMS.password);
         connect.send(JSON.stringify(PARAMS));
-    })
+    });
+    
 })
