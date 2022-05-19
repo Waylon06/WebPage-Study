@@ -132,6 +132,7 @@ body::after {
     padding: 40px 45px;
     margin: 0 auto 80px;
     box-shadow: 0 20px 50px 0 hsl(0deg 0% 64% / 10%);
+    /* box-shadow: 0 0 20px rgb(245, 245, 245); */
     display: inline-block;
     height: 489px;
     width: 360px;
@@ -175,19 +176,23 @@ body::after {
 }
 
 .mi-card .login-table .table-main .username {
-    border: 1px solid rgba(0, 0, 0, 0);
+    /* border: 1px solid rgba(0, 0, 0, 0); */
     border-radius: 4px;
     position: absolute;
     left: -40px;
 }
 .login-table .table-main .username input {
+    display: block;
+    height: 60px;
     width: 350px;
-    padding: 30px 20px 10px;
+    padding: 0 5%;
+    /* font-size: 20px; */
+    /* padding: 30px 20px 10px; */
 }
 
 .login-table .table-main .pwd {
     border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0);
+    /* border: 1px solid rgba(0, 0, 0, 0); */
     position: absolute;
     top: 80px;
     left: -40px;
@@ -195,8 +200,12 @@ body::after {
 }
 
 .login-table .table-main .pwd input {
+    display: block;
+    height: 60px;
     width: 350px;
-    padding: 30px 20px 10px;
+    padding: 0 5%;
+    /* font-size: 20px; */
+    /* padding: 30px 20px 10px; */
 }
 
 .login-table .table-main button {
@@ -211,11 +220,15 @@ body::after {
     height: 60px;
     font-size: 18px;
     color: #ffffff;
-    background-color: #ff5c00;
+    background-color: #ffbe99;
+    border: none;
+}
+
+.login-table .table-main button:hover {
+    background: #ffcba9;
 }
 
 .login-table .table-main .ck {
-   
     position: absolute;
     left: -40px;
     top: 158px;

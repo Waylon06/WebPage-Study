@@ -78,12 +78,35 @@ body {
     height: 40px;
     margin-left: 15px;
     font-size: 12px;
+    position: relative;
+}
+
+.top .top-cart .products {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    height: 100px;
+    width: 316px;
+    background-color: #fff;
+    display: none;
+    transition: all .2 linear;
 }
 
 .top .top-cart .cart-mini {
     background-color: #424242;
     text-align: center;
     display: block;
+}
+
+.top .top-cart .cart-mini:hover,
+.top .top-cart .cart-mini:hover .cart-mini-num {
+    background-color: #ffffff;
+    color: #ff6700;
+}
+
+.top .top-cart:hover .products {
+    display: block;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .top .top-cart .cart-mini .icon-font::before {
