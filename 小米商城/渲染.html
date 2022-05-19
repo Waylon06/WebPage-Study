@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .app {
+            height: 300px;
+            width: 200px;
+            border: 1px solid black;
+            float: left;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .app img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .title {
+            font-size: 20px;
+            height: 20px;
+        }
+        .info{
+            font-size: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="app">
+        <img src="" alt="" class="photo">
+        <div class="title">我是标题</div>
+        <div class="info">我是介绍信息</div>
+        <div class="price">我是价格</div>
+    </div> -->
+    <button onclick="ajaxSend()">点我</button>
+    <script>
+        const btn = document.querySelector("button")
+        function ajaxSend() {
+            const ajax = new XMLHttpRequest();
+            const url = "http://43.138.138.11:1110/api";
+            ajax.open("GET", url + "/product")
+            ajax.send()
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    const resp = JSON.parse(ajax.responseText)
+                    if (resp.code == 200) {
+                        // 让按钮消失
+                        btn.style.display = "none"
+                        const product = resp.data
+                        for(let i=0; i<product.length; i++ ){
+                            let app = document.createElement("div")
+                            app.classList.add("app")
+                            // 渲染图片
+                            let img = document.createElement("img")
+                            img.src = product[i].product_picture
+                            
+                            // 渲染名称
+                            let title = document.createElement("div")
+                            title.classList.add("title")
+                            title.innerText = product[i].product_name
+                            
+                            // 渲染介绍信息
+                            let info = document.createElement("div");
+                            info.classList.add("info")
+                            info.innerText = product[i].product_title
+                            // 渲染价格
+                            let price = document.createElement("div")
+                            price.classList.add("price")
+                            price.innerText = product[i].product_price
+
+                            // 将需要渲染的元素放进大盒子
+                            app.appendChild(img)
+                            app.appendChild(title)
+                            app.appendChild(info)
+                            app.appendChild(price)
+                            
+                            // 将盒子放进body
+                            document.body.appendChild(app)
+                        }
+                        
+                    } else {
+                        alert("哦豁")
+                    }
+
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

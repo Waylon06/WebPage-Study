@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建Symbol
+        let s = Symbol();
+        console.log(s, typeof s);
+        // Symbol.for 创建
+        let s2 = Symbol('Waylon');
+        let s3 = Symbol('Waylon');
+        console.log(s2 === s3);    //false
+
+        let s4 = Symbol.for('Waylon');
+        let s5 = Symbol.for('Waylon');
+        console.log(s4 === s5);    //true
+
+        // 不能与其他数据进行运算与比较
+        // let sum = s5 + 100;
+        // let sum = s5 + '100';
+        console.log(sum);
+
+        // JS数据类型
+        // USONB
+        // U undefined
+        // S string Symbol
+        // O Object
+        // N null Number
+    </script>
+</body>
+</html>

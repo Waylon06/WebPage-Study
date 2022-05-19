@@ -46,12 +46,12 @@ body::after {
     height: auto;
 }
 
-.login-desktop .right .login-header {
+.right .login-header {
     padding: 20px;
     height: 40px;
 }
 
-.login-desktop .right .login-header .logo {
+.right .login-header .logo {
     float: left;
     height: 40px;
     font-size: 26px;
@@ -60,22 +60,21 @@ body::after {
     line-height: 40px;
     margin-left: 20px;
 }
-
-.login-desktop .right .login-header .logo img {
+.right .login-header .logo img {
     margin-right: 10px;
     vertical-align: top;
 }
 
-.login-desktop .right .login-header img {
+.right .login-header img {
     height: 40px;
     width: 40px;
 }
 
-.login-desktop .right .login-header .mi-nav {
+.right .login-header .mi-nav {
     float: right;
 }
 
-.login-desktop .right .login-header .mi-nav a {
+.right .login-header .mi-nav a {
     margin-left: 10px;
     margin-right: 10px;
     display: inline-block;
@@ -86,7 +85,7 @@ body::after {
     line-height: 40px;
 }
 
-.login-desktop .right .login-header .mi-nav span {
+.right .login-header .mi-nav span {
     margin-left: 10px;
     margin-right: 10px;
     border-right: 1px solid #ddd;
@@ -96,7 +95,7 @@ body::after {
     width: 0;
 }
 
-.login-desktop .right .login-header .mi-nav .language {
+.right .login-header .mi-nav .language {
     position: relative;
     margin-left: 10px;
     margin-right: 10px;
@@ -108,7 +107,7 @@ body::after {
     line-height: 40px;
 }
 
-.login-desktop .right .login-header .mi-nav .language .corner {
+.right .login-header .mi-nav .language .corner {
     position: absolute;
     top: 18px;
     right: -10px;
@@ -123,12 +122,12 @@ body::after {
     width: auto;
 }
 
-.login-desktop .right .login-banner {
+.right .login-banner {
     padding-top: 20px;
     text-align: center;
 }
 
-.login-desktop .right .login-banner .mi-card {
+.right .login-banner .mi-card {
     border-radius: 4px;
     padding: 40px 45px;
     margin: 0 auto 80px;
@@ -140,20 +139,20 @@ body::after {
     position: relative;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table {
+.right .login-banner .mi-card .login-table {
     width: 360px;
     color: rgba(0, 0, 0, .85);
     font-size: 14px;
     margin-top: 20px;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-nav {
+.login-banner .mi-card .login-table .table-nav {
     position: absolute;
     top: 2px;
     left: 0;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-nav span a {
+.mi-card .login-table .table-nav span a {
     margin-right: 20px;
     font-size: 22px;
     color: #333;
@@ -164,30 +163,29 @@ body::after {
     border-radius: 3px;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-main::after {
+.mi-card .login-table .table-main::after {
     content: '';
     display: block;
     clear: both;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-main {
+.mi-card .login-table .table-main {
     height: 316px;
     position: relative;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-main .username {
+.mi-card .login-table .table-main .username {
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 4px;
     position: absolute;
     left: -40px;
 }
-
-.login-desktop .right .login-banner .mi-card .login-table .table-main .username input {
+.login-table .table-main .username input {
     width: 350px;
     padding: 30px 20px 10px;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-main .pwd {
+.login-table .table-main .pwd {
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0);
     position: absolute;
@@ -196,13 +194,12 @@ body::after {
 
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-main .pwd input {
+.login-table .table-main .pwd input {
     width: 350px;
     padding: 30px 20px 10px;
 }
 
-
-.login-desktop .right .login-banner .mi-card .login-table .table-main button {
+.login-table .table-main button {
     margin-top: 20px;
     margin-bottom: 10px;
     position: absolute;
@@ -217,7 +214,7 @@ body::after {
     background-color: #ff5c00;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-main .ck {
+.login-table .table-main .ck {
    
     position: absolute;
     left: -40px;
@@ -226,14 +223,14 @@ body::after {
     width: 20px;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-main span {
+.login-table .table-main span {
     position: absolute;
     left: -18px;
     top: 159px;
     font-size: 14px;
 }
 
-.login-desktop .right .login-banner .mi-card .login-table .table-main .login-sevrve {
+.login-table .table-main .login-sevrve {
     position: absolute;
     top: 270px;
     position: relative;

@@ -43,6 +43,11 @@ body {
     float: left;
 }
 
+.top .top-info a:hover,
+.top .top-nav a:hover {
+    color: #fff;
+}
+
 .top a,
 .top .cart-mini .cart-mini-num {
     background-color: rgba(0, 0, 0, 0);
@@ -140,6 +145,10 @@ nav .nav-list ul li a {
     display: block;
     padding: 26px 10px 38px;
     color: #333;
+}
+
+nav .nav-list a:hover {
+    color: #ff6700;
 }
 
 nav .nav-search {
