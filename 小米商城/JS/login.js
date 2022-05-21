@@ -4,6 +4,7 @@ window.addEventListener('load', function () {
     var un = document.querySelector('#username');
     var psw = document.querySelector('#password');
     var checked = this.document.querySelector('.ck');
+    var eye = this.document.querySelector('#eye');
 
     btn.addEventListener('click', function () {
         if (checked.checked === true) {
@@ -32,10 +33,22 @@ window.addEventListener('load', function () {
                     console.log("请求失败:" + connect.status);
                 }
             }
-
         } else {
             console.log(checked.checked);
         }
     });
+
+    // 密码隐藏显示
+    var flag = 1;
+    eye.onclick = function () {
+        flag = !flag;
+        if (flag == 0) {
+            psw.type = 'text';
+            eye.src = '../Images/open.png';
+        } else {
+            psw.type = 'password';
+            eye.src = '../Images/close.png';
+        }
+    }
 
 })

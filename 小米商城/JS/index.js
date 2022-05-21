@@ -54,6 +54,8 @@ window.addEventListener('load', function () {
           let lis = document.createElement('li');
           //  创建a链接
           let a = document.createElement('a');
+          // 为a赋值上超链接
+          a.href = '#';
           //  渲染图片
           let img = document.createElement('img');
           img.src = products[i].product_picture;
@@ -67,13 +69,23 @@ window.addEventListener('load', function () {
           desc.innerText = products[i].product_title;
           // 渲染价格
           let price = document.createElement('p');
-          price.classList.add('price');
-          price.innerText = products[i].product_price + '元';
-          // 将元素加进li盒子
-          lis.appendChild(img);
-          lis.appendChild(title);
-          lis.appendChild(desc);
-          lis.appendChild(price);
+          if (products[i].product_price > products[i].product_selling_price) {
+            price.classList.add('price');
+            price.innerHTML = products[i].product_selling_price + '元&nbsp;';
+            let del = document.createElement('del');
+            del.innerText = products[i].product_price + '元';
+            price.appendChild(del);
+          } else {
+            price.classList.add('price');
+            price.innerText = products[i].product_price + '元';
+          }
+          // 将元素加进a链接里
+          a.appendChild(img);
+          a.appendChild(title);
+          a.appendChild(desc);
+          a.appendChild(price);
+          // 将a链接放进li盒子里
+          lis.appendChild(a);
           // 将li盒子放进ul里
           ul.appendChild(lis);
         }
