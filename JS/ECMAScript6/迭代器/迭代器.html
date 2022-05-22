@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const xiyou = ['唐僧','孙悟空','猪八戒', '沙僧'];
+
+        // 使用 for....of   遍历数组 
+        // for...in 循环变量保存的是键名
+        // for....of 循环变量保存的是键值
+        for(let v of xiyou) {
+            console.log(v);
+        } 
+
+        let iterator = xiyou[Symbol.iterator]();
+
+        // 调用对象的next方法
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #90b;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击发送请求</button>
+    <div id="result"></div>
+    <script>
+        const btn = document.querySelector('button');
+        const result = document.querySelector('#result');
+        btn.addEventListener('click', function () {
+            const xhr = new XMLHttpRequest();
+            // 超时设置   1s内无结果就取消
+            xhr.timeout = 1000;
+            // 超时回调
+            xhr.ontimeout = function() {
+                alert('网络异常，请稍后再试');
+            }
+            // 网络异常回调
+            xhr.onerror = function() {
+                alert('您的网络似乎开小差了！');
+            }
+            xhr.open('get', 'http://127.0.0.1:8000/delay');
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        result.innerHTML = xhr.response;
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

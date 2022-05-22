@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function * gen() {
+            console.log(111);
+            yield '一只没有耳朵';
+            console.log(222);
+            // yield相当于断点
+            yield '一只没有眼睛';
+            console.log(333);
+        }
+
+        let iterator = gen();
+        iterator.next();
+        iterator.next();
+        iterator.next();
+
+        // for (const v of gen()) {
+        //     console.log(v);
+        // }
+    </script>
+</body>
+</html>
