@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../jQuery.min.js"></script>
+</head>
+<body>
+    <ol>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+        <li class="item">我是ol的li</li>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+    </ol>
+    <ul>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+    </ul>
+    <div class="current">有类名</div>
+    <div>没有</div>
+    <script>
+        // 1.兄  siblings()  查找兄弟节点，不包括本身
+        $("ol .item").siblings("li").css("color", "red")
+        // 2.第n个元素
+        // (1)我们可以利用选择器的方式选择
+        $("ul li:eq(2)").css("color", "pink");
+        // (2)利用选择方法的方式选择   更推荐
+        $("ul li").eq(3).css("color", "pink");
+        // 判断是否有某个类名
+        console.log($("div:first").hasClass("current"));    //true
+        console.log($("div:last").hasClass("current"));     //false
+    </script>
+</body>
+</html>

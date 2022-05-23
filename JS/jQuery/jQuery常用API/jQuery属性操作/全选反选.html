@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+    
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          border: 1px solid #c0c0c0;
+          width: 500px;
+          margin: 100px auto;
+          text-align: center;
+        }
+    
+        th {
+          background-color: #09c;
+          font: bold 16px "微软雅黑";
+          color: #fff;
+          height: 24px;
+        }
+    
+        td {
+          border: 1px solid #d0d0d0;
+          color: #404060;
+          padding: 10px;
+        }
+    
+        .allCheck {
+          width: 80px;
+        }
+      </style>
+      <script src="../jQuery.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+          <tr>
+            <th class="allCheck">
+              <input type="checkbox" name="" id="checkAll" @click="choiceAll" v-model="checked" > <span class="all">全选</span>
+            </th>
+            <th>商品</th>
+            <th>商家</th>
+            <th>价格</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name="check" class="ck" v-model="chooses" value="1">
+            </td>
+            <td>小米手机</td>
+            <td>小米</td>
+            <td>￥1999</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name="check" class="ck" v-model="chooses" value="2">
+            </td>
+            <td>小米净水器</td>
+            <td>小米</td>
+            <td>￥4999</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name="check" class="ck" v-model="chooses" value="3">
+            </td>
+            <td>小米电视</td>
+            <td>小米</td>
+            <td>￥5999</td>
+          </tr>
+        </table>
+      </div>
+      <script>
+          $(function() {
+              $("#checkAll").change(function() {
+                  console.log($(this).prop("checked"));
+                  $(".ck").prop("checked", $(this).prop("checked"));
+              })
+              $(".ck").change(function() {
+                  if($(".ck:checked").length === $(".ck:checked").length){
+                      $("#checkAll").prop("checked", true);
+                  }else {
+                    $("#checkAll").prop("checked", false);
+                  }
+              })
+          })
+      </script>
+</body>
+</html>
