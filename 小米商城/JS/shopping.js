@@ -53,6 +53,9 @@ window.addEventListener("load", function () {
                     phone_info.appendChild(price);
 
                 }
+                else {
+                    alert(resp.msg);
+                }
             }
         }
     }
