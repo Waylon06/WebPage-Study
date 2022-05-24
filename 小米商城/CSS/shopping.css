@@ -290,6 +290,10 @@ nav .nav-search .search-form .search-btn {
     line-height: 1.5;
 }
 
+.product .product-info .sale-dec font {
+    color:#ff4a00;
+}
+
 .product .product-info .ad {
     color: #ff6700;
     margin-top: 14px;

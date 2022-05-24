@@ -55,7 +55,8 @@ window.addEventListener('load', function () {
           //  创建a链接
           let a = document.createElement('a');
           // 为a赋值上超链接
-          a.href = '#';
+          // a.href = 'javascript:;';
+          a.href = 'Views/shopping.html'
           //  渲染图片
           let img = document.createElement('img');
           img.src = products[i].product_picture;
@@ -89,11 +90,19 @@ window.addEventListener('load', function () {
           // 将li盒子放进ul里
           ul.appendChild(lis);
         }
+        var lis = document.querySelectorAll('.box-bd .right .first li');
+        // console.log(lis);
+        for (let i = 0; i < lis.length; i++) {
+          lis[i].addEventListener('click', function () {
+            // alert(11);
+            // console.log(products);
+            // console.log(products[i].product_id);
+            sessionStorage.setItem('pid', products[i].product_id);
+          })
+        }
       }
     }
   }
-
-
 
 
 

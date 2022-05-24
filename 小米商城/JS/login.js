@@ -24,17 +24,20 @@ window.addEventListener('load', function () {
             connect.onreadystatechange = function () {
                 if (connect.readyState === 4 && connect.status === 200) {
                     const resp = JSON.parse(connect.responseText)
-                    if (resp.code == 200) {
-                        console.log(connect.response.data);
+                    if (resp.code === 200) {
+                        console.log(resp.data);
                         console.log(JSON.parse(connect.responseText));
                         window.location.href = "../index.html";
+                    } else {
+                        alert(resp.msg);
                     }
                 } else {
                     console.log("请求失败:" + connect.status);
                 }
             }
         } else {
-            console.log(checked.checked);
+            // console.log(checked.checked);
+            alert("请先同意用户协议");
         }
     });
 
