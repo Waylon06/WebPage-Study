@@ -12,6 +12,11 @@ li {
     margin: 0 auto;
 }
 
+/* body { */
+    /* width: 100%; */
+    /* overflow: hidden; */
+/* } */
+
 @font-face {
     font-family: 'icomoon';
     src: url('../fonts/icomoon.eot?kgxpis');
@@ -489,7 +494,7 @@ nav .nav-search .search-form .search-btn {
 .product .img-box {
     height: 270px;
     position: relative;
-    width: 100%;
+    width: 98%;
     overflow: hidden;
     margin: 0 auto;
     background: #f5f5f5;

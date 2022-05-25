@@ -11,8 +11,18 @@ a {
     text-decoration: none;
 }
 
-w {
+.w {
     width: 1226px;
+    margin: 0 auto;
+}
+
+header {
+    font-size: 12px;
+    border-bottom: 2px solid #ff6700;
+    background: #fff;
+    color: #b0b0b0;
+    position: relative;
+    height: 100px;
 }
 
 header::after {
@@ -22,10 +32,43 @@ header::after {
 }
 
 header a {
-    display: inline-block;
+    display: block;
+    width: 93px;
+    margin-top: 26px;
+    float: left;
 }
 
 header a img {
     width: 48px;
     height: 48px;
+}
+
+header .topic {
+    height: 48px;
+    margin-top: 26px;
+    float: left;
+}
+
+header .topic h2 {
+    float: left;
+    line-height: 48px;
+    font-size: 28px;
+    font-weight: 400;
+    color: #424242;
+}
+
+header .login {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 30px;
+    color: #b0b0b0;
+}
+
+header .login a {
+    
+    padding: 0 5px;
+    text-align: center;
+    float: left;
+    line-height: 40px;
 }
