@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //异步编程  文件操作 网络操作（ajax, request） 数据库操作
+
+        // 1S 后控制台输出 111 2S后输出 222 3S后输出 333
+        //回调地狱
+        // setTimeout(() => {
+        //     console.log(111);
+        //     setTimeout(() => {
+        //         console.log(222);
+        //         setTimeout(() => {
+        //             console.log(333);
+        //         }, 3000)
+        //     }, 2000)
+        // }, 1000)
+
+        function one() {
+            setTimeout(() => {
+            console.log(111);
+            iterator.next(); 
+        },1000)
+        }
+
+        function two() {
+            setTimeout(() => {
+            console.log(222);
+            iterator.next(); 
+        },2000)
+        }
+
+        function three() {
+            setTimeout(() => {
+            console.log(333);
+            iterator.next(); 
+        },3000)
+        }
+
+        function * gen() {
+            yield one();
+            yield two();
+            yield three();
+        }
+        // 调用生成器函数
+        let iterator = gen();
+        iterator.next(); 
+    </script>
+
+</body>
+
+</html>
