@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
                 username: un.value,
                 password: psw.value
             }
-            sessionStorage.setItem('user',un.value);
+            sessionStorage.setItem('uid',un.value);
             console.log(PARAMS.username);
             console.log(PARAMS.password);
             connect.send(JSON.stringify(PARAMS));
