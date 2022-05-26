@@ -94,4 +94,52 @@ window.addEventListener('load', function () {
             }
         }
     }
+
+
+    // 渲染推荐商品数据
+    var ul = document.querySelector('.goods ul');
+    var connect = new XMLHttpRequest();
+    const url = 'http://43.138.138.11:1110/api/product';
+    connect.open('get', url);
+    connect.send();
+    connect.onreadystatechange = function () {
+        if (connect.readyState == 4 && connect.status == 200) {
+            console.log(JSON.parse(connect.responseText));
+            const resp = JSON.parse(connect.responseText);
+            // Ajax渲染数据
+            if (resp.code = 200) {
+                const products = resp.data;
+                for (let i = 0; i < 20; i++) {
+                    // 创建li盒子
+                    var lis = document.createElement('li');
+                    //  创建a链接
+                    let a = document.createElement('a');
+                    a.href = 'javascript:;';
+                    //  渲染图片
+                    let img = document.createElement('img');
+                    img.src = '../' + products[i].product_picture;
+
+                    let recommend_name = document.createElement('div');
+                    let recommend_price = document.createElement('div');
+                    recommend_name.classList.add('recommend-name');
+                    recommend_name.innerText = products[i].product_name;
+                    recommend_price.classList.add('recommend-price');
+                    if (products[i].product_price > products[i].product_selling_price) {
+                        recommend_price.innerHTML = products[i].product_selling_price + '元';
+                      } else {
+                        recommend_price.innerText = products[i].product_price + '元';
+                      }
+
+                    a.appendChild(img);
+                    a.appendChild(recommend_name);
+                    a.appendChild(recommend_price);
+
+                    lis.appendChild(a);
+
+                    ul.appendChild(lis);
+                }
+
+            }
+        }
+    }
 })

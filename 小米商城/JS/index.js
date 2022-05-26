@@ -59,7 +59,7 @@ window.addEventListener('load', function () {
           a.href = 'Views/shopping.html'
           //  渲染图片
           let img = document.createElement('img');
-          img.src = products[i].product_picture;
+          c
           // 渲染名称
           let title = document.createElement('h3');
           title.classList.add('title');
