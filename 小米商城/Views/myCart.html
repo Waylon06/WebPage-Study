@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../Images/favicon.ico">
+    <title>我的购物车-小米商城</title>
     <link rel="stylesheet" href="../CSS/myCart.css">
 </head>
 
@@ -17,12 +18,52 @@
                 <h2>我的购物车</h2>
             </div>
             <div class="login">
-                <a href="#">登录</a>
-                <span>|</span>  
-                <a href="#">注册</a>
+                <a href="login.html">登录</a>
+                <span>|</span>
+                <a href="register.html">注册</a>
             </div>
         </div>
     </header>
+
+    <div class="banner">
+        <div class="w">
+            <div class="shopping-info">
+                <!-- 当购物车为空时 -->
+                <div class="empty">
+                    <h2>您的购物车还是空的！</h2>
+                    <p>登录之后显示您之前加入的商品</p>
+                    <a href="login.html" class="login">立即登录</a>
+                    <a href="#" class="go-shopping">马上去购物</a>
+                </div>
+                 <!-- 当购物车不为空时 -->
+                <!-- <div class="goods-list">
+                    <div class="list-head">
+
+                    </div>
+                </div> -->
+            </div>
+            <div class="recommend">
+                <h2>
+                    <span>为您推荐</span>
+                </h2>
+                <div class="goods">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="../Images/shopping-pic.webp" alt="">
+                                <div class="recommend-name">小米手环7 NFC版</div>
+                                <div class="recommend-price">299元</div>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
