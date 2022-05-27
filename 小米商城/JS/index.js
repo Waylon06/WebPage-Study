@@ -59,7 +59,7 @@ window.addEventListener('load', function () {
           a.href = 'Views/shopping.html'
           //  渲染图片
           let img = document.createElement('img');
-          c
+          img.src = products[i].product_picture;
           // 渲染名称
           let title = document.createElement('h3');
           title.classList.add('title');
@@ -107,9 +107,17 @@ window.addEventListener('load', function () {
 
   // 登录后展示用户信息
   var top_info = document.querySelector('.top-info');
-  const uid = sessionStorage.getItem('uid');
-  if (uid != null && uid != undefined) {
-    top_info.innerHTML = `Hi! ${uid}
+  // var uinfo = sessionStorage.getItem(JSON.parse('uinfo'));
+  const uinfo = JSON.parse(sessionStorage.getItem("uinfo"))
+  console.log(uinfo);
+  // const user = sessionStorage.getItem(uinfo.username);
+  // if (user != null && user != undefined) {
+  //   top_info.innerHTML = `Hi! ${user}
+  //      <span>|</span>
+  //     <a href="#">消息通知</a>`
+  // }
+    if (uinfo != null && uinfo != undefined) {
+    top_info.innerHTML = `Hi! ${uinfo.username}
        <span>|</span>
       <a href="#">消息通知</a>`
   }

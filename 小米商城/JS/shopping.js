@@ -80,9 +80,10 @@ window.addEventListener("load", function () {
 
     // 登录后展示用户信息
     var top_info = document.querySelector('.top-info');
-    const uid = sessionStorage.getItem('uid');
-    if (uid != null && uid != undefined) {
-        top_info.innerHTML = `Hi! ${uid}
+    const uinfo = JSON.parse(sessionStorage.getItem("uinfo"))
+    console.log(uinfo);
+    if (uinfo != null && uinfo != undefined) {
+        top_info.innerHTML = `Hi! ${uinfo.username}
        <span>|</span>
       <a href="#">消息通知</a>`
     }

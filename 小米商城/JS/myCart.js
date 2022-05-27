@@ -1,5 +1,7 @@
 window.addEventListener('load', function () {
     var shopping_info = document.querySelector('.shopping-info');
+    var list_item = document.querySelector('.list-body .list-item');
+    var login = document.querySelector('header .login');
     if (sessionStorage.getItem('pid') == null && sessionStorage.getItem('pid') == undefined) {
         shopping_info.innerHTML = `<div class="empty">
         <h2>您的购物车还是空的！</h2>
@@ -8,11 +10,16 @@ window.addEventListener('load', function () {
         <a href="#" class="go-shopping">马上去购物</a>
     </div>`
     } else {
+        const uinfo = JSON.parse(sessionStorage.getItem("uinfo"));
+        login.innerText = 'Hi!' + uinfo.username;
         const xhr = new XMLHttpRequest();
+        const xhr2 = new XMLHttpRequest();
+        const xhr3 = new XMLHttpRequest();
         const url = 'http://43.138.138.11:1110/api';
-        const uid = sessionStorage.getItem('uid');
         const pid = sessionStorage.getItem('pid');
-        xhr.open('get', url + '/' + 'product' + '/' + pid);
+        console.log(uinfo);
+        xhr.open('post', url + '/' + 'order' + '/' + uinfo.userId + '/' + pid);
+        // xhr.open('get', url + '/'+ 'product' + '/' + pid);
         xhr.send();
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
@@ -20,75 +27,85 @@ window.addEventListener('load', function () {
                     const resp = JSON.parse(xhr.responseText);
                     if (resp.code === 200) {
                         console.log(xhr.responseText);
-                        const product = resp.data;
-                        console.log(product);
-                        shopping_info.innerHTML = `<div class="goods-list">
-                        <div class="list-head">
-                            <div class="all-checked">
-                                <input type="checkbox" class="ck">
-                                全选
-                            </div>
-                            <div class="nbsp">&nbsp;</div>
-                            <div class="col-name">商品名称</div>
-                            <div class="col-price">单价</div>
-                            <div class="col-num">数量</div>
-                            <div class="col-total">小计</div>
-                            <div class="col-del">操作</div>
-                        </div>
-                        <div class="list-body">
-                            <div class="list-item">
-                                <div class="item-row">
-                                    <div class="col-check">
-                                        <input type="checkbox" class="item-ck">
-                                    </div>
-                                    <div class="col-img">
-                                        <a href="javascript:;">
-                                            <img src="../${product.product_picture}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="col-name">
-                                        <h3>
-                                            <a href="#">${product.product_name}</a>
-                                        </h3>
-                                    </div>
-                                    <div class="col-price">
-                                    ${product.product_selling_price}元
-                                    </div>
-                                    <div class="col-num">
-                                        <div class="change-num">
-                                            <a href="#">-</a>
-                                            <input type="text" autocomplete="off" class="goods-num">
-                                            <a href="#">+</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-total">
-                                        ${product.product_selling_price}元
-                                    </div>
-                                    <div class="col-del">
-                                        <a href="#">
-                                            <i></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cart-bar">
-                                <section class="left">
-                                    <a href="#">继续购物</a>
-                                    <span>
-                                        已选择
-                                        <i>1</i>
-                                        件
-                                    </span>
-                                </section>
-                                <div class="total-price">
-                                    合计：
-                                    <em>${product.product_selling_price}</em>
-                                    元
-                                    <a href="#">去结算</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
+                        xhr2.open('get', url + '/' + 'order/' + uinfo.userId + '/1/5');
+                        xhr2.send();
+                        xhr2.onreadystatechange = function () {
+                            if (xhr2.readyState === 4) {
+                                if (xhr2.status >= 200 && xhr2.status < 300) {
+                                    const info = JSON.parse(xhr2.responseText);
+                                    if (info.code === 200) {
+                                        const product = info.data.records;
+                                        console.log(product);
+                                        console.log(info.data);
+                                        let item_row;
+                                        // 解决累加拼接字符串的第一个为undefined的问题
+                                        let a;
+                                        for (let i = 0; i < product.length; i++) {
+                                            // item_row +=   会出现定义前的undefined
+                                            a = `<div class="item-row">
+                                            <div class="col-check">
+                                                <input type="checkbox" class="item-ck">
+                                            </div>
+                                            <div class="col-img">
+                                                <a href="javascript:;">
+                                                    <img src="../${product[i].product_picture}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-name">
+                                                <h3>
+                                                    <a href="#">${product[i].product_name}</a>
+                                                </h3>
+                                            </div>
+                                            <div class="col-price">
+                                                ${product[i].product_price}元
+                                            </div>
+                                            <div class="col-num">
+                                                <div class="change-num">
+                                                    <a href="#">-</a>
+                                                    <input type="text" autocomplete="off" class="goods-num">
+                                                    <a href="#">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-total">
+                                                ${product[i].product_price}元
+                                            </div>
+                                            <div class="col-del">
+                                                <a href="#">
+                                                    <i></i>
+                                                </a>
+                                            </div>
+                                        </div>`
+                                            if (i == 0) {
+                                                item_row = a;
+                                            }
+                                            if (i > 0) {
+                                                item_row = item_row + a;
+                                            }
+                                        }
+                                        list_item.innerHTML = item_row;
+                                    
+                                        // 删除订单功能
+                                        var dels = document.querySelectorAll('.list-body .list-item .item-row .col-del i');
+                                        for (let i = 0; i < dels.length; i++) {
+                                            dels[i].addEventListener('click', function () {
+                                                xhr3.open('delete', url + '/order' + '/' + product[i].order_id);
+                                                xhr3.send();
+                                                xhr3.onreadystatechange = function () {
+                                                    if (xhr3.readyState === 4) {
+                                                        if (xhr3.status >= 200 && xhr3.status < 300) {
+                                                            const isDel = JSON.parse(xhr3.responseText);
+                                                            if (isDel.code === 200) {
+                                                                console.log(isDel);
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            })
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -126,9 +143,9 @@ window.addEventListener('load', function () {
                     recommend_price.classList.add('recommend-price');
                     if (products[i].product_price > products[i].product_selling_price) {
                         recommend_price.innerHTML = products[i].product_selling_price + '元';
-                      } else {
+                    } else {
                         recommend_price.innerText = products[i].product_price + '元';
-                      }
+                    }
 
                     a.appendChild(img);
                     a.appendChild(recommend_name);

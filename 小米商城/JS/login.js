@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
                 username: un.value,
                 password: psw.value
             }
-            sessionStorage.setItem('uid',un.value);
+            
             console.log(PARAMS.username);
             console.log(PARAMS.password);
             connect.send(JSON.stringify(PARAMS));
@@ -27,6 +27,7 @@ window.addEventListener('load', function () {
                     const resp = JSON.parse(connect.responseText)
                     if (resp.code === 200) {
                         console.log(resp.data);
+                        sessionStorage.setItem('uinfo', JSON.stringify(resp.data));
                         console.log(JSON.parse(connect.responseText));
                         window.location.href = "../index.html";
                     } else {
