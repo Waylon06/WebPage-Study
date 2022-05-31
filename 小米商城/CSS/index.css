@@ -119,6 +119,7 @@ body {
     line-height: 20px;
     vertical-align: -4px;
     margin-right: 4px;
+    font-style: normal;
 }
 
 nav {
@@ -246,6 +247,8 @@ nav .nav-search .search-form .search-btn {
     float: left;
     font-family: 'icomoon';
     content: '\ea51';
+    font-style: normal;
+    font-size: 20px;
 }
 
 .banner .side-nav ul .title em {
