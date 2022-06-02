@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+    var url = 'http://43.138.138.11:1110/api';
     var shopping_info = document.querySelector('.shopping-info');
     var list_item = document.querySelector('.list-body .list-item');
     var login = document.querySelector('header .login');
@@ -15,7 +16,7 @@ window.addEventListener('load', function () {
         login.innerText = 'Hi!' + uinfo.username;
         var product;
         const xhr = new XMLHttpRequest();
-        const url = 'http://43.138.138.11:1110/api';
+        // const url = 'http://43.138.138.11:1110/api';
         const pid = sessionStorage.getItem('pid');
         console.log(uinfo);
         if (pid == null && pid == undefined) {
@@ -39,10 +40,10 @@ window.addEventListener('load', function () {
         }
     }
 
-      // 刷新购物车
-      function newPage() {
+    // 刷新购物车
+    function newPage() {
         const xhr2 = new XMLHttpRequest();
-        xhr2.open('get', 'http://43.138.138.11:1110/api' + '/' + 'order/' + uinfo.userId + '/1/5');
+        xhr2.open('get', url + '/' + 'order/' + uinfo.userId + '/1/5');
         xhr2.send();
         xhr2.onreadystatechange = function () {
             if (xhr2.readyState === 4) {
@@ -103,17 +104,43 @@ window.addEventListener('load', function () {
                             }
                         }
                         list_item.innerHTML = item_row;
-
+                        // 全选反选
+                        var checkall = document.querySelector('.goods-list .list-head .all-checked .ck');
+                        var cks = document.querySelectorAll('.col-check .item-ck');
+                        checkall.addEventListener('click', function () {
+                            for (let i = 0; i < cks.length; i++) {
+                                cks[i].checked = this.checked;
+                                cks[i].addEventListener('click', function () {
+                                    let isAll = true;
+                                    for (let j = 0; j < cks.length; j++) {
+                                        if (!cks[j].checked) {
+                                            isAll = false
+                                        }
+                                        checkall.checked = isAll;
+                                    }
+                                })
+                            }
+                        })
+                        // 数量按钮
                         var reduce = document.querySelectorAll('.col-num .change-num .reduce');
                         console.log(reduce);
                         var num = document.querySelectorAll('.col-num .change-num .goods-num');
                         var add = document.querySelectorAll('.col-num .change-num .add');
-                        for(let i = 0; i < product.length; i++){
-                            reduce[i].addEventListener('click', function() {
-                                num[i].value--;
+                        for (let i = 0; i < product.length; i++) {
+                            reduce[i].addEventListener('click', function () {
+                                if (num[i].value == 1) {
+                                    alert('莫点我了，我是计数的，没有删除功能');
+                                } else {
+                                    num[i].value--;
+                                }
                             });
-                            add[i].addEventListener('click', function() {
-                                num[i].value++;
+                            add[i].addEventListener('click', function () {
+                                if (num[i].value >= 2) {
+                                    alert('还点?你钱够吗')
+                                    num[i].value++;
+                                } else {
+                                    num[i].value++;
+                                }
                             })
 
                         }
@@ -133,14 +160,14 @@ window.addEventListener('load', function () {
         }
     }
 
-       // 删除订单功能
-       function delOrder() {
+    // 删除订单功能
+    function delOrder() {
         const xhr3 = new XMLHttpRequest();
         var dels = document.querySelectorAll('.list-body .list-item .item-row .col-del i');
         for (let i = 0; i < dels.length; i++) {
             dels[i].addEventListener('click', function () {
 
-                xhr3.open('delete', 'http://43.138.138.11:1110/api' + '/order' + '/' + product[i].order_id);
+                xhr3.open('delete', url + '/order' + '/' + product[i].order_id);
                 xhr3.send();
                 xhr3.onreadystatechange = function () {
                     if (xhr3.readyState === 4) {
@@ -161,8 +188,8 @@ window.addEventListener('load', function () {
     // 渲染推荐商品数据
     var ul = document.querySelector('.goods ul');
     var connect = new XMLHttpRequest();
-    const url = 'http://43.138.138.11:1110/api/product';
-    connect.open('get', url);
+    // const url = 'http://43.138.138.11:1110/api/product';
+    connect.open('get', url + '/product');
     connect.send();
     connect.onreadystatechange = function () {
         if (connect.readyState == 4 && connect.status == 200) {
