@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
 
     btn.addEventListener('click', function () {
         if (checked.checked === true) {
-            // console.log(checked.checked);++++++x
+            // console.log(checked.checked);
             const connect = new XMLHttpRequest();
 
             connect.open('post', 'http://43.138.138.11:1110/api/users/login');
