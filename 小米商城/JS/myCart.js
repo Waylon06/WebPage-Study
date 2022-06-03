@@ -1,5 +1,5 @@
 window.addEventListener('load', function () {
-    var url = 'http://43.138.138.11:1110/api';
+    const url = 'http://43.138.138.11:1110/api';
     var shopping_info = document.querySelector('.shopping-info');
     var list_item = document.querySelector('.list-body .list-item');
     var login = document.querySelector('header .login');
@@ -40,10 +40,10 @@ window.addEventListener('load', function () {
         }
     }
 
-    // 刷新购物车
+    // 刷新购物车 
     function newPage() {
         const xhr2 = new XMLHttpRequest();
-        xhr2.open('get', url + '/' + 'order/' + uinfo.userId + '/1/5');
+        xhr2.open('get', url + '/' + 'order/' + uinfo.userId + '/1/20');
         xhr2.send();
         xhr2.onreadystatechange = function () {
             if (xhr2.readyState === 4) {
@@ -56,10 +56,18 @@ window.addEventListener('load', function () {
                         let item_row;
                         // 解决累加拼接字符串的第一个为undefined的问题
                         let a;
-                        var obj = {
-                            num: 0,
-                            arr: []
-                        };
+                        var arr = [];
+                        for (let i = 0; i < product.length; i++) {
+                            arr[i] = 1;
+                            for (let j = i + 1; j < product.length; j++) {
+                                if (product[i].product_name == product[j].product_name) {
+                                    arr[i]++;
+                                    product.splice(j, 1);
+                                    j--;
+                                }
+                            }
+                        }
+
                         for (let i = 0; i < product.length; i++) {
                             // item_row +=   会出现定义前的undefined
                             a = `<div class="item-row">
@@ -104,29 +112,14 @@ window.addEventListener('load', function () {
                             }
                         }
                         list_item.innerHTML = item_row;
-                        // 全选反选
-                        var checkall = document.querySelector('.goods-list .list-head .all-checked .ck');
-                        var cks = document.querySelectorAll('.col-check .item-ck');
-                        checkall.addEventListener('click', function () {
-                            for (let i = 0; i < cks.length; i++) {
-                                cks[i].checked = this.checked;
-                                cks[i].addEventListener('click', function () {
-                                    let isAll = true;
-                                    for (let j = 0; j < cks.length; j++) {
-                                        if (!cks[j].checked) {
-                                            isAll = false
-                                        }
-                                        checkall.checked = isAll;
-                                    }
-                                })
-                            }
-                        })
-                        // 数量按钮
+
+                        // 数量加减按钮
                         var reduce = document.querySelectorAll('.col-num .change-num .reduce');
                         console.log(reduce);
                         var num = document.querySelectorAll('.col-num .change-num .goods-num');
                         var add = document.querySelectorAll('.col-num .change-num .add');
                         for (let i = 0; i < product.length; i++) {
+                            num[i].value = arr[i];
                             reduce[i].addEventListener('click', function () {
                                 if (num[i].value == 1) {
                                     alert('莫点我了，我是计数的，没有删除功能');
@@ -143,6 +136,47 @@ window.addEventListener('load', function () {
                                 }
                             })
 
+                        }
+
+                        // 全选反选
+                        var checkall = document.querySelector('.goods-list .list-head .all-checked .ck');
+                        var cks = document.querySelectorAll('.col-check .item-ck');
+                        // 总价
+                        var price = document.querySelector('.cart-bar .total-price .price');
+                        // 件数计算
+                        var amounts = document.querySelector('.cart-bar .left span .amount');
+                        checkall.addEventListener('click', function () {
+                            let total_price = 0;
+                            for (let i = 0; i < cks.length; i++) {
+                                cks[i].checked = this.checked;
+                                if (checkall.checked == true) {
+                                    total_price += product[i].product_price * num[i].value;
+                                    amounts.innerText = cks.length;
+                                }else {
+                                    amounts.innerText = 0;
+                                }
+                                price.innerText = total_price;
+                            }
+                        })
+                        // 每个勾选点加点击事件
+                        
+                        for (let i = 0; i < cks.length; i++) {
+                            cks[i].addEventListener('click', function () {
+                                let amount = cks.length;
+                                let total_price = 0;
+                                let isAll = true;
+                                for (let j = 0; j < cks.length; j++) {
+                                    if (!cks[j].checked) {
+                                        isAll = false;
+                                        amount--;
+                                    } else {
+                                        total_price += product[j].product_price * num[j].value;
+                                    }
+                                    checkall.checked = isAll;
+                                }
+                                amounts.innerText = amount;
+                                price.innerText = total_price;
+                            })
                         }
 
                         if (item_row == undefined) {
