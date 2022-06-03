@@ -152,14 +152,14 @@ window.addEventListener('load', function () {
                                 if (checkall.checked == true) {
                                     total_price += product[i].product_price * num[i].value;
                                     amounts.innerText = cks.length;
-                                }else {
+                                } else {
                                     amounts.innerText = 0;
                                 }
                                 price.innerText = total_price;
                             }
                         })
                         // 每个勾选点加点击事件
-                        
+
                         for (let i = 0; i < cks.length; i++) {
                             cks[i].addEventListener('click', function () {
                                 let amount = cks.length;
