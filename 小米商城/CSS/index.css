@@ -107,6 +107,12 @@ body {
 .top .top-cart:hover .products {
     display: block;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    color: #424242;
+    text-align: center;
+}
+
+.top .top-cart .products p {
+    margin: 50px 0;
 }
 
 .top .top-cart .cart-mini .icon-font::before {

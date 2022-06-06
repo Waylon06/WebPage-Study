@@ -105,7 +105,6 @@ window.addEventListener('load', function () {
                     </div>`
                             if (i == 0) {
                                 item_row = a;
-
                             }
                             if (i > 0) {
                                 item_row = item_row + a;
