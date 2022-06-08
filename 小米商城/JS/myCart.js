@@ -15,10 +15,14 @@ window.addEventListener('load', function () {
     } else {
         login.innerText = 'Hi!' + uinfo.username;
         var product;
+        // 判断分页是否为空
+        var isEmpty = true;
         const xhr = new XMLHttpRequest();
         // const url = 'http://43.138.138.11:1110/api';
         const pid = sessionStorage.getItem('pid');
         console.log(uinfo);
+        var paging = document.querySelector('.list-body .cart-bar .paging input');
+        paging.value = 1;
         if (pid == null && pid == undefined) {
             newPage();
 
@@ -43,7 +47,7 @@ window.addEventListener('load', function () {
     // 刷新购物车 
     function newPage() {
         const xhr2 = new XMLHttpRequest();
-        xhr2.open('get', url + '/' + 'order/' + uinfo.userId + '/1/20');
+        xhr2.open('get', url + '/' + 'order/' + uinfo.userId + '/' + paging.value + '/5');
         xhr2.send();
         xhr2.onreadystatechange = function () {
             if (xhr2.readyState === 4) {
@@ -51,11 +55,12 @@ window.addEventListener('load', function () {
                     let info = JSON.parse(xhr2.responseText);
                     if (info.code === 200) {
                         product = info.data.records;
-                        console.log(product);
-                        console.log(info.data);
+                        // console.log(product);
+                        // console.log(info.data);
                         let item_row;
                         // 解决累加拼接字符串的第一个为undefined的问题
                         let a;
+                        // 数组对象去重
                         var arr = [];
                         for (let i = 0; i < product.length; i++) {
                             arr[i] = 1;
@@ -178,20 +183,49 @@ window.addEventListener('load', function () {
                             })
                         }
 
-                        if (item_row == undefined) {
+                        if (paging.value <= 1 && isEmpty == true && item_row == undefined) {
                             shopping_info.innerHTML = `<div class="empty">
-                                     <h2>您的购物车还是空的！</h2>
+                                    <h2>您的购物车还是空的！</h2>
                                     <p>登录之后显示您之前加入的商品</p>
                                     <a href="../index.html" class="login">马上去购物</a>
                                 </div>`
+                        }else if(paging.value > 1 && isEmpty == true && item_row == undefined) {
+                            paging.value--;
+                            newPage();
+                        }
+                        else if(isEmpty == false && item_row == undefined){
+                            paging.value--;
+                            newPage();
+                            alert('哥别点了，这是最后一页了，不能再多了');
                         }
                         delOrder();
-                        console.log('渲染成功');
+                        // console.log('渲染成功');
                     }
                 }
             }
         }
     }
+
+    var prev = document.querySelector('.list-body .cart-bar .paging .prev');
+    var next = document.querySelector('.list-body .cart-bar .paging .next');
+
+    prev.addEventListener('click', function () {
+        if (paging.value == 1) {
+            alert('减减减，还减，都0了你还减，你数学体育老师教的吗')
+        } else {
+            paging.value--;
+            newPage();
+        }
+    })
+    next.addEventListener('click', function () {
+            paging.value++;
+            isEmpty = false;
+            newPage();
+    })
+    paging.onblur = function () {
+        newPage();
+    }
+
 
     // 删除订单功能
     function delOrder() {
@@ -208,6 +242,7 @@ window.addEventListener('load', function () {
                             const isDel = JSON.parse(xhr3.responseText);
                             if (isDel.code === 200) {
                                 console.log(isDel);
+                                isEmpty = true;
                                 newPage();
                             }
                         }

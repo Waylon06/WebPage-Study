@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
       console.log(JSON.parse(connect.responseText));
       const resp = JSON.parse(connect.responseText);
       // Ajax渲染数据
-      if (resp.code = 200) {
+      if (resp.code == 200) {
         const products = resp.data;
         for (let i = 0; i < 8; i++) {
           // 创建li盒子
