@@ -223,6 +223,7 @@ window.addEventListener('load', function () {
             newPage();
     })
     paging.onblur = function () {
+        isEmpty = true;
         newPage();
     }
 
