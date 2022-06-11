@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?ckouwu');
+    src: url('../fonts/icomoon.eot?ckouwu#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?ckouwu') format('truetype'),
+        url('../fonts/icomoon.woff?ckouwu') format('woff'),
+        url('../fonts/icomoon.svg?ckouwu#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+header {
+    background: rgb(65, 82, 133);
+    color: rgba(255, 255, 255, 1);
+    /* height: 85px; */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo>img {
+    width: 58%;
+    height: 58%;
+}
+
+header .header-nav {
+    margin-right: 8px;
+    float: right;
+    position: relative;
+}
+
+.header-nav li {
+    float: left;
+    width: 100px;
+    display: block;
+    height: 81px;
+    line-height: 81px;
+    text-align: center;
+}
+
+.header-nav li a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.header-nav li:hover a {
+    /* position: absolute; */
+    /* top: -20%; */
+    font-weight: 600;
+    color: white;
+}
+
+header .login {
+    float: right;
+    margin-top: 26px;
+    height: 32px;
+    line-height: 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 0 8px;
+    font-weight: 700;
+}
+
+header .login>span {
+    padding: 0 2px;
+}
+
+header .login i::before {
+    font-family: 'icomoon';
+    content: '\e971';
+    font-style: normal;
+}
+
+.banner {
+    margin-top: 60px;
+}
+
+.banner .book-img {
+    width: 610px;
+    height: 815px;
+    float: left;
+    text-align: center;
+}
+
+.banner .book-img img {
+    height: 80%;
+    widows: 80%;
+}
+
+.banner .book-info {
+    width: 510px;
+    float: left;
+    text-align: center;
+    /* margin-left: 60px; */
+}
+
+.banner .book-info .title {
+    font-size: 24px;
+    color: #212121;
+    font-weight: 400;
+    /* text-align: center; */
+}
+
+.banner .book-info .details {
+    margin-top: 20px;
+}
+
+.banner .book-info .author {
+    margin-top: 20px;
+}
+
+.banner .book-info .author span {
+    color: #415285;
+}
+
+.banner .book-info .line {
+    margin-top: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.banner .book-info .address {
+    margin: 20px 0;
+    padding: 30px 50px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+}
+
+.banner .book-info .address i::before {
+    font-family: 'icomoon';
+    content: '\e948';
+    font-style: normal;
+}
+
+.banner .book-info .address a {
+    margin-top: 5px;
+    display: inline-block;
+    color: #415285;
+}
+
+.banner .book-info .title {
+    font-size: 18px;
+}
+
+.banner .book-info input {
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+}
+
+.banner .book-info button {
+    /* margin-left: 150px; */
+    margin-top: 50px;
+    width: 300px;
+    height: 55px;
+    font-size: 16px;
+    background: #415285;
+    color: #fff;
+}
