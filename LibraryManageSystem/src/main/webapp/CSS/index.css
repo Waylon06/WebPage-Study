@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?ckouwu');
+    src: url('../fonts/icomoon.eot?ckouwu#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?ckouwu') format('truetype'),
+        url('../fonts/icomoon.woff?ckouwu') format('woff'),
+        url('../fonts/icomoon.svg?ckouwu#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+header {
+    background: rgb(65, 82, 133);
+    color: rgba(255, 255, 255, 1);
+    /* height: 85px; */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo>img {
+    width: 58%;
+    height: 58%;
+}
+
+header .header-nav {
+    margin-right: 8px;
+    float: right;
+    position: relative;
+}
+
+.header-nav li {
+    float: left;
+    width: 100px;
+    display: block;
+    height: 81px;
+    line-height: 81px;
+    text-align: center;
+}
+
+.header-nav li a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.header-nav li:hover a {
+    /* position: absolute; */
+    /* top: -20%; */
+    font-weight: 600;
+    color: white;
+}
+
+header .login {
+    float: right;
+    margin-top: 26px;
+    height: 32px;
+    line-height: 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 0 8px;
+    font-weight: 700;
+}
+
+header .login>span {
+    padding: 0 2px;
+}
+
+header .login i::before {
+    font-family: 'icomoon';
+    content: '\e971';
+    font-style: normal;
+}
+
+.mapper {
+    /* height: 700px; */
+    height: 66%;
+    width: 100%;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+
+/* First-Swiper */
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.firstSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.firstSwiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.firstSwiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mapper .search {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    left: 0;
+    padding: 40px 80px 0 80px;
+    z-index: 99;
+}
+
+.mapper .search .main-box {
+    width: 803px;
+    height: 162px;
+    font-size: 0;
+    box-sizing: border-box;
+    border-top: 6px solid #415285;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 0px 6px 6px 6px;
+    padding: 35px 50px;
+    margin: 0 auto;
+}
+
+.search .main-box .ipt-box {
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgba(65, 82, 133, 0.50);
+    border-radius: 6px;
+}
+
+.search .main-box .ipt-box .select-box {
+    border: none;
+    width: 128px;
+    height: 50px;
+    background: rgba(65, 82, 133, 0.05);
+    border-right: 1px solid rgba(65, 82, 133, 0.50);
+    float: left;
+    text-align: center;
+    font-size: 16px;
+}
+
+.search .main-box .ipt-box .ipt{
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    float: left;
+    border: none;
+    width: 425px;
+    background: rgba(255, 255, 255, .7);
+}
+
+.search .main-box .ipt-box .btn::before {
+    font-family: 'icomoon';
+    content: '\e986';
+    font-style: normal;
+}
+
+.search .main-box .ipt-box .btn {
+    background: #3D82F2;
+    border: none;
+    outline: none;
+    width: 110px;
+    height: 50px;
+    border-radius: 0px 6px 6px 0px;
+    font-size: 18px;
+    color: #ffffff;
+    float: right;
+}
+
+.banner .recommend {
+    background: #ffffff;
+    height: 500px;
+}
+
+.banner .recommend .recommend-img {
+    line-height: 22px;
+    margin-bottom: 15px;
+    padding: 20px 0 0 0;
+    position: relative;
+    color: #1A1A1B;
+    text-align: center;
+}
+
+.banner .recommend .recommend-img a {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    color: #999999;
+}
+
+.recommend .recommend-img i::before {
+    font-family: 'icomoon';
+    content: '\ea51';
+    font-style: normal;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    font-size: 20px;
+}
+
+.banner .recommend .book-mapper {
+    margin: 0 auto;
+    width: 1016px;
+    height: 266px;
+}
+
+
+/* Second-Swiper */
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.secondSwiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.secondSwiper .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 210px;
+    height: 300px;
+}
+
+.secondSwiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

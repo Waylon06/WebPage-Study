@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="LibrarySystem" />
+        <module name="yjjDorySystem 1.5" />
+        <module name="yjjDorySystem (1)" />
+        <module name="yjjDorySystem 2.5" />
+        <module name="yjjDorySystem (2)" />
+        <module name="yjjDorySystem" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
