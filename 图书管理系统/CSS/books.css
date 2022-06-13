@@ -109,7 +109,7 @@ header .login i::before {
     width: 234px;
     height: 400px;
     background-color: #6993c6fc;
-    margin-left: 14px;
+    margin-left: 66px;
     margin-bottom: 14px;
     transition:  all .2s linear;
     text-align: center;
@@ -143,4 +143,18 @@ header .login i::before {
 
 .banner ul li .author {
     color: #415285;
+}
+
+.banner ul li .ipt {
+    height: 25px;
+    width: 80%;
+}
+
+.banner ul li .btn {
+    margin-top: 5px;
+    width: 90%;
+    height: 55px;
+    font-size: 16px;
+    background: #415285;
+    color: #fff;
 }

@@ -41,4 +41,20 @@ window.addEventListener('load', function () {
         },
       });
       
+
+      var select = document.querySelector('.select-box');
+      var btn = document.querySelector('.btn');
+      var ipt =document.querySelector('.ipt');
+      btn.addEventListener('click', function() {
+        console.log(select.options[select.selectedIndex].value);
+        let id = select.options[select.selectedIndex].value;
+        sessionStorage.setItem('cid',id);
+        sessionStorage.setItem('title', ipt.value);
+        window.location.href = 'View/books.html';
+      })
+
+  var log_info = document.querySelector('.login span a');
+      if (sessionStorage.getItem('name') != null && sessionStorage != undefined) {
+        log_info.innerText = sessionStorage.getItem('name');
+      }
 })
