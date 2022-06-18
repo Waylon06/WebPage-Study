@@ -20,6 +20,7 @@ window.addEventListener('load', function () {
             
             console.log(PARAMS.username);
             console.log(PARAMS.password);
+            // JSON.stringify 就是把对象的类型转换为字符串类型 后台只能接受JSON字符串类型的数据
             connect.send(JSON.stringify(PARAMS));
 
             connect.onreadystatechange = function () {
@@ -27,6 +28,7 @@ window.addEventListener('load', function () {
                     const resp = JSON.parse(connect.responseText)
                     if (resp.code === 200) {
                         console.log(resp.data);
+                        // 将用户数据存入浏览器,在后续购物车和页面显示用户名中需使用
                         sessionStorage.setItem('uinfo', JSON.stringify(resp.data));
                         console.log(JSON.parse(connect.responseText));
                         window.location.href = "../index.html";
@@ -34,11 +36,13 @@ window.addEventListener('load', function () {
                         alert(resp.msg);
                     }
                 } else {
+                    // 打印到后台
                     console.log("请求失败:" + connect.status);
                 }
             }
         } else {
             // console.log(checked.checked);
+            // 弹出警示框
             alert("请先同意用户协议");
         }
     });
@@ -48,6 +52,7 @@ window.addEventListener('load', function () {
     eye.onclick = function () {
         flag = !flag;
         if (flag == 0) {
+            // 修改type的类型 text型能显示 password型能隐藏
             psw.type = 'text';
             eye.src = '../Images/open.png';
         } else {

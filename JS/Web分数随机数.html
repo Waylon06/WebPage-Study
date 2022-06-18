@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" class="low">
+    <input type="number" class="hight">
+    <button>开始</button>
+    <script>
+
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            let min = document.querySelector('.low').value;
+            let max = document.querySelector('.hight').value;
+            let val = Math.floor(Math.random() * (max - min + 1)) + parseInt(min);
+            alert(val + '分');
+        })
+    </script>
+</body>
+
+</html>

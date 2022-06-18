@@ -105,7 +105,8 @@
      height: 273px;
      padding-left: 558px;
      margin: 65px 0 130px;
-     background: url(https://cdn.cnbj1.fds.api.mi-img.com/staticsfile/cart/cart-empty.png) no-repeat 124px 0;
+     /* background: url(https://cdn.cnbj1.fds.api.mi-img.com/staticsfile/cart/cart-empty.png) no-repeat 124px 0; */
+     background: url(../Images/cart-empty.png) no-repeat 124px 0;
      color: #b0b0b0;
      overflow: hidden;
  }

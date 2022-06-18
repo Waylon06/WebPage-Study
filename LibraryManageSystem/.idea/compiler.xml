@@ -8,8 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="LibrarySystem" />
         <module name="yjjDorySystem 1.5" />
-        <module name="yjjDorySystem (1)" />
         <module name="yjjDorySystem 2.5" />
+        <module name="LibraryManageSystem" />
+        <module name="yjjDorySystem (1)" />
         <module name="yjjDorySystem (2)" />
         <module name="yjjDorySystem" />
       </profile>

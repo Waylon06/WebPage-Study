@@ -10,8 +10,8 @@ window.addEventListener('load', function () {
             connect.open('post', 'http://43.138.138.11:1110/api/users/register');
             connect.setRequestHeader('Content-Type', 'application/json');
             const PARAMS = {
-                username: 'Win',
-                password: 1234567,
+                username: 'rty',
+                password: 123456,
                 phone: ipt.value
             }
             console.log(PARAMS.username);
