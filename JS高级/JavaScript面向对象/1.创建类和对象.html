@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.创建类 class 创建一个学生类 
+        class student {
+            // 构造函数 用于接收参数
+            constructor(sname, age){
+                this.sname = sname;
+                this.age = age;
+            }
+            sing(song) {
+                // console.log('唱歌');
+                console.log(this.sname + '唱' + song);
+            }
+        }
+        // 2.利用类创建对象 new
+        var Waylon = new student('Waylon',18);
+        console.log(Waylon.sname);
+        console.log(Waylon.age);
+        Waylon.sing('珊瑚海');
+    </script>
+</body>
+</html>
