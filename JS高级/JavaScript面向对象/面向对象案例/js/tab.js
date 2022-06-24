@@ -18,7 +18,7 @@ class Tab {
         this.className = ' liactive';
         this.sections[this.index].className = 'conactive';
         
-    }
+    }.
     // 2.添加功能
     addTab(){}
     // 3.删除功能
