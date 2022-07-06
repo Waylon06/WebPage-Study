@@ -63,8 +63,7 @@ class Tab {
         that. lis[index].remove();
         that.sections[index].remove();
         that.init();
-        // 当我们删除的不是选中状态这个li的时候，原来的选中状态不变
-        if(document.querySelector('.liactive')) return;
+        // 当我们删除的不是选中状态这个li的时候，原来的选中状态不变  
         // 当我们删除了选中状态的这个li的时候，让它的前一个li处于选定状态
         index--;
         // 前面为真，则执行后面的 为假则不执行 来筛选当index为-1的时候，因为index没有-1这个索引
