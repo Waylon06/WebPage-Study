@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname,age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = function() {
+            //     console.log('I can dance!');
+            // }
+        }
+        // 原型是一个对象，每一个构造函数内部都有一个prototype原型对象
+        // 原型的作用是 共享方法
+        // 2.一般情况下，我们的 公共属性定义到构造函数里面，公共的方法我们放到原型对象身上 避免造成内存的浪费
+        Star.prototype.sing = function(){
+            console.log('I can dance!');
+        }
+        var Waylon = new Star('Waylon', 18);
+        Waylon.sing();
+        
+        
+    </script>
+</body>
+</html>

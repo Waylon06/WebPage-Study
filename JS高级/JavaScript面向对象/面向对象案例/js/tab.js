@@ -1,5 +1,6 @@
 var that;
 class Tab {
+    // constructor()方法是类的构造函数（默认方法），用于传递参数，返回实例对象 
     constructor(id) {
         that = this;
         this.main = document.querySelector(id);

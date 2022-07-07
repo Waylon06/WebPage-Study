@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = function() {
+            //     console.log('I can dance!');
+            // }
+        }
+        Star.prototype.sing = function () {
+            console.log('I can dance!');
+        }
+        var Waylon = new Star('Waylon', 18);
+        Waylon.sing();
+        console.log(Waylon); //对象身上系统自己添加一个__proto__指向我们构造函数的原型对象（prototype）
+        console.log(Waylon.__proto__ === Star.prototype);
+        //方法的查找规则：首先看Waylon对象身上是否有sing方法，如果有就执行这个对象上的sing
+        // 如果没有sing这个方法，因为有__proto__的存在，就去构造函数原型对象prototype身上去查找sing这个方法
+    </script>
+</body>
+
+</html>
