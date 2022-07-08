@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = function() {
+            //     console.log('I can dance!');
+            // }
+        }
+        // Star.prototype.sing = function () {
+        //     console.log('I can dance!');
+        // }
+        // Star.prototype.movie = function () {
+        //     console.log('I can shoot film');
+        // }
+        Star.prototype = {
+            // 如果修改了原来的原型对象，给原型对象赋值的是一个对象，则必须手动的利用constructor指回原来的构造函数（因为修改了原型对象就会覆盖掉之前的构造函数指向）   
+            constructor: Star,
+            sing: function () {
+                console.log('I can dance!');
+            },
+            movie: function () {
+                console.log('I can shoot film');
+            }
+        }
+        var Waylon = new Star('Waylon', 18);
+        console.log(Star.prototype.constructor);
+        console.log(Star.__proto__.constructor);
+    </script>
+</body>
+
+</html>

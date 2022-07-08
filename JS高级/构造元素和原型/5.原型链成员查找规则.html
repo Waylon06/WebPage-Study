@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+        var Waylon = new Star('Waylon',18);
+        // 先使用对象上的sex成员
+        Waylon.sex = 'man';
+        // 对象上没有就往上查（Star.prototype的sex成员）
+        // Star.prototype.sex = 'woman';
+        // 若Star.prototype里也没有就再往上查（Object.prototype的sex成员）
+        // Object.prototype.sex = 'ladyboy';
+        // 若Object.prototype里面还是没有，就为null返回undefined
+        console.log(Waylon.sex);
+    </script>
+</body>
+</html>
