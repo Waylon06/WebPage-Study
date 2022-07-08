@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+        var that;
+        Star.prototype.sing = function() {
+            console.log('I can sing!');
+            that = this;
+        }
+        var Waylon = new Star('Waylon',18);
+        // 1.在构造函数中，里面的this指向的是对象实例 Waylon
+        Waylon.sing();
+        console.log(that === Waylon);
+        // 2.原型对象函数里面的this指向的是实例对象 Waylon
+    </script>
+</body>
+</html>
