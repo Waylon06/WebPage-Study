@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+             id: 1,
+             pname: '小米',
+             price: 1999
+        }
+        // 1.以前的对象修改和添加属性的方式
+        // obj.num = 1000;
+        // obj.price = 99;
+        // 2.Object.defineProperty(obj, prop, descriptor) 定义对象中新属性或者修改原有的属性
+        // obj:必需。目标对象  prop:必需。需定义或修改的属性名字  descriptor:必需。目标属性所拥有的特效
+            Object.defineProperty(obj, 'num', {
+                value: 1000
+            })
+            console.log(obj);
+            Object.defineProperty(obj, 'id', {
+                // 如果值为false则不允许修改这个属性值 默认值也是false，如果为true则相反
+                writable: false,
+            })
+            obj.id = 2;  //修改失败
+            console.log(obj);
+
+            Object.defineProperty(obj, 'address', {
+                value: '中国山东蓝翔技校XX单元',
+                writable: false,
+                // enumerable 如果值为false 则不允许遍历，默认值是false
+                enumerable: false,
+                // configurable 如果为false 则不允许删除这个属性且不允许修改第三个参数里面的特性，默认为false
+                configurable: false,
+            })
+            delete obj.address;  //删除失败
+            console.log(obj);
+            delete obj.pname;  //删除成功
+    </script>
+</body>
+</html>

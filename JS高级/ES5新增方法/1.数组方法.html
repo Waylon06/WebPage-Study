@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // forEach 迭代（遍历）数组  array.forEach(function(currentValue, index, array))
+        var arr = [1, 2, 3, 10];
+        var sum = 0;
+        arr.forEach(function (value, index, arr) {
+            console.log('每一个数组元素' + value);
+            console.log('每一个数组元素的索引号' + index);
+            console.log('数组本身' + arr);
+            sum += value;
+        })
+        console.log(sum);
+
+        // filter 筛选数组  array.filter(function(currentValue, index, array))
+        var newArr = arr.filter(function (value, index) {
+            // return value >=2;
+            return value %2 === 0;
+        })
+        console.log(newArr);
+
+        // some 查找数组中是否有满足条件的元素  array.some(function(currentValue, index, array))  (布尔型)
+        var flag = arr.some(function(value) {
+            // 只要找到第一个满足条件的元素就终止循环，不再继续查找
+            // return value > 9;
+            return value < 0;
+        })
+        console.log(flag);
+    </script>
+</body>
+
+</html>

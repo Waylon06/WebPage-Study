@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 借用父构造函数继承属性
+        // 父构造函数
+        function Farther(uname, age) {
+            // this 指向父构造函数的对象实例
+            this.uname = uname;
+            this.age = age;
+        }
+        Farther.prototype.money = function () {
+            console.log(100000);
+        }
+        // 子构造函数
+        function Son(uname, age, score) {
+            // this 指向子构造函数的对象实例
+            Farther.call(this, uname, age);
+            this.score = score;
+        }
+        // 将父构造函数的原型对象地址赋给子构造函数的原型对象
+        // Son.prototype = Farther.prototype;     这样直接赋值会有问题，如果修改了子原型对象，父原型对象也会跟着一起变化
+        // 因为获得的是父构造函数原型对象的地址若给子构造函数添加方法，相当于给父构造函数添加了方法
+        Son.prototype = new Farther();
+        // 如果利用对象的形式修改了原型对象，不要忘记利用constructor 指回原来的构造函数
+        Son.prototype.constructor = Son;
+        Son.prototype.exam = function () {
+            console.log('Need to exam!');
+        }
+        var son = new Son('Waylon', 18, 100);
+        console.log(son);
+        console.log(Son.prototype.constructor);
+    </script>
+</body>
+
+</html>
