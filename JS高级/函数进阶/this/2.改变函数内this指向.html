@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 改变函数内this指向  js提供了三种方法 call()  apply()  bind()
+
+        // 1.call()
+        var o = {
+            name: 'Waylon',
+        }
+        function fn() {
+            console.log(this);
+        }
+        fn.call(o);
+        // call 第一个可以调用函数 第二个可以改变函数内的this指向
+        // call 的主要作用可以实现继承
+        function Father(uname, age, sex) {
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+        function Son() {
+            Father.call(this, uname, age, sex);
+        }
+
+        var son = new Son('Waylon', 18, 'man');
+    </script>
+</body>
+
+</html>

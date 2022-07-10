@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    2.apply() 应用 运用的意思
+        var o = {
+            name: 'Waylon',
+        }
+        function fn(arr) {
+        console.log(this);
+        console.log(arr);
+        }
+        fn.apply(o, ['Waylon']);
+        //  1.也是调用函数 第二个可以改变内部的this指向
+        // 2.但是他的传的参数必须是数组(伪数组)
+    </script>
+</body>
+
+</html>
