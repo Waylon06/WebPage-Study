@@ -21,6 +21,11 @@
         fn.apply(o, ['Waylon']);
         //  1.也是调用函数 第二个可以改变内部的this指向
         // 2.但是他的传的参数必须是数组(伪数组)
+        // 3.apply 的主要应用 比如说我们可以利 用apply 借助于数学内置对象求最大值（Math.max()）
+        var arr = [1, 5, 11, 99];
+        var max = Math.max.apply(null, arr);
+        var min = Math.min.apply(Math, arr);
+        console.log(max, min);
     </script>
 </body>
 

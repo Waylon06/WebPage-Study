@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        // bind() 绑定 捆绑的意思
+        var o = {
+            name: 'Waylon',
+        }
+
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+        var f = fn.bind(o, 1, 2);
+        f();
+        // 1.不会调用原来的函数 可以改变原来函数内部this指向
+        // 2.返回的是原函数改变this之后产生的新函数
+        // 3.如果有的函数我们不需要立即调用 但是又想要改变这个函数内部的this指向时用bind
+
+        // 案例-一个按钮，当点击之后就禁用这个按钮，3秒之后开启这个按钮
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            this.disabled = true;   //这个this指向的是btn这个按钮
+            setTimeout(function(){
+                this.disabled = false;
+            }.bind(this), 3000)
+        }
+    </script>
+</body>
+
+</html>
