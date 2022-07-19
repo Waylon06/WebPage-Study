@@ -10,7 +10,7 @@
 
 <body>
     <script>
-        // 浅拷贝只是拷贝一层，更深层次对象的只拷贝引用
+        // 深拷贝拷贝多层，每一级别的数据都会拷贝
         var obj = {
             id: 1,
             name: 'Waylon',
@@ -19,17 +19,16 @@
             }
         };
         var o = {};
-        for (var k in obj) {
-            // k 是属性名 obj[k] 属性值
-            o[k] = obj[k];
+        // 封装函数
+        function deepCopy (newObj, oldObj) {
+        for (const key in oldObj) {
+            // 判断我们的属性值属于哪种数据类型
+            // 1.获取属性值 oldObj[k]
+            var item = oldObj[k];
+            
         }
-        console.log(o);
-        o.msg.age = 20;
-        console.log('--------------------------------');
-        // assign()方法可以实现浅拷贝
-        Object.assign(o, obj);
-        o.msg.age = 20;
-        console.log(o);
+        }
+        deepCopy(o, obj)
     </script>
 </body>
 
