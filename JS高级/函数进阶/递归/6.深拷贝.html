@@ -16,19 +16,33 @@
             name: 'Waylon',
             msg: {
                 age: 18,
-            }
+            },
+            color: ['pink', 'red'],
         };
         var o = {};
         // 封装函数
-        function deepCopy (newObj, oldObj) {
-        for (const key in oldObj) {
-            // 判断我们的属性值属于哪种数据类型
-            // 1.获取属性值 oldObj[k]
-            var item = oldObj[k];
-            
+        function deepCopy(newObj, oldObj) {
+            for (const k in oldObj) {
+                // 判断我们的属性值属于哪种数据类型
+                // 1.获取属性值 oldObj[k]
+                var item = oldObj[k];
+                // 2.判断这个值是否是数组
+                if (item instanceof Array) {
+                    newObj[k] = [];
+                    deepCopy(newObj[k], item);
+                } else if (item instanceof Object) {
+                // 3.判断这个值是否是对象
+                    newObj[k] = {};
+                    deepCopy(newObj[k], item)
+                } else {
+                // 4.属于简单数据类型
+                    newObj[k] = item;
+                }
+
+            }
         }
-        }
-        deepCopy(o, obj)
+        deepCopy(o, obj);
+        console.log(o);
     </script>
 </body>
 
