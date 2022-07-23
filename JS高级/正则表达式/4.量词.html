@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 量词符: 用来设定某个模式出现的次数
+        // 简单理解: 就是让下面的a这个字符重复多少次
+        // var rg = /^a$/;
+
+        //  * 相当于 >= 0 可以出现0次或者很多次 
+        // var rg = /^a*$/;
+        // console.log(rg.test(''));
+        // console.log(rg.test('a'));
+        // console.log(rg.test('aaa'));
+
+        //  + 相当于 >= 1 可以出现1次或者很多次
+        // var rg = /^a+$/;
+        // console.log(rg.test(''));  //false
+        // console.log(rg.test('a'));
+        // console.log(rg.test('aaa'));
+
+        //  ?  相当于 1 || 0
+        // var rg = /^a?$/;
+        // console.log(rg.test(''));  
+        // console.log(rg.test('a'));
+        // console.log(rg.test('aaa')); //false
+
+        //  {3} 就是重复3次
+        // var rg = /^a{3}$/;
+        // console.log(rg.test(''));  //false
+        // console.log(rg.test('a')); //false
+        // console.log(rg.test('aaa'));
+
+        //  {3,}  大于等于3
+        // var rg = /^a{3,}$/;
+        // console.log(rg.test('')); //false
+        // console.log(rg.test('a')); //false
+        // console.log(rg.test('aaa'));
+        // console.log(rg.test('aaaa'));
+
+        //  {3,16}  大于等于3 并且 小于等于16
+        var rg = /^a{3,6}$/;
+        console.log(rg.test('')); //false
+        console.log(rg.test('a')); //false
+        console.log(rg.test('aaa'));
+        console.log(rg.test('aaaa'));
+        console.log(rg.test('aaaaaaa')); //false
+    </script>
+</body>
+</html>

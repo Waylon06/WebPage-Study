@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .right {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="uname">
+    <span>请输入用户名</span>
+    <script>
+        // 量词是限定某个模式出现的次数
+        var reg = /^[a-zA-Z0-9_-]{6,16}$/;
+        // console.log(reg.test('asdfg55677'));
+        var uname = document.querySelector('.uname');
+        var span = document.querySelector('span');
+        uname.onblur = function(){
+            console.log(this);
+            if(reg.test(this.value)) {
+                console.log('right');
+                span.className = 'right'; 
+                span.innerText = '用户名符合要求'
+            }else {
+                console.log('wrong');
+                span.className = 'wrong'; 
+                span.innerText = '用户名不符合要求'
+            }
+        }
+    </script>
+</body>
+</html>
