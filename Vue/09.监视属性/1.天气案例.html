@@ -10,7 +10,7 @@
 <body>
     <div id="root">
         <h2>今天天气很{{info}}</h2>
-        <button>切换天气</button>
+        <button @click="tab">切换天气</button>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -21,7 +21,9 @@
             isHot: true,
         },
         methods: {
-        
+            tab() {
+                this.isHot = !this.isHot
+            }
         },
         computed: {
             info() {
