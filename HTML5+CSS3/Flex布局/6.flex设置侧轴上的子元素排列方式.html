@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 600px;
+            height: 300px;
+            background-color: pink;
+            /* 主轴居中，此时主轴为默认轴x */
+            justify-content: center;
+            /* 侧轴居中 */
+            /* align-items: center; */
+
+            /* 拉伸，但是子盒子不要给高度,然后拉得更父盒子一样高 */
+            align-items: stretch;
+        }
+
+        div span {
+            width: 150px;
+            /* height: 100px; */
+            background-color: purple;
+            color: #fff;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+
+</html>
