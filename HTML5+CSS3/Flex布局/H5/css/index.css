@@ -1,0 +1,304 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+/* 搜索模块 */
+
+.search-index {
+    /* 固定定位跟父盒子没有关系 它以屏幕为准 */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    /* 固定的盒子应该有宽度 */
+    /* 兼容老版本写法 */
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    /* background-color: pink; */
+    display: flex;
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.search {
+    position: relative;
+    height: 26px;  
+    border: 1px solid #ccc;
+    flex: 1;
+    line-height: 24px;
+    font-size: 12px;
+    color: #666;
+    margin: 6px 10px;
+    border-radius: 5px;
+    padding-left: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -279px;
+    background-size: 104px auto;
+}
+
+.user {
+    width: 44px;
+    height: 44px;
+    /* background-color: purple; */
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+.user::before {
+    content: '';
+    display: block;
+    height: 23px;
+    width: 23px;
+    background: url(../images/sprite.png) no-repeat -59px -194px ;
+    background-size: 104px auto;
+    margin: 4px auto -2px;
+}
+
+/* focus */
+
+.focus {
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+/* 局部导航栏 */
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+    padding: 0;
+}
+
+.local-nav li{
+    flex: 1;
+}
+
+.local-nav a {
+    display: flex;
+    flex-direction: column;
+    /* 侧轴居中对齐 */
+    align-items: center;
+
+}
+
+/* 属性选择器 */
+.local-nav li [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    background-color: pink;
+    margin-top: 8px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+
+.local-nav li .local-nav-icon-2 {
+    background-position: 0 -32px;
+}
+
+.local-nav li .local-nav-icon-3 {
+    background-position: 0 -64px;
+}
+
+.local-nav li .local-nav-icon-4 {
+    background-position: 0 -96px;
+}
+
+.local-nav li .local-nav-icon-5 {
+    background-position: 0 -128px;
+}
+
+/* 主导航栏 */
+nav {
+    border-radius: 8px;
+    margin: 0 4px 3px;
+    overflow: hidden;
+}
+
+.nav-common {
+    display: flex;
+    height: 88px;
+}
+
+.nav-common:nth-child(2) {
+    margin: 3px 0;
+}
+
+.nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-items a{
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+.nav-items:nth-child(1) a {
+    border: 0;
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px;
+}
+
+/* 选择前两个 */
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+.nav-common:nth-child(1) {
+    background: -webkit-linear-gradient(left, #fa5a55, #fa994d);
+}
+
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4b90ed, #53bced);
+}
+
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #34c2a9, #6cd559);
+}
+
+/* 侧导航栏 */
+.subnav-entry {
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.subnav-entry li {
+    /* 里面的子盒子可以写 % 相对于父盒子来讲 */
+    flex: 20%;
+}
+
+.subnav-entry a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subnav-entry-icon {
+    width: 28px;
+    height: 28px;
+    background-color: pink;
+    margin-top: 4px;
+    background: url(../images/subnav-bg.png) no-repeat;
+    background-size: 28px auto;
+}
+
+/* 销售模块 */
+
+.sales-box {
+    background-color: #fff;
+    border-top: 1px solid #bbb;
+    margin: 4px;
+}
+
+.sales-box .sales-hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sales-hd h2 {
+    position: relative;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+.sales-hd h2::after {
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    content: '';
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png) no-repeat 0 -20px;
+    background-size: 79px auto;
+}
+
+.more {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    background: -webkit-linear-gradient(left, #ff506c, #ff6bc6);
+    border-radius: 8px;
+    padding: 3px 20px 3px 10px;
+    color: #fff;
+}
+
+.more::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: 9px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.row {
+    display: flex;
+}
+
+.row a {
+    flex: 1;
+    border: 1px solid #eee;
+}
+.row a img {
+    width: 100%;
+}
+
+.row a:nth-child(1) {
+    border-right: 1px solid #eee;
+}
