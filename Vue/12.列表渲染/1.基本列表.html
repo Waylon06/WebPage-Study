@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../js/vue.js"></script>
 </head>
 
 <body>
@@ -28,8 +29,8 @@
         <!-- 遍历对象 -->
         <h2>汽车信息</h2>
         <ul>
-            <li v-for="(value, key) in car" :key="key">
-                {{vlaue}}----{{key}}
+            <li v-for="(value,key) in cars" :key="key">
+                {{value}}----{{key}}
             </li>
         </ul>
 
