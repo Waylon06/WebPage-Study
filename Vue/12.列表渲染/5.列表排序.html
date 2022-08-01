@@ -14,6 +14,9 @@
     <div id="root">
         <h2>人员列表</h2>
         <input type="text" placeholder="请输入名字" v-model="keyWord">
+        <button @click="sortType = 2"> 年龄升序</button>
+        <button @click="sortType = 1">年龄降序</button>
+        <button @click="sortType = 0">原顺序</button>
         <ul>
             <li v-for="person in filPersons" :key="person.id">
                 {{person.name}}-{{person.age}}-{{person.sex}}
@@ -30,24 +33,25 @@
         new Vue({
             el: '#root',
             data: {
+                sortType: 0,   //0-代表原顺序 1-代表降序 2-代表升序
                 keyWord: '',
                 persons: [
                     {
                         id: 001,
                         name: '马冬梅',
-                        age: 18,
+                        age: 19,
                         sex: '女'
                     },
                     {
                         id: 002,
                         name: '周冬雨',
-                        age: 19,
+                        age: 15,
                         sex: '女'
                     },
                     {
                         id: 003,
                         name: '周杰伦',
-                        age: 20,
+                        age: 24,
                         sex: '男'
                     },
                     {
@@ -55,15 +59,27 @@
                         name: '温兆伦',
                         age: 20,
                         sex: '男'
+                    },
+                    {
+                        id: 005,
+                        name: 'Lorraine',
+                        age: 90,
+                        sex: 'ladyboy'
                     }
                 ],
-                filPersons: []
             },
             computed: {
                 filPersons() {
-                    return this.filPersons = this.persons.filter((person) => {
+                    const arr = this.persons.filter((person) => {
                             return person.name.indexOf(this.keyWord) !== -1;
                         })
+                        // 判断是否需要排序
+                        if(this.sortType){
+                            arr.sort((a, b)=>{
+                                return this.sortType === 1? b.age - a.age : a.age - b.age;
+                            })
+                        }
+                        return arr;
                 }
             }
         })

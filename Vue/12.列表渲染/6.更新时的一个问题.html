@@ -13,9 +13,9 @@
 
     <div id="root">
         <h2>人员列表</h2>
-        <input type="text" placeholder="请输入名字" v-model="keyWord">
+        <button @click="updateMei">更新马冬梅信息</button>
         <ul>
-            <li v-for="person in filPersons" :key="person.id">
+            <li v-for="person in persons" :key="person.id">
                 {{person.name}}-{{person.age}}-{{person.sex}}
             </li>
         </ul>
@@ -30,24 +30,23 @@
         new Vue({
             el: '#root',
             data: {
-                keyWord: '',
                 persons: [
                     {
                         id: 001,
                         name: '马冬梅',
-                        age: 18,
+                        age: 19,
                         sex: '女'
                     },
                     {
                         id: 002,
                         name: '周冬雨',
-                        age: 19,
+                        age: 15,
                         sex: '女'
                     },
                     {
                         id: 003,
                         name: '周杰伦',
-                        age: 20,
+                        age: 24,
                         sex: '男'
                     },
                     {
@@ -62,19 +61,22 @@
                         age: 90,
                         sex: 'ladyboy'
                     }
-                ],
-                filPersons: []
+                ]
             },
-            watch: {
-                keyWord: {
-                    immediate: true,
-                    handler(val) {
-                        this.filPersons = this.persons.filter((person) => {
-                            return person.name.indexOf(val) !== -1;
-                        })
+            methods: {
+                updateMei() {
+                    /* this.persons[0].name = '马老师',
+                    this.persons[0].age = 50,
+                    this.persons[0].sex = '男' */ //奏效
+                    this.persons[0] = {
+                        id: 001,
+                        name: '马老师',
+                        age: 50,
+                        sex: '男'
                     }
                 }
-            }
+            },
+                
         })
     </script>
 </body>
