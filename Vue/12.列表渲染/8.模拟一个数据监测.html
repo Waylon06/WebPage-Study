@@ -23,14 +23,14 @@
             const keys = Object.keys(obj)
             // console.log(keys);
             // 遍历
-            keys.forEach((k) => {
-                console.log(k);
-                Object.defineProperty(this, k, {
+            keys.forEach((key) => {
+                console.log(key);
+                Object.defineProperty(this, key, {
                     get() {
-                        return obj[k];
+                        return obj[key];
                     },
                     set(value) {
-                        obj[k] = value;
+                        obj[key] = value;
                     }
                 })
             });
