@@ -68,12 +68,8 @@
                     /* this.persons[0].name = '马老师',
                     this.persons[0].age = 50,
                     this.persons[0].sex = '男' */ //奏效
-                    this.persons[0] = {
-                        id: 001,
-                        name: '马老师',
-                        age: 50,
-                        sex: '男'
-                    }
+                    // this.persons[0] = {id: 001, name: '马老师', age: 50, sex: '男'} 不奏效
+                    this.persons.splice(0,1,{id: 001, name: '马老师', age: 50, sex: '男'});
                 }
             },
                 
