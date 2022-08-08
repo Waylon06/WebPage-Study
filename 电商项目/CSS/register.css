@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    max-width: 450px;
+    min-width: 320px;
+    margin: 0 auto;
+    /* font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei; */
+    color: #000;
+    overflow-x: hidden;
+    /* -webkit-tap-highlight-color: transparent; */
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?ckouwu');
+    src: url('../fonts/icomoon.eot?ckouwu#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?ckouwu') format('truetype'),
+        url('../fonts/icomoon.woff?ckouwu') format('woff'),
+        url('../fonts/icomoon.svg?ckouwu#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.logo {
+    display: flex;
+    margin-top: 50px;
+    height: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    height: 100%;
+}
+
+.detils {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.detils span {
+    font-size: 14px;
+}
+
+.login-table {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user {
+    height: 30px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #ebebeb;
+    border-radius: 6px;
+}
+
+.user input {
+    height: 25px;
+    width: 220px;
+    background-color: #ebebeb;
+    border: none;
+}
+
+.user::before {
+    font-family: 'icomoon';
+    content: '\e971';
+    color: #60b363;
+}
+
+.psw {
+    height: 30px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #ebebeb;
+    border-radius: 6px;
+}
+
+.psw input {
+    height: 25px;
+    width: 220px;
+    background-color: #ebebeb;
+    border: none;
+}
+
+.psw::before {
+    font-family: 'icomoon';
+    content: '\e98f';
+    color: #60b363;
+}
+
+.more {
+    display: flex;
+    justify-content: center;
+}
+
+.more span {
+    width: 250px;
+    display: flex;
+    justify-content: right;
+    font-size: 10px;
+}
+
+.more span a {
+    font-size: 10px;
+    color: #62789e;
+}
+
+.register {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.register .btn {
+    height: 50px;
+    width: 250px;
+    border-radius: 60px;
+    color: aliceblue;
+    background-color: #60b363;
+    font-size: 16px;
+}
