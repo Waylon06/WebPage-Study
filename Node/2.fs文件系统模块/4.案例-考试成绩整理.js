@@ -20,7 +20,9 @@ fs.readFile('./成绩.txt', 'utf8', function(err, dataStr) {
         console.log(newStr);
         fs.writeFile('./新成绩列表.txt', newStr, function(err) {
             if(err) {
-                console.log('写入失败！\n' + err.message);
+                console.log('写入文件失败！\n' + err.message);
+            }else {
+                console.log('成绩写入成功');
             }
         })
     }
