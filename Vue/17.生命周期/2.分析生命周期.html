@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>当前的n值是：{{n}}</h2>
+        <button @click="add">点我n+1</button>
+        <button @click="bye">点我销毁vm</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        new Vue({
+            el: '#root',
+            data: {
+                n: 1
+            },
+            methods: {
+                add() {
+                    console.log('add');
+                    this.n++;
+                },
+                bye() {
+                    console.log('bye');
+                    this.$destroy()
+                }
+            },
+            beforeCreate() {
+                console.log('beforeCreate');
+                console.log(this);
+                // debugger
+            },
+            created() {
+                console.log('created');
+                console.log(this);
+                // debugger
+            },
+            beforeMount() {
+                console.log('beforeMount');
+                console.log(this);
+                // debugger
+            },
+            mounted() {
+                console.log('mounted');
+                console.log(this, this.$el instanceof HTMLElement);
+                // debugger
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate');
+                console.log(this, this.n);
+                // debugger
+            },
+            updated() {
+                console.log('updated');
+                console.log(this, this.n);
+                // debugger
+            },
+            beforeDestroy() {
+                console.log('beforeDestroy');
+                this.add();
+                console.log(this);
+            },
+            destroyed() {
+                
+            },
+        })  
+    </script>
+</body>
+
+</html>
