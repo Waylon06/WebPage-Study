@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <script src="../js/vue.js"></script>
 </head>
+
 <body>
     <!-- 
         常用的生命周期钩子：
@@ -28,31 +30,32 @@
         Vue.config.productionTip = false;
 
         const vm = new Vue({
-        el: '#root',
-        data: {
-            opacity: 1
-        },
-        methods: {
-            stop() {
-                // clearInterval(this.timer);
-                this.$destroy();
-            }
-        },
-        //Vue完成模板的解析并把初始的真实的DOM元素放入页面后（挂载完毕）调用mounted
-        mounted() {
-            console.log('mounted', this);
-            this.timer = setInterval(() => {
-            this.opacity -= 0.01;
-            if(this.opacity <= 0) this.opacity = 1;
-        },16) 
-        },
-        beforeDestroy() {
-            console.log('vm即将驾鹤西游了');
-            clearInterval(this.timer);
-        },
+            el: '#root',
+            data: {
+                opacity: 1
+            },
+            methods: {
+                stop() {
+                    // clearInterval(this.timer);
+                    this.$destroy();
+                }
+            },
+            //Vue完成模板的解析并把初始的真实的DOM元素放入页面后（挂载完毕）调用mounted
+            mounted() {
+                console.log('mounted', this);
+                this.timer = setInterval(() => {
+                    this.opacity -= 0.01;
+                    if (this.opacity <= 0) this.opacity = 1;
+                }, 16)
+            },
+            beforeDestroy() {
+                console.log('vm即将驾鹤西游了');
+                clearInterval(this.timer);
+            },
         })
 
-        
+
     </script>
 </body>
+
 </html>
