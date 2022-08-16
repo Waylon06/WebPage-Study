@@ -47,6 +47,7 @@ header {
     font-weight: 600;
     color: #1a681c;
 }
+
 .title span {
     position: relative;
     right: -30px;
@@ -219,3 +220,45 @@ section::after {
     position: absolute;
     right: 8px;
 }
+
+footer {
+    display: flex;
+    height: 60px;
+    justify-content: space-around;
+    background-color: #fafafa;
+    align-items: center;
+    position: sticky; 
+    bottom: 0;
+}
+
+footer .icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+footer .index::before {
+    font-family: 'icomoon';
+    font-size: 20px;
+    content: '\e900';
+}
+
+footer .order::before {
+    font-family: 'icomoon';
+    font-size: 20px;
+    content: '\e922';
+}
+
+footer .msg::before {
+    font-family: 'icomoon';
+    font-size: 20px;
+    content: '\e96b';
+}
+
+footer .mine::before {
+    font-family: 'icomoon';
+    font-size: 20px;
+    content: '\e9e7';
+}
+
