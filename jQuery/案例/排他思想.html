@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>排他思想</h3>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <script src="../jQuery.min.js"></script>
+    <script>
+        // 原生实现排他思想
+        /* var btns = document.querySelectorAll('button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                for (let j = 0; j < btns.length; j++) {
+                    btns[j].style.background = 'none'
+                }
+                this.style.background = 'pink';
+            }
+        } */
+
+        // jQuery实现排他思想
+        // 第一种
+        /* $('button').on('click',function() {
+            $(this).css('background', 'pink').siblings().css('background', 'none')
+        }) */
+        // 第二种
+        $('button').click(function() {
+            $(this).css('background', 'pink').siblings().css('background', 'none')
+        })
+
+
+
+    </script>
+</body>
+
+</html>

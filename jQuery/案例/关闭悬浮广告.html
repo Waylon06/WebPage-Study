@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 180px;
+            height: 300px;
+            border: 1px solid red;
+            background: pink;
+            position: fixed;
+            top: 200px;
+        }
+
+        .left {
+            left: 10px;
+        }
+
+        .right {
+            right: 10px;
+        }
+
+        .left button {
+            float: right;
+        }
+
+        .right button {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">左边的广告<button>x</button></div>
+    <div class="right">右边的广告<button>x</button></div>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <script src="../jQuery.min.js"></script>
+    <script>
+        // 原生实现
+        /* var btn = document.querySelectorAll('button');
+        console.log(btn);
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                this.parentElement.style.display = 'none'
+            }
+        } */
+        // jQuery实现
+        $('button').click(function() {
+            $(this).parent().hide()
+        })
+    </script>
+</body>
+
+</html>
