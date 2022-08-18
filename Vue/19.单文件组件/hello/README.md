@@ -13,7 +13,7 @@
            <Demo name="xxx"/>
        (2).接收数据:
            第一种方式(只接收): 
-               props['name]
+               props['name']
 
            第二种方式(限制类型): 
                props: {

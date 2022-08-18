@@ -4,6 +4,7 @@
     <h2>学校名称：{{name | mySlice}}</h2>
     <h2>学校地址：{{address}}</h2>
     <button @click="showName">点我提示学校名：</button>
+    <button @click="sendSchoolName">发送SchoolName给App</button>
   </div>
 </template>
 
@@ -19,10 +20,14 @@ export default {
       address: "China",
     };
   },
+  props: ['getSchoolName'],
   methods: {
     /* showName() {
       alert(this.school);
     }, */
+    sendSchoolName() {
+      this.getSchoolName(this.name);
+    }
   },
   mixins: [mixin]
 };

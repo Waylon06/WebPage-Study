@@ -24,7 +24,19 @@
     <button>修改透明度</button>
     <div></div>
     <script>
+        // JS原生入口函数(第一种写法)
+        // window.onload = function() {}
+        // JS原生入口函数(第二种写法)
+        // window.addEventListener('load', function() {})
+        // jQuery入口函数(第一种写法)
+        // jQuery(document).ready(function() {})
+        // jQuery入口函数(第二种写法)
+        // $(document).ready(function() {})
+        // jQuery入口函数(第三种写法)
+        // $().ready(function() {})
+        // jQuery入口函数(第四种写法)
         $(function() {
+            // eq(index)方法根据固定的索引值来确认元素
             $("button").eq(0).click(function() {
                 // 淡入 fadeIn()
                 $("div").fadeIn(1000);
@@ -32,20 +44,15 @@
             $("button").eq(1).click(function() {
                 // 淡出 fadeOut()
                 $("div").fadeOut(1000);
-
             })
             $("button").eq(2).click(function() {
                 // 淡入淡出切换 fadeToggle()
                 $("div").fadeToggle(1000);
-
             });
             $("button").eq(3).click(function() {
                 //  修改透明度 fadeTo() 这个速度和透明度要必须写
                 $("div").fadeTo(1000, 0.5);
-
             });
-
-
         });
     </script>
 </body>

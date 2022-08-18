@@ -22,6 +22,12 @@
     <button>切换</button>
     <div></div>
     <script>
+        /* 
+            hide(time)  //time表示过渡时间
+            show(time)
+            toggle(time)  //只会切换,有或没有
+            stop()  动画阻断
+        */
         $(function() {
             $("button").eq(1).click(function() {
                 $("div").hide(1000,function() {
@@ -34,7 +40,7 @@
                 });
             })
             $("button").eq(2).click(function() {
-                $("div").toggle(1000);
+                $("div")stop().toggle(1000);
             })
         })
     </script>

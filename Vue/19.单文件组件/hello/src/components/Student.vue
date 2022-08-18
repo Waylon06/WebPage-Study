@@ -6,6 +6,9 @@
     <h2>学生性别：{{ sex }}</h2>
     <button @click="addAge">点我加年龄</button>
     <button @click="showName">点我展示名字</button>
+    <button @click="sendStudentName">发送学生名字给App</button>
+    <button @click="unbind">解绑waylon这个自定义事件</button>
+    <button @click="death">销毁vc</button>
   </div>
 </template>
 
@@ -51,13 +54,25 @@ export default {
     }, */
     addAge() {
       this.myAge++
+    },
+    sendStudentName() {
+      // 触发Student组件实例身上的waylon事件
+      this.$emit('waylon',this.name)
+    },
+    unbind() {
+      this.$off('waylon')  //解绑一个自定义事件
+      // this.$off(['waylon','xxx'])  //解绑多个自定义事件
+      // this.$off()  //解绑所有的自定义事件
+    },
+    death() {
+      this.$destroy(); //销毁了当前student组件的实例，销毁后所有Student实例的自定义事件全都不奏效
     }
   },
   mixins: [mixin]
 };
 </script>
 
-<style>
+<style scoped>
 /* 组件样式 */
 .demo {
   background-color: orange;
