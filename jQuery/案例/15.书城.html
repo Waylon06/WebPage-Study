@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>书城特效</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+
+        ul {
+            background: url(images/top.png) no-repeat;
+            width: 320px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            padding-top: 50px;
+        }
+
+        li {
+            padding-left: 20px;
+            line-height: 50px;
+            color: #f60;
+            cursor: pointer;
+        }
+
+        p {
+            background: url(images/01.jpg) no-repeat 0 center;
+            padding-left: 30px;
+        }
+
+        img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+        <li>
+            <p>怎样在不为人知的情况 15.10元</p>
+            <img src="images/img.jpg" alt="">
+        </li>
+    </ul>
+
+    <script src="../jQuery.min.js"></script>\
+    <script>
+        // 原生实现
+        /* var lis = document.querySelectorAll('li');
+        for(let i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function() {
+                this.children[0].style.display = 'none';
+                this.children[1].style.display = 'block';
+            }
+        }
+        for(let i = 0; i < lis.length; i++) {
+            lis[i].onmouseout = function() {
+                this.children[0].style.display = 'block';
+                this.children[1].style.display = 'none';
+            }
+        }  */
+
+        // jQuery实现
+        // 初级方法
+        /* $('li').mouseover(function () {
+            $(this).children('p').hide().siblings('img').show()
+        })
+        $('li').mouseout(function () {
+            $(this).children('p').show().siblings('img').hide()
+        }) */
+        // 中级方法
+        /* $('li').hover(function () {
+            $(this).children('p').hide().siblings('img').show()
+        }, function () {
+            $(this).children('p').show().siblings('img').hide()
+        }) */
+        // 高级方法
+        $('li').hover(function() {
+            $(this).children('p').toggle().siblings('img').toggle();
+        });
+
+    </script>
+</body>
+
+</html>

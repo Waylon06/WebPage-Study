@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏作业</title>
+    <style>
+        *{margin: 0;padding: 0;border: 0;list-style: none;}
+        ul{width: 340px;height: 30px;background: url(./images/bg.jpg) no-repeat;margin: 100px auto;}
+        ul>li{margin-left: 10px;float: left;}
+        span, ol li{background: url(./images/libg.jpg) no-repeat;width: 100px;height: 30px;display: block;text-align: center;line-height: 30px;cursor: pointer;}
+        ol{display: none;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <span>一级菜单</span>
+            <ol>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ol>
+        </li>
+        <li>
+            <span>一级菜单</span>
+            <ol>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ol>
+        </li>
+        <li>
+            <span>一级菜单</span>
+            <ol>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ol>
+        </li>
+    </ul>
+    <script src="../jQuery.min.js"></script>
+    <script>
+        // 原生JS实现
+        /* var lis = document.querySelectorAll('ul>li');
+        var ols = document.querySelectorAll('ol')
+        console.log(lis);
+        for(let i = 0; i < lis.length; i++){
+            lis[i].addEventListener('mouseover', function() {
+                ols[i].style.display = 'block';
+            })
+            lis[i].addEventListener('mouseout', function() {
+                ols[i].style.display = 'none';
+            })  
+        } */
+        $('ul>li').hover(function() { $(this).children('ol').stop().fadeToggle()})
+    </script>
+</body>
+</html>

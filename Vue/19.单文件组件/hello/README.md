@@ -7,6 +7,14 @@
         打标识：<h1 ref="xxx"></h1> 或 <School ref="xxx"/>
         获取：this.$refs.xxx
 
+## 关于不同版本的Vue：
+
+    1.Vue.js与Vue.runtime.js的区别：
+      (1).Vue.js是完整版的Vue，包含：核心功能+模板解析器
+      (2).Vue.runtime.js是运行版的Vue，只包含：核心功能，没有模板解析器
+
+    2.因为Vue.runtime.js没有模板解析器，所以不能使用template配置项，需要使用render函数接收到的createElement函数去指定具体内容 
+
 ## 配置项props
        功能:让组件接收外部传过来的数据
        (1).传递函数:
