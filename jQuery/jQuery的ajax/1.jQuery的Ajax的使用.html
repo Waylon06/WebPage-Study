@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>This is a li</li>
+    </ul>
+    <script src="./jQuery.min.js"></script>
+    <script>
+        const url = 'http://520it.com:8809/index/banners/travel'
+        $.get(url, function(resp) {
+            console.log(resp);
+            resp.data.forEach(item => {
+                $('ul').append(`<li>${item.title}</li><img src="${item.coverUrl}">`);
+            });
+        });
+
+    </script>
+</body>
+</html>

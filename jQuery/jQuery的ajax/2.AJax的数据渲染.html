@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>这是原本的li</li>
+        <li>这是原本的li</li>
+        <li>这是原本的li</li>
+        <li>这是原本的li</li>
+        <li>这是原本的li</li>
+    </ul>
+    <script src="./jQuery.min.js"></script>
+    <script>
+        // 需求：根据接口的地址请求到对应的数据，渲染到页面上
+        /* 
+            1.发一个ajax请求数据
+            $get(url, [data],function(resp){console.log(resp.data)})
+        */
+       const url = 'http://kumanxuan1.f3322.net:8809/index/banners/travel'
+       $.get(url, function(resp){
+        console.log(resp);
+        // 清空已有的数据
+        $('ul').empty()
+        // 遍历渲染
+        resp.data.forEach(item => {
+            $('ul').append(`<li>${item.title}</li><img src=${item.coverUrl} width='400px'>`)
+        });
+       })
+    </script>
+</body>
+</html>
