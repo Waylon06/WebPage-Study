@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 常量： 永久不变（不可修改）的一个量
+
+        // 常量 区别 与变量，一般习惯于将首字母大写
+
+        // 1.const 一旦声明就必须赋值
+        /* const Data;
+        console.log(Data); */   //报错：在const声明中缺少初始化 --> const定义的常量需要初始化
+
+        // 2.赋值后不能改变常量值
+        /* const Data = 10;
+        Data = 20
+        console.log(Data); */
+
+        // 3.不能先使用后声明（没有预解析）
+        /* console.log(Data);
+        const Data = 5; */
+
+        // 4.const 具有块级作用域
+        /* {
+            const A = 2;
+        }
+        console.log(A); */
+
+        // 5.在数组这种引用数据类型结构当中，本身是不能修改（引用地址是不能修改的）
+        const Arr = [1, 2, 3]
+        // Arr = [4, 5, 6]   相当于更改引用地址
+
+        // 但是能改值
+        Arr[1] = 100;
+        console.log(Arr);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>6.对象的解构赋值语法</h3>
+    <script>
+        var obj = {
+            name: 'waylon',
+            age: 20,
+            sex: '男'
+        }
+        /* let name = obj.name
+        let age = obj.age */
+
+        // ES6 提出一个解构赋值的语法， 目的就是简化代码
+        // 等号左边就是变量 = 等号右边是对象
+        // 如果对象的key 和 右边对象内的key相同，就可以直接使用解构语法拿值
+        /* let { name, age, sex } = obj;
+        console.log(name, age, sex); */
+
+        // 1.完全解构：将对象里的值全部拿出来
+        // let { name, age, sex } = obj;
+
+        // 2.部分解构:只拿取部分值
+        // let {name, sex} = obj; 
+
+        // 3.解构后的重命名
+        /* let {name, age: old} = obj;
+        console.log(old); */
+
+        // 4.承载封装好了的对象属性与方法
+        let {random} = Math
+        console.log(random());
+
+    </script>
+</body>
+
+</html>

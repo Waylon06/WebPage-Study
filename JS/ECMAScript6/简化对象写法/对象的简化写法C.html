@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = 'waylon'
+        let age = 20
+
+        function show() {
+            return '帅'
+        }
+
+        let obj = {
+            name: name,
+            age: age,
+            show: show,
+        }
+        console.log(obj);
+        // 当对象内的key与value 相同， 那么就只需要写个key 不用写value
+        let obj2 = {
+            name,
+            age,
+            show,
+        }
+        console.log(obj2);
+    </script>
+</body>
+</html>

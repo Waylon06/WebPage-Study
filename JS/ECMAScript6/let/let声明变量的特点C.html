@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.不允许  先使用再声明
+        // let 没有预解析
+        /* console.log(a);
+        let a = 10; */
+
+        // 2.不可以重新声明同一个变量
+       /*  let b =5;
+        let b =2;
+        console.log(b); */
+
+        // 3.for循环中的let外部不能访问
+        // let拥有块级作用域（{}包含的代码片段）
+        /* for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+        console.log(i); */
+
+        /* {
+            let a = 2;
+            console.log(a);
+        }
+        console.log(a); //报错 */
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>函数参数的解构赋值</h3>
+    <script>
+
+        // 使用add函数 传递数组进行累加 ---将数组进行解构（函数参数的解构）
+        /* function add([a, b, c]) {
+            return a + b + c;
+        }
+        var arr = [1, 2, 3];
+        console.log(add(arr)); */
+
+        function getObj({ x, y, z }) {
+            console.log(x,y,z);
+        }
+        var obj = {
+            x: 10,
+            y: 15,
+            z: 20
+        }
+        getObj(obj);
+    </script>
+</body>
+
+</html>

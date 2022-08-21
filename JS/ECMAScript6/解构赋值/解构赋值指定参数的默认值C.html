@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>解构赋值指定参数的默认值</h3>
+    <script>
+        // let {url,type} = obj
+        function ajaxFn({type='post',url='www.xxxxx'} = {}){
+            console.log(url,type);
+        }
+        ajaxFn({
+            type: 'get',
+            url: 'http//xxxxx'
+        })
+        // ajaxFn()
+    </script>
+</body>
+</html>
