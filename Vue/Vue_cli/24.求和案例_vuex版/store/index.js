@@ -40,18 +40,9 @@ const mutations = {
         state.sum += value
     }
 }
-
-// 准备getters --用于将state中的数据进行加工
-const getters = {
-    bigSum(state) {
-        return state.sum*10
-    }
-}
 // 准备state --用于存储数据
 const state = {
     sum: 0,
-    school: 'Bilibili',
-    subject: 'Computer'
 }
 
 
@@ -59,8 +50,7 @@ const state = {
 const store = new Vuex.Store({
     actions,
     mutations,
-    state,
-    getters
+    state
 })
 
 // 导出store

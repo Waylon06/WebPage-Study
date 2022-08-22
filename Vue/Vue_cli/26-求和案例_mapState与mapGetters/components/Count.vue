@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
   name: "CountName",
   data() {
@@ -53,32 +53,23 @@ export default {
     ...mapGetters(["bigSum"]),
   },
   methods: {
-    // 程序员亲自去写方法
-    /* plus() {
+
+    plus() {
       this.$store.commit("PLUS", this.num);
     },
     decrement() {
       this.$store.commit("DECREMENT", this.num);
-    }, */
-    //借助mapMutations生成对应方法，方法中会调用commit去联系mutations（对象写法）
-    // 如果使用以下方法实现，就需要在标签内绑定事件时的函数变为带参函数
-    ...mapMutations({ plus: "PLUS", decrement: "DECREMENT" }),
+    },
+  
 
-    //借助mapMutations生成对应方法，方法中会调用commit去联系mutations（数组写法）与前面的一样
-
-    // 程序员亲自去写方法
-    /* plusOdd() {
+    plusOdd() {
       this.$store.dispatch("plusOdd", this.num);
     },
     plusWait() {
       this.$store.dispatch("plusWait", this.num);
-    }, */
+    },
 
-    //借助mapActions生成对应方法，方法中会调用dispatch去联系actions（对象写法）
-    // ...mapActions({plusOdd: 'plusOdd', plusWait: 'plusWait'})
-
-    //借助mapActions生成对应方法，方法中会调用dispatch去联系actions（数组写法）
-    ...mapActions(["plusOdd", "plusWait"]),
+ 
   },
   mounted() {
     const x = mapState({ sum: "sum", school: "school", subject: "subject" });
