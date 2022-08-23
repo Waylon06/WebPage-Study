@@ -12,7 +12,7 @@ Vue.use(vueResource);
 
 //创建vm
 new Vue({
-	el:'#app',
+	el: '#app',
 	render: h => h(App),
 	store,
 })

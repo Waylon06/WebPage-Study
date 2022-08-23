@@ -5,10 +5,10 @@ window.addEventListener('load', function () {
     btn.addEventListener('click', function () {
         if (checked.checked === true) {
             // console.log(checked.checked);
-            const connect = new XMLHttpRequest();
+            const xhr = new XMLHttpRequest();
 
-            connect.open('post', 'http://43.138.138.11:1110/api/users/register');
-            connect.setRequestHeader('Content-Type', 'application/json');
+            xhr.open('post', 'http://43.138.138.11:1110/api/users/register');
+            xhr.setRequestHeader('Content-Type', 'application/json');
             const PARAMS = {
                 username: 'rty',
                 password: 123456,
@@ -17,21 +17,21 @@ window.addEventListener('load', function () {
             console.log(PARAMS.username);
             console.log(PARAMS.password);
             console.log(PARAMS.phone);
-            connect.send(JSON.stringify(PARAMS));
+            xhr.send(JSON.stringify(PARAMS));
 
-            connect.onreadystatechange = function () {
-                if (connect.readyState === 4) {
-                    if (connect.status >= 200 && connect.status < 300) {
-                        const resp = JSON.parse(connect.responseText)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        const resp = JSON.parse(xhr.responseText)
                         if (resp.code === 200) {
                             console.log(resp.data);
-                            console.log(JSON.parse(connect.responseText));
+                            console.log(JSON.parse(xhr.responseText));
                             window.location.href = "../index.html";
                         } else {
                             alert(resp.msg);
                         }
                     } else {
-                        console.log("请求失败:" + connect.status);
+                        console.log("请求失败:" + xhr.status);
                     }
                 }
             }

@@ -9,10 +9,10 @@ window.addEventListener('load', function () {
     btn.addEventListener('click', function () {
         if (checked.checked === true) {
             // console.log(checked.checked);
-            const connect = new XMLHttpRequest();
+            const xhr = new XMLHttpRequest();
 
-            connect.open('post', 'http://43.138.138.11:1110/api/users/login');
-            connect.setRequestHeader('Content-Type', 'application/json');
+            xhr.open('post', 'http://43.138.138.11:1110/api/users/login');
+            xhr.setRequestHeader('Content-Type', 'application/json');
             const PARAMS = {
                 username: un.value,
                 password: psw.value
@@ -21,23 +21,23 @@ window.addEventListener('load', function () {
             console.log(PARAMS.username);
             console.log(PARAMS.password);
             // JSON.stringify 就是把对象的类型转换为字符串类型 后台只能接受JSON字符串类型的数据
-            connect.send(JSON.stringify(PARAMS));
+            xhr.send(JSON.stringify(PARAMS));
 
-            connect.onreadystatechange = function () {
-                if (connect.readyState === 4 && connect.status === 200) {
-                    const resp = JSON.parse(connect.responseText)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const resp = JSON.parse(xhr.responseText)
                     if (resp.code === 200) {
                         console.log(resp.data);
                         // 将用户数据存入浏览器,在后续购物车和页面显示用户名中需使用
                         sessionStorage.setItem('uinfo', JSON.stringify(resp.data));
-                        console.log(JSON.parse(connect.responseText));
+                        console.log(JSON.parse(xhr.responseText));
                         window.location.href = "../index.html";
                     } else {
                         alert(resp.msg);
                     }
                 } else {
                     // 打印到后台
-                    console.log("请求失败:" + connect.status);
+                    console.log("请求失败:" + xhr.status);
                 }
             }
         } else {
