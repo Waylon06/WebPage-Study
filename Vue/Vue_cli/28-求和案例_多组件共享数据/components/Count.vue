@@ -28,8 +28,8 @@ export default {
   computed: {
 
     // 借助mapState 生成计算属性，从state中读取数据 （数组写法）
-    ...mapState('countAbout' ,["sum", "school", "subject", "personList"]),
-    ...mapState('personAbout' ,["personList"]),
+    ...mapState(["sum", "school", "subject", "personList"]),
+
     // 借助apGetters 生成计算属性，从state中读取数据 （数组写法）
     ...mapGetters(["bigSum"]), 
   },
