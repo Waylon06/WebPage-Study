@@ -5,11 +5,8 @@
         <!-- 跳转路由并携带query参数，to的字符串写法 -->
         <!-- <router-link :to="`/home/message/detail?id=${m.id}&title=${m.title}`">{{ m.title }}</router-link>&nbsp;&nbsp;  -->
 
-        <!-- 跳转路由并携带param参数，to的字符串写法 -->
-        <router-link :to="`/home/message/detail/${m.id}/${m.title}`">{{ m.title }}</router-link>&nbsp;&nbsp; 
-
         <!-- 跳转路由并携带query参数，to的对象写法 -->
-        <!-- <router-link
+        <router-link
           :to="{
             path: '/home/message/detail',
             query: {
@@ -18,7 +15,7 @@
             },
           }"
           >{{ m.title }}
-          </router-link>&nbsp;&nbsp; -->
+          </router-link>&nbsp;&nbsp;
       </li>
     </ul>
     <hr />
