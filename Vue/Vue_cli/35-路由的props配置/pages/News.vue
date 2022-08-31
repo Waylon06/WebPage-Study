@@ -1,8 +1,9 @@
 <template>
   <div>
     <ul>
-      <li>news001 <input type="text"></li>
-      <li>news003 <input type="text"></li>
+      <li>news001</li>
+      <li>news002</li>
+      <li>news003</li>
     </ul>
   </div>
 </template>
