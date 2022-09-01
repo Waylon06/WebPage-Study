@@ -10,7 +10,7 @@ import Detail from '../pages/Detail'
 
 
 // 创建一个路由器
-const router = new VueRouter({
+export default new VueRouter({
     routes: [
         {
             path: '/about',
@@ -55,10 +55,10 @@ const router = new VueRouter({
                                 }
                             } */
                             // 解构赋值写法（二）  连续解构赋值
-                            props({ query: { id, title } }) {
+                            props({query:{id, title}}) {
                                 return {
                                     id: id,
-                                    title: title
+                                    title:title
                                 }
                             }
                         }
@@ -68,18 +68,3 @@ const router = new VueRouter({
         },
     ]
 })
-
-//全局前置路由守卫----初始化的时候被调用、每次路由切换之前被调用
-router.beforeEach((to, from, next) => {
-    console.log(to, from);
-    // 可以使用if来判断是否放行
-    // 放行
-    if (to.path === '/home') {
-        alert('你好,您现在正在判断语句内')
-        next();
-    }else {
-        next()
-    }
-})
-
-export default router
