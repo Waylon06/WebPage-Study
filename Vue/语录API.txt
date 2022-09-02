@@ -1,0 +1,1 @@
+https://api.uixsj.cn/hitokoto/get?type=social
