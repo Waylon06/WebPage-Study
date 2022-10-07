@@ -1,3 +1,4 @@
+/* 样式初始化 */
 * {
     margin: 0;
     padding: 0;
@@ -31,12 +32,14 @@ a {
     margin: 30px auto;
 }
 
+/* 图标部分 */
 .logo {
     float: left;
     width: 198px;
     height: 42px;
 }
 
+/* 导航栏部分 */
 .nav {
     float: left;
     margin-left: 60px;
@@ -59,6 +62,7 @@ a {
     border-bottom: 2px solid #00a4ff;
 }
 
+/* 搜索框部分 */
 .search {
     float: left;
     width: 412px;
@@ -86,6 +90,7 @@ a {
     background: url(images/btn.png);
 }
 
+/* 用户部分 */
 .user {
     float: right;
     line-height: 42px;
@@ -635,7 +640,8 @@ a {
 
 /* 底部部分 */
 .footer {
-    height: 415px;
+    margin-top: 50px;
+    height: 280px;
     background-color: #fff;
 }
 
@@ -643,17 +649,17 @@ a {
     padding-top: 35px;
 }
 
-.coperight {
+.f-left {
     float: left;
 }
 
-.coperight p {
+.f-left p {
     font-size: 12px;
     color: #666;
     margin: 20px 0 15px 0;
 }
 
-.coperight .app {
+.f-left .app {
     display: block;
     width: 118px;
     height: 33px;
@@ -662,9 +668,9 @@ a {
     line-height: 33px;
     font-size: 16px;
 }
-
+ 
 .links {
-    float:right
+    float:right;
 }
 
 .links dl {

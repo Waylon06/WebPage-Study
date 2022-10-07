@@ -1,0 +1,8 @@
+{
+    "name": "waylon-tools",
+    "version": "1.0.0",
+    "main": "./index.js",
+    "description": "提供格式化时间、HTMLEscape相关功能",
+    "keywords": ["waylon", "dateFormat", "escape", "HTMLEscape"],
+    "license": "ISC"
+}
