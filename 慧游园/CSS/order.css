@@ -211,20 +211,12 @@ section::after {
     border: 1px solid #c7c7c7;
 }
 
-.service .cancel,
-.service .comments {
-    position: absolute;
-    right: 192px;
-}
-
-.service .ticket,
-.service .change {
+.service .ticket {
     position: absolute;
     right: 100px;
 }
 
-.service .moreInfo,
-.service .pay {
+.service .moreInfo {
     position: absolute;
     right: 8px;
 }
