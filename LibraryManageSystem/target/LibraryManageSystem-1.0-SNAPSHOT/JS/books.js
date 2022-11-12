@@ -35,7 +35,7 @@ window.addEventListener('load', function () {
                         <form action="../AddBook" method="get">
                             <input type="text" name="id" class="ipt" placeholder="增加的书本已给您备好，只需输入id号"></br>
                             <input type="submit" value="新 增" class="btn">
-                        </form>
+                         </form>
                     </a>
                 </li>`;
                 let lis = document.querySelectorAll('.banner ul li');
