@@ -9,7 +9,7 @@ import Detail from '../pages/Detail'
 
 //创建并暴露一个路由器
 export default new VueRouter({
-	routes:[
+	routes	:[
 		{
 			name:'guanyu',
 			path:'/about',
